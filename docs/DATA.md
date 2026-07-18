@@ -54,14 +54,19 @@ via the in-app browser using same-origin `fetch()`.
 
 ## Current counts
 
-_As of the latest seed (KKP and the 658 missing KK are still being added, so
-clinic totals continue to grow toward the official benchmarks)._
+_~3,100 facilities total. KK now meets the official benchmark; KD greatly
+expanded via the per-state official directory (Perlis and Perak reconciled
+exactly against their MOH directories)._
 
 | Tier | Count | Breakdown |
 | --- | --- | --- |
 | `state` (JKN) | 16 | 16 |
-| `district` | 467 | 143 hospital · 162 PKD · 162 PKPD |
-| `clinic` | 1,240+ | 469 KK · ~1,005 KKP · 311 KD · 46 gov clinic · 16 K1M |
+| `district` | ~465 | ~140 hospital · 162 PKD · 162 PKPD |
+| `clinic` | ~2,640 | ~1,124 KK · ~959 KKP · ~495 KD · gov clinic · K1M |
+
+Coordinates: after two geocoding passes (place + postcode), only ~61 facilities
+remain on approximate (state-centre) coordinates; the rest are town-level or
+exact.
 
 ### Official benchmarks (MOH Health Facts 2024, 2023 data)
 
@@ -85,9 +90,12 @@ clinic totals continue to grow toward the official benchmarks)._
 | `seed_kkp.py` | Geocode + seed KKP (dental clinics) from the official dental directory dump |
 | `build_missing_kk.py` | Diff official KK directory vs OSM → `data/klinik_kesihatan_*.json` |
 | `seed_missing_kk.py` | Geocode + seed the KK the directory has but OSM was missing |
+| `refine_coords.py` / `refine_coords_v2.py` | Re-geocode approximate rows (place then postcode strategy) |
+| `reconcile_perlis.py` / `add_perak_facilities.py` | Per-state reconciliation against the official MOH directory |
 | `find_anchors.py` | Per tracking request: OSM residential anchors around the target office |
-| `collect_traffic.py` | Daily (GitHub Actions): Google Distance Matrix + Open-Meteo per anchor |
-| `generate_report.py` | Groq (Llama) analysis → writes report back to `tracking_requests` |
+| `collect_traffic.py` | GitHub Actions (every 15 min, morning window): collects per request ~near its leave-home time; skips weekends + public holidays |
+| `run_due_reports.py` | GitHub Actions (hourly): generate + email reports whose tracking window has ended |
+| `generate_report.py` | Groq (Llama) analysis → writes report to DB + emails via Resend |
 
 ---
 
@@ -112,3 +120,31 @@ clinic totals continue to grow toward the official benchmarks)._
   count is a slight over-estimate where naming differs.
 - The only route to a fully authoritative geocoded dataset is the
   access-restricted **MyHDW** directory (`support.myhdw@mimos.my`).
+
+---
+
+## Deployment & operations
+
+- **Live site:** https://kkm-relocation-planner.vercel.app (Vercel, auto-deploys on push to `main`).
+- **Repo:** https://github.com/drakmal/kkm-relocation-planner (public).
+- **Database:** Supabase (cloud). A `keep_alive.yml` workflow pings it every 3 days so the free tier never pauses.
+- **Scheduled jobs (GitHub Actions):**
+  - `daily_tracker.yml` — commute-timed traffic collection (every 15 min, 05:00-10:00 MYT).
+  - `generate_reports.yml` — hourly report generation + email.
+  - `keep_alive.yml` — Supabase keep-alive.
+
+### Environment variables
+
+| Variable | Vercel (web app) | GitHub Actions (python) |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` / `_ANON_KEY` | ✅ | — |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | ✅ | ✅ |
+| `GOOGLE_MAPS_API_KEY` | ✅ | ✅ (Distance Matrix) |
+| `GROQ_API_KEY` | — | ✅ (report LLM) |
+| `RESEND_API_KEY` / `RESEND_FROM` | ✅ (confirmation email) | ✅ (report email) |
+| `APP_BASE_URL` | ✅ | ✅ (report links) |
+
+**Notes:**
+- Confirmation email + report email need `RESEND_*` in **both** places (the web app sends the confirmation; the Actions send the report). `RESEND_FROM` must be a verified Resend sending domain — `onboarding@resend.dev` only delivers to the account owner.
+- Google Distance Matrix is the only paid dependency (traffic-aware). Cost is bounded by: 3 requests/email/week, ≤5 working days, and the per-request anchor count. See the app's Limitations card.
+- The submit route calls Overpass inline (~10-15s). If it ever times out on the serverless host, move anchor creation into a background Action.
