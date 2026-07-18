@@ -1,0 +1,27 @@
+name: Supabase Keep-Alive
+
+# Supabase free-tier projects pause after ~7 days of no activity. This pings the
+# database every 3 days so it never goes idle long enough to be paused.
+# (The traffic-collector and report workflows already query the DB on weekdays,
+#  but this guarantees activity during quiet periods, holidays, etc.)
+
+on:
+  schedule:
+    - cron: '0 6 */3 * *'   # every 3 days at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          code=$(curl -sS -o /dev/null -w "%{http_code}" \
+            "$SUPABASE_URL/rest/v1/locations?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY")
+          echo "Supabase ping returned HTTP $code"
+          test "$code" = "200"

@@ -1,0 +1,3334 @@
+{
+  "_meta": {
+    "source": "https://www.moh.gov.my/en/health-facilities/health-clinic/<state>",
+    "description": "Official MOH Klinik Kesihatan directory, flagged against OSM-seeded locations table.",
+    "total_official_kk": 997,
+    "already_in_osm": 339,
+    "missing_from_osm": 658,
+    "note": "Matching is by normalized location-core name and is approximate. 'missing' rows carry the official address for geocoding."
+  },
+  "states": {
+    "Johor": [
+      {
+        "name": "KK Air Hitam",
+        "address": "KK Air Hitam,� Batu 15, Muar, 84200, Muar, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Air Tawar 2",
+        "address": "KK Air Tawar 2, Felda Air Tawar 2, 81920 Kota Tinggi, Johor, 81920, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Air Tawar 5 (Felda)",
+        "address": "KK Air Tawar 5 (Felda), Felda Air Tawar 5, 81900 Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Mas",
+        "address": "KK Bandar Mas, Bandar Mas, 81900 Kota Tinggi, Johor, 81900, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Putra",
+        "address": "KK Bandar Putra, Jalan Genuang, Bandar Putra, Segamat, 85000, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Tenggara",
+        "address": "KK Bandar Tenggara, Kulaijaya, 81440, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Anam",
+        "address": "KK Batu Anam, Jalan Bukit Cantik, Jalan Muar, Batu Anam, 85100, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bayu Damai",
+        "address": "KK Bayu Damai, Pengerang, 81600, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bekok",
+        "address": "KK Bekok, Jalan Gunung, 86500 Bekok, Segamat, 86500, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Besar",
+        "address": "KK Bukit Besar, Felda Bukit Besar, Kulai Jaya, 81450, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Gambir",
+        "address": "KK Bukit Gambir, Lot 11961 Klinik Kesihatan Bukit Gambir, Gersik, 84800, Tangkak, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Indah",
+        "address": "KK Bukit Indah, PTD 89954, Jalan Indah 4/14, Taman Bukit Indah, 79100, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Pasir",
+        "address": "KK Bukit Pasir, 84300 Bukit Pasir, Muar, Johor, 84300, Muar, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Waha",
+        "address": "KK Bukit Waha, Felda Bukit Waha, 81907, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Buloh Kasap",
+        "address": "KK Buloh Kasap, Jalan Tasik Alai, Buluh Kasap, 85010, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chaah",
+        "address": "KK Chaah, Chaah, Segamat, 85400, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gelang Patah",
+        "address": "KK Gelang Patah, JKR 4176 Jalan Besar Gelang Patah, 81550, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gersik",
+        "address": "KK Gersik, Gersik, Ledang, 84700, Tangkak, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jementah",
+        "address": "KK Jementah, Jalan Muar, Jementah, Segamat, 85200, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kahang Batu 22",
+        "address": "KK Kahang Batu 22, Lot 96, Jalan Mersing Batu 22, Kahang, 86700, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kahang Timur",
+        "address": "KK Kahang Timur, Jalan Merak, Felda Kahang Timur, 86000, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Cahaya Baru",
+        "address": "KK Kampung Cahaya Baru, JKR 2116, Jln Perak, Kampung Cahaya Baru, Masai, 81750, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kayu Ara Pasong",
+        "address": "KK Kayu Ara Pasong, Jln Kayu Ara Pasong, Api-Api, 82010, Pontian, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kelapa Sawit",
+        "address": "Klinik Kesihatan Kelapa Sawit, Jalan Kelapa Sawit, 81000, Kulai, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kulai Besar",
+        "address": "KK Kulai Besar, Batu 19 Jalan Air Hitam, Kulaijaya, 81000, Kulai, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Larkin",
+        "address": "KK Larkin, PTD 4999, Jalan Sentosa, Larkin, 80350, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Layang-Layang",
+        "address": "KK Layang-Layang, Jalan Pejabat Pos, Layang-Layang, 81850, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lenga",
+        "address": "KK Lenga, Batu 29 Lenga, Muar, 84040, Muar, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lok Heng",
+        "address": "KK Lok Heng, Jalan Amanah, 81900, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Maharani",
+        "address": "KK Maharani, Jalan Salleh, Muar, 84000, Muar, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mahmoodiah",
+        "address": "KK Mahmoodiah, JKR 6274 Jalan Mahammodiah, 80100, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mengkibol",
+        "address": "KK Mengkibol, Jalan Mengkibol, 86000, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Muar",
+        "address": "KK Muar, Taman Tun Dr Ismail, Jalan Bakri Batu 1 1/2 Muar, 84000, Muar, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nitar 1",
+        "address": "KK Nitar 1, Jalan Merbah, Mersing, 86800, Mersing, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Paloh",
+        "address": "KK Paloh, No 139 Jalan Klinik, Paloh, 86600, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Palong Timur",
+        "address": "KK Palong Timur, Palong Timur, Batu Anam, 85100, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Parit Ismail",
+        "address": "KK Parit Ismail, Jln Parit Ismail, Pontian, 82200, Pontian, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Gudang",
+        "address": "KK Pasir Gudang, JKR 5376, Jalan 8/1 Perjiranan 8, Pasir Gudang, 81700, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Paya Mengkuang",
+        "address": "KK Paya Mengkuang, JKR 4091 Jln Kelasi, Desa Paya Mengkuang, Gelang Patah, 81560, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pekan Air Panas",
+        "address": "KK Pekan Air Panas, Pekan Air Panas, Labis, Segamat, 85300, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pekan Nanas",
+        "address": "KK Pekan Nanas, Jln Pekan Nanas, Pontian, 81500, Pontian, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pemanis",
+        "address": "KK Pemanis, Felda Pemanis, Segamat, 85009, Segamat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pengerang",
+        "address": "KK Pengerang, Felda Lok Heng, Tanjung Surat, 81600, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pesta",
+        "address": "KK Pesta, PTD 13591, Kampung Kenang-Kenangan Dato' Onn, Jalan Perak, Simpang Kanan, 83000, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Renggam",
+        "address": "KK Renggam, PTD 2495, Jalan Simpang Renggam, Renggam, 86300, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Rengit",
+        "address": "KK Rengit, TLO 52, Jalan Besar Rengit, Rengit, 83500, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sedili Besar",
+        "address": "KK Sedili Besar, Lot 218, Jalan Hj Md Lazim, Kambu, 81910, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Senggarang",
+        "address": "KK Senggarang, No 24, 25, 26 & 27, Jalan Abdullah, Medan Bunga Cempaka Baru, Senggarang Batu Pahat, 83200, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sening",
+        "address": "KK Sening, 81900 Kota Tinggi, Johor, 81900, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Serkat",
+        "address": "KK Serkat, Jalan Serkat, Pontian, 82030, Pontian, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Skudai Baru",
+        "address": "Klinik Kesihatan Skudai Baru, Ptd 4418, Jalan Hang Lekir 1, Taman Skudai Baru",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sri Gading",
+        "address": "KK Sri Gading, Lot 5360, Sri Gading, Jalan Kluang, Simpang Kanan, 83000, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sri Medan",
+        "address": "KK Sri Medan, Lot 5660, Pekan Sri Medan, Mukim 18, 83400, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Mati",
+        "address": "KK Sungai Mati, Tangkak, Ledang, 84400, Tangkak, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Ungku Tun Aminah",
+        "address": "KK Taman Ungku Tun Aminah, Lot 9, 11, 15, 17 Jln Sri Orkid 36, Tmn Sri Orkid, Skudai, 81300, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Universiti",
+        "address": "KK Taman Universiti, Jalan Kebudayaan 28, Taman Universiti, 81300, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tampoi",
+        "address": "KK Tampoi, JKR 4969, Batu 5 Jalan Skudai, 81200, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tanjong Sedili",
+        "address": "KK Tanjong Sedili, Felda Sening, 81910, Kota Tinggi, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tenggaroh 02",
+        "address": "KK Tenggaroh 02, Jemaluang, Mersing, 86810, Mersing, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tongkang Pecah",
+        "address": "KK Tongkang Pecah, PTD 1921, Jalan Besar Tongkang Pecah, Linau, 83010, Batu Pahat, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Johor Bahru",
+        "address": "KK UTC Johor Bahru, Level G, Bangunan Galeria Kotaraya, 80200, Johor Bahru, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Belitong",
+        "address": "KK Ulu Belitong, Jalan Cemara, Felda Ulu Belitong, 86007, Kluang, Johor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Tiram",
+        "address": "KK Ulu Tiram, JKR 2159, Jln Besar, Ulu Tiram, 81800, Johor Bahru, Johor",
+        "in_osm": false
+      }
+    ],
+    "Kedah": [
+      {
+        "name": "KK Air Hangat",
+        "address": "KK Air Hangat, Jalan Air Hangat, Langkawi, 07000, Langkawi, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Banai",
+        "address": "KK Banai, Jitra, 06000, Kubang Pasu, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Sg. Petani",
+        "address": "KK Bandar Sg. Petani, Pej.Kes. Daerah Kuala Muda, Jalan Badlishah, Sungai Petani, 08000, Kuala Muda, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Selambau",
+        "address": "KK Bukit Selambau, Sungai Petani, 08010, Kuala Muda, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Changloon",
+        "address": "KK Changloon, Changlun, 06010, Kubang Pasu, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gulau",
+        "address": "KK Gulau, Jalan Gulau Nami, Sik, 08210, Sik, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Betong",
+        "address": "KK Kampung Betong, Kampung Betong, Mukim Jeneri, Sik, 08200, Sik, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Lalang",
+        "address": "KK Kampung Lalang, Jalan Weng, Mukim Siong, Baling, 09100, Baling, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Karangan",
+        "address": "KK Karangan, Jalan Mahang, Karangan, 09700, Kulim, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kodiang",
+        "address": "KK Kodiang, Kodiang, 06100, Kubang Pasu, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Kuala Muda",
+        "address": "KK Kota Kuala Muda, Jalan Kampung Sungai Emas, Kota Kuala Muda, 08500, Kuala Muda, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kubur Panjang",
+        "address": "KK Kubur Panjang, Kubur Panjang, Pendang, 06760, Pendang, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kulim",
+        "address": "KK Kulim, Jalan Hospital Lama, Kulim, 09000, Kulim, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Laka Temin",
+        "address": "KK Laka Temin, Bukit Kayu Hitam, 06050, Kubang Pasu, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lubuk Buntar",
+        "address": "KK Lubuk Buntar, Jln Serdang-Bandar Baharu, 09800, Bandar Baharu, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mahang",
+        "address": "KK Mahang, Jalan Mahang, Kulim, 09800, Kulim, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Merbau Pulas",
+        "address": "KK Merbau Pulas, Jalan Kuala Ketil, Kulim, 09410, Kulim, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padang Matsirat",
+        "address": "KK Padang Matsirat, Langkawi, 07100, Langkawi, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Parit Panjang",
+        "address": "KK Parit Panjang, Baling, 09120, Baling, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Tuba",
+        "address": "Klinik Kesihatan Pulau Tuba, Mukim Kuah, 07000, Langkawi, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sg. Lalang",
+        "address": "KK Sg. Lalang, Lot 15,16,17 & 18, Taman Lembah Permai, Sungai Lalang, Bedong, 08100, Kuala Muda, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Pasir",
+        "address": "Klinik Kesihatan Sungai Pasir, Taman Desa Meranti Indah, Sungai Petani, 08000 Kuala Muda, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Intan",
+        "address": "Jalan Taman Intan, Sungai Petani",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tawar",
+        "address": "KK Tawar, Kuala Ketil, 09310, Baling, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Teloi Timur",
+        "address": "KK Teloi Timur, Teloi Timur, Sik, 08200, Sik, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Temonyong",
+        "address": "KK Temonyong, Mukim Kedawang, Langkawi, 7000, Langkawi, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tualang",
+        "address": "Klinik Kesihatan Tualang, Kampung Kerian, Jalan Tualang, Mukim Tualang, 06402, Pokok Sena, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Alor Setar",
+        "address": "KK UTC Alor Setar, Aras Bwh, Kompleks MBAS(City Point), Jln Kolam Air, 05100, Kota Setar, Kedah",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Sungai Petani",
+        "address": "KK UTC Sungai Petani, Lot G-UTC-02, UTC Sungai Petani, Bangunan Ukir Square, Jalan Kuala Ketil, 08000, Kuala Muda, Kedah",
+        "in_osm": false
+      }
+    ],
+    "Kelantan": [
+      {
+        "name": "KK Aring 2",
+        "address": "KK Aring 2, Aring, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ayer Lanas",
+        "address": "KK Ayer Lanas, Ayer Lanas, 17700, Jeli, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bachok",
+        "address": "KK Bachok, 16300 Bachok, 16300, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bahagia",
+        "address": "Jalan Kuala Krai, 18000 Kuala Krai",
+        "in_osm": false
+      },
+      {
+        "name": "KK Balai",
+        "address": "KK Balai, 16300 Bachok, 16300, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Kuala Krai",
+        "address": "KK Bandar Kuala Krai, KKB Jalan Pintas, 18000, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Tumpat",
+        "address": "KK Bandar Tumpat , Bandar Tumpat , 16200, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Banggol Pa' Esah",
+        "address": "KK Banggol Pa' Esah, Kampung Banggul Pa'Esah, Pasir Puteh, 16800, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batang Merbau",
+        "address": "KK Batang Merbau, Klinik Kesihatan Batang Merbau, Tanah Merah, 17500, Tanah Merah, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu 30",
+        "address": "KK Batu 30, Jalan Kuala Krai, 18500 Machang, 18500, Machang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Melintang",
+        "address": "KK Batu Melintang, Kampung Batu Melintang, 17520 Batu Melintang, 17520, Jeli, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Mengkebang",
+        "address": "KK Batu Mengkebang, Mengkebang, 18000, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Belimbing",
+        "address": "KK Belimbing, Kg Belimbing, 17500 Tanah Merah, 17500, Tanah Merah, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Berek",
+        "address": "KK Berek, Jalan Bukit Marak, 16450 Kota Bharu, 16450, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beris",
+        "address": "KK Beris, Kubor Besar, 16300 Bachok, 16300, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beris Panchor",
+        "address": "KK Beris Panchor, 16020 Tawang, Bachok, 16020, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bertam Baru",
+        "address": "KK Bertam Baru, Bertam Baru, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Biak",
+        "address": "KK Biak, Biak, 18000, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Bunga",
+        "address": "KK Bukit Bunga, Kg Bukit Bunga, Jalan Tanah Merah-Jeli, 17500 Tanah Merah, 17500, Tanah Merah, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bunohan",
+        "address": "KK Bunohan, Jalan Pangkalan Kubor 16200 Tumpat, 16200, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cabang 3 Perol",
+        "address": "KK Cabang 3 Perol, Cabang 3 Perol, 16010, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chekok",
+        "address": "KK Chekok, Chekok, 17060, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chempaka",
+        "address": "KK Chempaka, Jalan Panji, 16100 Kota Bharu, 16100, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cherang Ruku",
+        "address": "KK Cherang Ruku, Semerak 16700 Pasir Puteh, 16700, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chiku 3",
+        "address": "KK Chiku 3, Chiku 3, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Dabong",
+        "address": "KK Dabong, Dabong, 18200, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gaal",
+        "address": "KK Gaal, Gaal, 16800, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Geting",
+        "address": "KK Geting, Geting, Pengkalan Kubor, 16200, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gong Kulim",
+        "address": "KK Gong Kulim, Kampung Kulim, 16800 Pasir Puteh, 16800, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gua Musang",
+        "address": "KK Gua Musang, 18300 Gua Musang, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gual Ipoh",
+        "address": "KK Gual Ipoh, Kg Gual Ipoh 17500 Tanah Merah, 17500, Tanah Merah, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gual Periok",
+        "address": "KK Gual Periok, Gual Periok, 17200, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gunong",
+        "address": "KK Gunong, 16390 Bachok, 16390, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jelawat",
+        "address": "KK Jelawat, Pejabat Kesihatan Daerah Bachok, 16300, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jeli",
+        "address": "KK Jeli, Jeli, 17600, Jeli, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jeram Tekoh",
+        "address": "KK Jeram Tekoh, Jeram Tekoh, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jerek",
+        "address": "KK Jerek, Kampung Jerek, Wakil Pos Bertam, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Joh",
+        "address": "Kampung Joh, Machang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kangkong",
+        "address": "KK Kangkong, Jalan Pasir Mas Tanah Merah 17040 Pasir Mas, 17040, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Karangan",
+        "address": "Klinik Kesihatan Karangan, Jalan Kuala Krai, 18000 Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kasar",
+        "address": "KK Kasar, Klinik Kesihatan Kasar, Pasir Mas, 17000, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kerilla",
+        "address": "Klinik Kesihatan Kerilla, Jalan Temangan Kerilla, 18400 Temangan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Keroh",
+        "address": "KK Keroh, Jalan Kuala Krai, 18000, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kg Bandar",
+        "address": "KK Kg Bandar, Jalan Kemubu, 16600 Pulai Chondong, 16600, Machang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kok Lanas",
+        "address": "KK Kok Lanas, Kilometer 25, Jalan Kuala Krai 16450 Kotan Bharu, 16450, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Jembal",
+        "address": "KK Kota Jembal, Bandar Kota Jembal, Kedai Lalat, 16150, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Balah",
+        "address": "KK Kuala Balah, Kuala Balah, 17510, Jeli, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Betis",
+        "address": "KK Kuala Betis, Kuala Betis, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kubang Kerian",
+        "address": "KK Kubang Kerian, Jln Istana Mahkota, Kota Bharu, 16150, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kubang Kual",
+        "address": "KK Kubang Kual, Kubang Kual, 17000, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuchelong",
+        "address": "KK Kuchelong, Kuchelong, 16090 Bachok, 16090, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Labok",
+        "address": "KK Labok, 18500 Labok, Machang, 18400, Machang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Laloh",
+        "address": "KK Laloh, Laloh, 18000, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lebir",
+        "address": "KK Lebir, Lebir, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Limau Kasturi",
+        "address": "KK Limau Kasturi, Wakil Pos Limau Kasturi, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lojing",
+        "address": "KK Lojing, Lojing, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lubok Bongor",
+        "address": "KK Lubok Bongor, Lubok Bongor, 17600, Jeli, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lubuk Pukul",
+        "address": "KK Lubuk Pukul, Jalan Kota Bharu - Bachok, 16150, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lundang Paku",
+        "address": "KK Lundang Paku, Jalan Dewan Beta, 15100, Kota Bharu, 15100, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Machang",
+        "address": "KK Machang, Machang, 18500 Machang, 18500, Machang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mahligai",
+        "address": "KK Mahligai, Jalan Pasir Puteh Kota Bharu, 16400 Bachok, 16400, Bachok, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Manik Urai",
+        "address": "KK Manik Urai, Manek Urai, 18050, Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mata Ayer",
+        "address": "Klinik Kesihatan Mata Ayer, Kampung Mata Ayer, Pulai Chondong, 16600, Machang Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Meranti",
+        "address": "KK Meranti, Jln Banggol Che Wan, Meranti, 17000, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Meranto",
+        "address": "KK Meranto, Kampong Meranto, Gua Musang, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mulong",
+        "address": "KK Mulong, Jalan Kuala Krai - Kota Bharu, 16450, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padang Pak Amat",
+        "address": "KK Padang Pak Amat,  Lot.1617,Kg Padang Pak Amat,Pasir Puteh, 16800,   Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pangkal Kala",
+        "address": "KK Pangkal Kala, Kampung Pangkal Kala, 17030, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Parit",
+        "address": "KK Parit, Jalan Pasir Tumbuh-Tiong, 16400, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Pekan",
+        "address": "KK Pasir Pekan, Pasir Pekan, Wakaf Bharu, Tumpat, 16250, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Puteh",
+        "address": "KK Pasir Puteh, Pasir Puteh, 16800 Pasir Puteh, 16800, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pendek",
+        "address": "KK Pendek, Jln Kota Bharu-Salor, 15100, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Peria",
+        "address": "Klinik Kesihatan Peria, Kampung Peria, Jalan Kuala Krai, 18000 Kuala Krai, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pintu Geng",
+        "address": "KK Pintu Geng, Jln. Pintu Geng, Kota Bharu, 15100, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pos Brooke",
+        "address": "KK Pos Brooke, Pejabat Kesihatan Daerah Gua Musang, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Selising",
+        "address": "KK Selising, Selising, 16410, Pasir Puteh, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sokor",
+        "address": "Klinik Kesihatan Sokor, Kg Sokor, Gual Ipoh, 17500 Tanah Merah, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Star",
+        "address": "KK Star, Kampung Star, 18300, Gua Musang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Keladi",
+        "address": "Klinik Kesihatan Sungai Keladi, 17030, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telok Jering",
+        "address": "Klinik Kesihatan Telok Jering, Kampung Telok Jering, 16210 Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telok Renjuna",
+        "address": "KK Telok Renjuna, Telok Rejuna, 16200, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Temangan",
+        "address": "KK Temangan, Temangan, 18400, Machang, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK To' Uban",
+        "address": "KK To' Uban, Jeram, 17050, Pasir Mas, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Kelantan",
+        "address": "KK UTC Kelantan, Level 1 lot 378, Seksyen 16, jalan Hamzah 15050, Kota Bharu, 15050, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Wakaf Che Yeh",
+        "address": "KK Wakaf Che Yeh, Jalan Pasir Mas Salor, 15100 Kota Bharu, 15100, Kota Bharu, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Wakaf Delima",
+        "address": "KK Wakaf Delima, Kampung Wakaf Delima, 16250 Tumpat, 16250, Tumpat, Kelantan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Wakaf Stan",
+        "address": "KK Wakaf Stan, Kampung Wakaf Stan, Kota Bharu, 16150, Kota Bharu, Kelantan",
+        "in_osm": false
+      }
+    ],
+    "Melaka": [
+      {
+        "name": "KK Alor Gajah",
+        "address": "KK Alor Gajah, Pejabat Kesihatan Daerah Alor Gajah, 78000, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ayer Keroh",
+        "address": "KK Ayer Keroh, Jalan Ayer Keroh Lama, 75450, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ayer Molek",
+        "address": "KK Ayer Molek, Jalan Air Molek, 75460, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bachang",
+        "address": "Klinik Kesihatan Bachang, Kampung Bachang, Lorang Haji Yang, Alor Gajah, 78000, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batang Melaka",
+        "address": "Klinik Kesihatan Batang Melaka, Jalan Batang Melaka Jaya 1, Taman Batang Melaka Jaya, Batang Melaka, Jasin, 77500, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Berendam",
+        "address": "KK Batu Berendam, Jalan Batu Berendam, 75350, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Rambai",
+        "address": "KK Bukit Rambai, Jalan Bukit Rambai, Bukit Rambai, 75250, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Bukit Senggeh",
+        "address": "KK Felda Bukit Senggeh, Felda Bukit Senggeh, Asahan, 77100, Jasin, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Hutan Percha",
+        "address": "KK Hutan Percha, Felda Hutan Percha, 78000, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jasin",
+        "address": "KK Jasin, Pej. Kesihatan Jasin, 77000, Jasin, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kemendor",
+        "address": "KK Kemendor, Jalan Bunga Kertas, 77000, Jasin, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Macap Baru",
+        "address": "KK Macap Baru, KM 17, Kampung Macap Baru, 78000, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nyalas",
+        "address": "KK Nyalas, JKR 2016, Kuarters Klinik Kesihatan Nyalas, Pekan Nyalas, Asahan, 77100, Jasin, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padang Sebang",
+        "address": "KK Padang Sebang, Batu 19 1/2, Kampung Padang Sebang, 78000, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pengkalan Balak",
+        "address": "Klinik Kesihatan Pengkalan Balak, Jalan Telok Gong, 78300 Masjid Tanah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Peringgit",
+        "address": "KK Peringgit, Jalab Pantai Peringgit, 75400, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Seri Tanjung",
+        "address": "KK Seri Tanjung, Batu 7 Pekan Tanjung Kling, Tanjung Kling, 76400, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Simpang Ampat",
+        "address": "KK Simpang Ampat, Batu 22, Kampung Simpang Empat, 78000, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Rambai",
+        "address": "KK Sungai Rambai, KM 32, Sungai Rambai, 77400, Jasin, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tebong",
+        "address": "KK Tebong, Tebong, 76460, Alor Gajah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ujong Pasir",
+        "address": "KK Ujong Pasir, Jalan Ujong Pasir, 75050, Melaka Tengah, Melaka",
+        "in_osm": false
+      },
+      {
+        "name": "KK Umbai",
+        "address": "KK Umbai, Jalan Muar, Umbai, 77300, Jasin, Melaka",
+        "in_osm": false
+      }
+    ],
+    "Negeri Sembilan": [
+      {
+        "name": "KK Air Kuning Selatan",
+        "address": "KK Air Kuning Selatan, Gemencheh, 73200, Tampin, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Seri Jempol",
+        "address": "KK Bandar Seri Jempol, Bandar Seri Jempol, 72120, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Pelanduk",
+        "address": "KK Bukit Pelanduk, Port Dickson, 71960, Port Dickson, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Rokan (Felda)",
+        "address": "KK Bukit Rokan (Felda), Gemencheh, 73200, Tampin, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chennah",
+        "address": "KK Chennah, Klinik Kesihatan Chennah, Kg. Chennah, 71650, Jelebu, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Desa Rhu",
+        "address": "KK Desa Rhu, Sikamat, 70400, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda LBJ",
+        "address": "KK Felda LBJ, LBJ, 71760, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gemencheh",
+        "address": "KK Gemencheh, Gemencheh, 73200, Tampin, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Pilah",
+        "address": "KK Kuala Pilah, Kuala Pilah, 72000, Kuala Pilah, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lenggeng",
+        "address": "KK Lenggeng, Lenggeng, 71750, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lui Muda",
+        "address": "KK Lui Muda, Bandar Sri Jempol, Bahau, 72120, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padang Lebar",
+        "address": "KK Padang Lebar, Batu Kikir, 72200, Kuala Pilah, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Palong 4,5,6",
+        "address": "KK Palong 4,5,6, Klinik Kesihatan Palong 4,5,6, Gemas, 73430, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Palong 7&8(Felda)",
+        "address": "KK Palong 7&8(Felda), Gemas, 73430, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Palong 9,10,11",
+        "address": "KK Palong 9,10,11, JKR 861, Klinik Kesihatan Palong, 9,10,11, Gemas, 73430, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasoh 1",
+        "address": "KK Pasoh 1, Pasoh 1, Simpang Pertang, 72300, Jelebu, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pertang",
+        "address": "KK Pertang, Simpang Pertang, 72300, Jelebu, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Rantau",
+        "address": "KK Rantau, Rantau, 71200, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Rembau",
+        "address": "KK Rembau,  Jln Batu Hampar, 71300, Rembau, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Senaling",
+        "address": "KK Senaling, Kuala Pilah, 72000, Kuala Pilah, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Senawang",
+        "address": "KK Senawang, Persiaran Senawang 2, 70450, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sendayan (Felda)",
+        "address": "KK Sendayan (Felda), Felda Sendayan, 71950, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Seremban 2",
+        "address": "KK Seremban 2, Jalan S2 A2, 70300, Seremban, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Serting Hilir",
+        "address": "KK Serting Hilir, Serting Hilir, Bandar Sri Jempol, 72120, Jempol, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tampin",
+        "address": "KK Tampin, Tampin, 73000, Tampin, Negeri Sembilan",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Seremban",
+        "address": "KK UTC Seremban, Uda Mall Sbd Bhd, No.G-05 & G-06, Tingkat GF (Ground Floor), UTC N. Sembilan & Angsana Seremban, Jln. Seremban, Kuala Pilah, 70400, Seremban, Negeri Sembilan",
+        "in_osm": false
+      }
+    ],
+    "Pahang": [
+      {
+        "name": "KK Bandar Bera 32",
+        "address": "KK Bandar Bera 32, Bandar Bera 32, 28300 Triang, Pahang, 28300, Bera, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Jengka",
+        "address": "KK Bandar Jengka, 26400 Bandar Jengka, Pahang, 26400, Maran, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Jerantut",
+        "address": "KK Bandar Jerantut, 27000, Jerantut, Pahang, 27000, Jerantut, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Kuantan",
+        "address": "KK Bandar Kuantan, Jalan Dato Lim Hoe Lek, 25200 Kuantan, Pahang, 25200, Kuantan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Pekan",
+        "address": "KK Bandar Pekan, 26600 Pekan, Pahang, 26600, Pekan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Raub",
+        "address": "Klinik Kesihatan Raub, Jalan Cheroh Lama, 27600 Raub, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Tun Razak",
+        "address": "KK Bandar Tun Razak, 26900 Bandar Tun Razak, Rompin, Pahang, 26900, Rompin, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Benta",
+        "address": "KK Benta, 27300 Benta, Kuala Lipis, Pahang, 27300, Lipis, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bentong",
+        "address": "KK Bentong, Batu 1 Jalan Terap, 28700 Bentong, Pahang, 28700, Bentong, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beserah",
+        "address": "KK Beserah, 26100 Kuantan, Pahang, 26100, Kuantan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Betong",
+        "address": "KK Bukit Betong, 27200 Kuala Lipis, Pahang, 27200, Lipis, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Goh (Felda)",
+        "address": "KK Bukit Goh (Felda), 26050 Kuantan, Pahang, 26050, Kuantan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Ibam",
+        "address": "KK Bukit Ibam, 26760 Bukit Ibam, Muadzam Shah, Pahang, 26760, Rompin, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Mendi",
+        "address": "KK Bukit Mendi, 28320 Triang, Pahang, 28320, Bera, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cemomoi",
+        "address": "KK Cemomoi, Felda Chemomoi, 28310 Triang, Pahang, 28310, Bentong, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chanis",
+        "address": "KK Chanis, Felda Kratong 7, Bandar Chanis, 26800 Muadzam Shah, Pahang, 26800, Rompin, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chegar Perah",
+        "address": "Klinik Kesihatan Chegar Perah, Chegar Perah, 27200 Kuala Lipis, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chenor",
+        "address": "KK Chenor, 28100 Chenor, Pahang, 28100, Maran, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cheroh",
+        "address": "KK Cheroh, 27610 Raub, Pahang, 27610, Raub, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chini",
+        "address": "KK Chini, 26690 Felda Chini 1, Pekan Pahang, Pahang, 26690, Pekan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Damak",
+        "address": "KK Damak, 27300 Jerantut, Pahang, 27300, Jerantut, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gambang",
+        "address": "KK Gambang, 26300 Kuantan, Pahang, 26300, Kuantan, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jengka 2",
+        "address": "KK Jengka 2, 26400 Bandar Jengka, Pahang, 26400, Maran, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jengka 22",
+        "address": "KK Jengka 22, Poliklinik Komuniti Felda Jengka 22, 26400 Bandar Jengka, Pahang, 26400, Maran, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jengka 7",
+        "address": "KK Jengka 7, Klinik Kesihatan Jengka 7, 26400 Maran, Pahang, 26400, Maran, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jengka 8",
+        "address": "KK Jengka 8, 26400 Bandar Jengka, Pahang, 26400, Jerantut, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jerantut Feri",
+        "address": "KK Jerantut Feri, Jalan Gintang, Kampung Jerantut Feri, 27000, Jerantut, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jerkoh",
+        "address": "KK Jerkoh, 27300 Benta, Kuala Lipis, Pahang, 27300, Lipis, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jeruas",
+        "address": "KK Jeruas, Sega, 27660 Raub, Pahang, 27660, Raub, Pahang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kemayan",
+        "address": "KK Kemayan, Kemayan, 28320 Triang, Pahang, 28320, Bera, Pahang",
+        "in_osm": false
+      }
+    ],
+    "Pulau Pinang": [
+      {
+        "name": "KK Bandar Tasik Mutiara",
+        "address": "KK Bandar Tasik Mutiara, Lot 8767 Lorong Tasik Mutiara 19/SS2 Bandar Tasik Mutiara, Simpang Ampat, 14120, Seberang Perai Selatan, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Panchor",
+        "address": "KK Bukit Panchor, Lot 1866, Mukim 7 Jalan Bukit Panchor, Nibong Tebal, 14300, Seberang Perai Selatan, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Butterworth",
+        "address": "KK Butterworth, Lot 1696, Seksyen 4, Jalan Pantai, Butterworth, 12000, Seberang Perai Utara, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Glugor",
+        "address": "KK Glugor, Lot 392, Jalan Akuarium, Gelugor, 11700, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jalan Angsana",
+        "address": "KK Jalan Angsana, No 8, Jalan Angsana, Bandar Baru Air Itam, Air Itam, 11500, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jalan Perak",
+        "address": "KK Jalan Perak, Jalan Perak, Jelutong, 11600, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Muda",
+        "address": "KK Kuala Muda, Lot 1794, Mukim 1, JKR 1041, Kuala Muda, Penaga, 13110, Seberang Perai Utara, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lebuh Muntri",
+        "address": "KK Lebuh Muntri, 36, Lebuh Muntri, Georgetown, 10200, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Machang Bubuk",
+        "address": "KK Machang Bubuk, No FR 30, Lot 858, Mukim 16, Perkampungan Machang Bubuk, \nBukit Mertajam, 14000, Seberang Perai Tengah, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nibong Tebal",
+        "address": "KK Nibong Tebal, Lot 320, Mukim 17, Nibong Tebal, 14300, Seberang Perai Selatan, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Permatang Pauh",
+        "address": "KK Permatang Pauh, PWD 662, Jalan Sama Gagah, Permatang Pauh, 13500, Seberang Perai Tengah, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Acheh",
+        "address": "KK Sungai Acheh, Lot 1376, Mukim 10 Sungai Acheh, Nibong Tebal, 14310, Seberang Perai Selatan, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Dua (SPU)",
+        "address": "KK Sungai Dua (SPU), Lot 2349, Mukim 11, Jalan Pengkalan Machang, Sungai Dua, 13800, Seberang Perai Utara, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Dua (TL)",
+        "address": "KK Sungai Dua (TL), Lot 2254, Jalan Sungai Dua, Gelugor, 11700, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tanjung Bungah",
+        "address": "KK Tanjung Bungah, Lot 1835, Jalan Lembah Permai, Tanjung Bungah, 11200, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Pulau Pinang",
+        "address": "KK UTC Pulau Pinang, 2B-2.06, UTC Komtar, 10590, Timur Laut, Pulau Pinang",
+        "in_osm": false
+      }
+    ],
+    "Perak": [
+      {
+        "name": "KK Alor Pongsu",
+        "address": "KK Alor Pongsu, Jalan Stesen Alor Pongsu, Alor Pongsu, 34300, Kerian, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bagan Datoh",
+        "address": "KK Bagan Datoh, Pekan Bagan Datoh, Bagan Datoh, 36100, Hilir Perak, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bekor",
+        "address": "KK Bekor, Bekor, Manong, 33800, Kuala Kangsar, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bruas",
+        "address": "KK Bruas, Jalan Besar, Bruas, Manjung, 32700, Manjung, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Changkat Kruing",
+        "address": "KK Changkat Kruing, Kampung Changkat Kruing, Changkat Kruing, 32500, Manjung, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chemor",
+        "address": "KK Chemor, Jalan Tanah Hitam, Chemor, 31200, Kinta, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chenderong Balai",
+        "address": "KK Chenderong Balai, Chenderong Balai, Chenderong Balai, 36600, Hilir Perak, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felcra Nasaruddin",
+        "address": "KK Felcra Nasaruddin, Felcra Nasarudin, Bota, 32600, Perak Tengah, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Bersia",
+        "address": "KK Felda Bersia, Kampung Felda Bersia, 33320, Hulu Perak, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gopeng",
+        "address": "KK Gopeng, Jalan Dr.Raja Nazrin, Pekan Gopeng, Gopeng, 31600, Kampar, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gunung Besout",
+        "address": "KK Gunung Besout, Felda Gunung Besout 03, Sungkai, 35600, Batang Padang, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gunung Semanggol",
+        "address": "KK Gunung Semanggol, Jalan Kubu Gajah, Simpang Empat, Gunung Semanggol, 34400, Kerian, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jalan Baru",
+        "address": "KK Jalan Baru, Jalan Tanah Kebun, Kerian, 34250, Kerian, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Gajah",
+        "address": "KK Kampung Gajah, Kampung Gajah, 36800, Perak Tengah, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Simee",
+        "address": "KK Kampung Simee, Jalan Kompleks Sukan, Ipoh, 31400, Kinta, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kedai Empat",
+        "address": "KK Kedai Empat, Kedai Empat, Tanjung Piandang, 34250, Kerian, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Bharu",
+        "address": "KK Kota Bharu, Jalan Kota Bharu, Gopeng, 31610, Kampar, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Gula",
+        "address": "KK Kuala Gula, Kuala Gula, 34350, Kerian, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Sepetang",
+        "address": "KK Kuala Sepetang, Kampung Kuala Sepetang, Kuala Sepetang, 34600, Larut dan Matang, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lambor Kiri",
+        "address": "KK Lambor Kiri, Lambor , 32900, Perak Tengah, Perak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lintang",
+        "address": "KK Lintang, Kampung Lintang, Sungai Siput Utara, 31110, Kuala Kangsar, Perak",
+        "in_osm": false
+      }
+    ],
+    "Perlis": [
+      {
+        "name": "KK Arau",
+        "address": "KK Arau,  Arau, 02600 Kangar,  Perlis, 02600, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Chuping",
+        "address": "KM 20, Felda Chuping, Mata Ayer",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Gial",
+        "address": "KK Kampung Gial, Jalan Gial, Mata Ayer, 02500 Kangar, Perlis , 02500, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Perlis",
+        "address": "KK Kuala Perlis, Bt.7, Jalan Kuala Perlis, 02000 Kangar, Perlis, 02000, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Sanglang",
+        "address": "KK Kuala Sanglang,  Kuala Sanglang, 02800 Kangar, Perlis, 02800, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padang Besar",
+        "address": "KK Padang Besar, KM 37, Jalan Padang Besar, Padang Besar(U), 02100 Kangar, Perlis, 02100, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Perlis",
+        "address": "KK UTC Perlis, No.1, Aras G, Blok A, Pusat Transformasi Bandar, (UTC) Perlis, Mukim Sena, 01000 Kangar, Perlis , 01000, Kangar, Perlis",
+        "in_osm": false
+      },
+      {
+        "name": "KK di Perlis",
+        "address": "Alamat di perlis",
+        "in_osm": false
+      }
+    ],
+    "Sabah": [
+      {
+        "name": "KK Abuan",
+        "address": "KK Abuan, Kampung Abuan, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Apas Balung",
+        "address": "KK Apas Balung, Jalan Apas Balung, Tawau, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Apin-Apin",
+        "address": "KK Apin-Apin, Jalan Apin-Apin-Kota Kinabalu, Kg Kikiran, Apin-Apin, Keningau, 89007, Keningau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu 10",
+        "address": "KK Batu 10, Batu 10, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Putih",
+        "address": "KK Batu Putih, Kampung Batu Putih, Jalan Kinabatangan Lahad Datu, Batu Putih, Kinabatangan, 89108, Kinabatangan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bingkor",
+        "address": "KK Bingkor, Jalan Bunsit, Pekan Bingkor, Keningau, 89007, Keningau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bongawan",
+        "address": "KK Bongawan, Jln. Besar Pekan Bongawan, 89700 Bongawan, Papar, 89600, Papar, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bongkol",
+        "address": "KK Bongkol, Kampung Bongkol, Bongkol, 89108, Pitas, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Belacon",
+        "address": "KK Bukit Belacon, Bukit Belacon, Segama, Lahad Datu, 91120, Lahad Datu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bundu Tuhan",
+        "address": "KK Bundu Tuhan, Jalan Keranau, Kg Bundu Tuhan, 89308 Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Dandun",
+        "address": "KK Dandun, Kampung Dandun, Dandun, 89108, Pitas, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Entilibon",
+        "address": "KK Entilibon, Jalan Tongod, Kampung Entilibon, Kinabatangan, 89320, Tongod, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Sahabat",
+        "address": "KK Felda Sahabat, Desa Kencana,Felda Sahabat 16, Lahat Datu, 91120, Lahad Datu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Umas-Umas",
+        "address": "KK Felda Umas-Umas, Felda Umas-Umas, Tawau, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Inanam",
+        "address": "KK Inanam, Jalan Kionsom, Pekan Inanam, Inanam, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Indarason",
+        "address": "KK Indarason, Kg Indarason, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jalan Kebajikan",
+        "address": "Klinik Kesihatan Jalan Kebajikan, Jalan Kebajikan, Kuarters Hospital Queen Elizabeth, Kota Kinabalu, 88300 Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jambongan",
+        "address": "KK Jambongan, Pulau Jambongan, Jambongan, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jawi-Jawi",
+        "address": "KK Jawi-Jawi, Kg Jawi-jawi, Jalan Bypass Kudat, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kaingaran",
+        "address": "KK Kaingaran, Kampung Kaingaran, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kalabakan",
+        "address": "KK Kalabakan, Kampung Kalabakan, Jalan Kalabakan, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Karakit",
+        "address": "KK Karakit, Kampung Karakit, Pulau Banggi, Banggi, Kudat, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kemabong",
+        "address": "KK Kemabong, Pekan Kemabong, Kemabong, Tenom, 89907, Tenom, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kerukan",
+        "address": "KK Kerukan, Kampung Kerukan, Kuala Penyu, 89807, Kuala Penyu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kinabutan",
+        "address": "KK Kinabutan, Lot 334, Tingkat Bawah, Bandar Sri Indah Batu 10, Jalan Apas, Tawau, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kinarut",
+        "address": "KK Kinarut, Jalan Spur, Pekan Kinarut, Kinarut, Kinarut, Papar, 89600, Papar, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kiulu",
+        "address": "KK Kiulu, Jalan Keluk, 89207 Tamparuli, 89208, Tuaran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Klias",
+        "address": "KK Kota Klias, Kampung Kilas, Beaufort, 89807, Beaufort, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Papar",
+        "address": "KK Kuala Papar, Kampung Kuala Papar, Papar , 89600, Papar, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Sapi",
+        "address": "KK Kuala Sapi, Kampung Kuala Sapi, Sapi, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Tomani",
+        "address": "KK Kuala Tomani, Kampung Kuala Tomani, Tenom, 89907, Tenom, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuamut",
+        "address": "KK Kuamut, Pekan Kuamut, Kuamut, Kinabatangan, 90200, Kinabatangan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kundasang",
+        "address": "KK Kundasang, Jalan Kampung Lembah Permai, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Langkon",
+        "address": "KK Langkon, Kampung Langkon, Kudat, 89059, Kota Marudu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Likas",
+        "address": "KK Likas, Jalan Haiwan, Kampung Likas, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lingkabau",
+        "address": "KK Lingkabau, Kampung Lingkabau, Lingkabau, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lohan",
+        "address": "KK Lohan, Jalan Air Panas Poring, Kg Lohan, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Pasia",
+        "address": "KK Long Pasia, Kampung Long Pasia, Long Pasia, Sipitang, 89657, Sipitang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Matunggong",
+        "address": "KK Matunggong, Kg. Matunggong, Matunggong, Kudat, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Melalap",
+        "address": "KK Melalap, Pekan Melalap, Tenom, 89907, Tenom, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Meligan",
+        "address": "KK Meligan, Kampung Meligan, Meligan, Sipitang, 89857, Sipitang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Membakut",
+        "address": "KK Membakut, Pekan Membakut, Beaufort, Peti Surat 173, Membakut, 89728, 89728, Beaufort, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mendolong",
+        "address": "KK Mendolong, Kampung Mendulong, Mendulong, Sipitang, 89857, Sipitang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Menggatal",
+        "address": "KK Menggatal, Jalan Tuaran Lama, Pekan Menggatal, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mengkawagu",
+        "address": "KK Mengkawagu, Jalan Tongod, Kampung Mengkawagu, 89320, Tongod, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Menumbok",
+        "address": "KK Menumbok, Pekan Menumbok, Menumbok, Kuala Penyu, 89807, Kuala Penyu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Merotai Besar",
+        "address": "KK Merotai Besar, Jalan SMK Merotai, Tawau, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mesej Pangi",
+        "address": "KK Mesej Pangi, Pejabat Kesihatan Daerah Kunak, Peti Surat 06, 91207, Kunak, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Minusoh",
+        "address": "KK Minusoh, Kampung Minusoh, Kinabatangan, 89320, Tongod, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nabawan",
+        "address": "KK Nabawan, Pekan Nabawan, Pesiangan, 89957, Nabawan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nangka Lotong",
+        "address": "KK Nangka Lotong, Kg Lotong, Lotong, Kudat, 89058, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nangoh Rumedi",
+        "address": "KK Nangoh Rumedi, Kampung Nangoh Rumedi, Nangoh, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Narandang",
+        "address": "KK Narandang, Kampung Garau, Narandang, Kudat, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padas Damit",
+        "address": "KK Padas Damit, Kampung Padas Damit, Beaufort, 89807, Beaufort, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Paginatan",
+        "address": "KK Paginatan, Kampung Paginatan, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Paitan",
+        "address": "KK Paitan, Pekan Paitan, Paitan, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pantai",
+        "address": "KK Pantai, Kampung Pantai, Pantai, 89108, Pitas, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Patau",
+        "address": "KK Patau, Jalan Tambunan-Ranau, KM 12, Tambunan, 89650, Tambunan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Penampang",
+        "address": "KK Penampang, KM 12, Jalan Tambunan, WDT 29, Penampang, Sabah, 89500, Penampang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Penangah",
+        "address": "KK Penangah, Pekan Penangah, Penangah, Kinabatangan, 89320, Tongod, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Perancangan",
+        "address": "KK Perancangan, Kg Perancangan, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Bum-Bum",
+        "address": "KK Pulau Bum-Bum, Kg Pulau Bum-Bum, Semporna, 91308, Semporna, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Libaran",
+        "address": "KK Pulau Libaran, Kg Pulau Libaran, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Nunuyan",
+        "address": "KK Pulau Nunuyan, Kg Pulau Nunuyun, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Tambisan",
+        "address": "KK Pulau Tambisan, Pekan Tambisan, Tambisan, Lahat Datu, 91120, Lahad Datu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Semporna",
+        "address": "KK Semporna, Kg Semporna, Semporna, 91308, Semporna, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sepulot",
+        "address": "KK Sepulot, Pekan Sepulot, Sepulot, Pensiangan, 89957, Nabawan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Serusop",
+        "address": "KK Serusop, Jalan SRK Serusop, Kampung Serusop, 89208 Tuaran, 89208, Tuaran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sikuati",
+        "address": "KK Sikuati, Pekan Sikuati, Sikuati, Kudat, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Silabukan",
+        "address": "KK Silabukan, Batu 10, Jalan Tungku, Lahad Datu, 91120, Lahad Datu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sindumin",
+        "address": "KK Sindumin, Pekan Sindumin, Sindumin, Sipitang, 89657, Sipitang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Suan Lamba",
+        "address": "KK Suan Lamba, Kampung Suan Lamba, Suan Lamba, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Suangpai",
+        "address": "KK Suangpai, Kg Suangpai, 89059, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sukau",
+        "address": "KK Sukau, Pekan Sukau, Sukau, Kinabatangan, 90200, Kinabatangan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Manila",
+        "address": "KK Sungai Manila, Kampung Sungai Manila, Sungai Manila, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Tamang",
+        "address": "KK Sungai Tamang, Kampung Sungai Tamang, Tawau, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai-Sungai",
+        "address": "KK Sungai-Sungai, Kampung Sungai-Sungai, Sungai Sungai, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sunsuron",
+        "address": "KK Sunsuron, Jalan Tambunan-Kota Kinabalu, Simpang Kanan, SK Sunsuron, Tambunan, 89650, Tambunan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tagas-Tagas",
+        "address": "KK Tagas-Tagas, Kampung Tagas-Tagas, Tagas-Tagas, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Sejati",
+        "address": "KK Taman Sejati  , Lot 12857,Taman Sejati Off Taman Semarak, Jalan Kuhara, 91000, Tawau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tamparuli",
+        "address": "KK Tamparuli, W.D.T 59, 89275 Tamparuli, 89208, Tuaran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tandek",
+        "address": "KK Tandek, Pekan Tandek, Tandek, Kota Murudu, 89059, Kota Marudu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tangkarason",
+        "address": "KK Tangkarason, Kampung Tangkarason, Tangkarason, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telaga",
+        "address": "KK Telaga, Kampung Telaga, Telaga, Pitas, Kudat, 89108, Pitas, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telipok",
+        "address": "KK Telipok, Jalan Tuaran, Pekan Telipok, Telipok, Kota Kinabalu, 89200, Kota Kinabalu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telupid",
+        "address": "KK Telupid, Klinik Kesihatan Telupid, Peti Surat 11, 89300 Telupid, 89300, Telupid, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tenghilan",
+        "address": "KK Tenghilan, Jalan Kampung Tenghilan Tuaran, 89208 Tuaran, 89208, Tuaran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Terian",
+        "address": "KK Terian, Kampong Terian, Peti Surat 434, 89500, Penampang, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Terusan Sugut",
+        "address": "KK Terusan Sugut, Kampung Terusan Sugut, Beluran, 90108, Beluran, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Timbua",
+        "address": "KK Timbua, Kampung Timbua, Ranau, 89308, Ranau, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tinangol",
+        "address": "KK Tinangol, Kampung Tinangol, Tinangol, Kudat, 89507, Kudat, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tongod",
+        "address": "KK Tongod, Pekan Tongod, Tongod, Kinabatangan, 89320, Tongod, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tungku",
+        "address": "KK Tungku, Pekan Tungku, Tungku, Lahat Datu, 91120, Lahad Datu, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Dusun",
+        "address": "KK Ulu Dusun, Kampung Ulu Dusun, Ulu Dusun, Sandakan, 90009, Sandakan, Sabah",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Kimanis",
+        "address": "KK Ulu Kimanis, Kampung Ulu Kimanis, Kimanis, 89700 Papar, 89600, Papar, Sabah",
+        "in_osm": false
+      }
+    ],
+    "Sarawak": [
+      {
+        "name": "KK Ba Kelalan",
+        "address": "KK Ba Kelalan, Pekan Ba Kelalan, 98850 Limbang, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bako",
+        "address": "KK Bako, Jalan Bako, Kampung Bako, 93150 Kuching, 93150, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Balai (Bakam)",
+        "address": "KK Balai (Bakam), Balai, 96100 Sarikei, Sarawak, 96100, Sarikei, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Balai Ringin",
+        "address": "KK Balai Ringin, Kampung Ringin, 94700 Serian, Sarawak, 94700, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Balingian",
+        "address": "KK Balingian, Lot 75 & Lot 76 Block 23, Balingian Land District, Balingian , 96400, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bario",
+        "address": "KK Bario, Pekan Bario, 98050 Baram, Sarawak, 98050, Miri, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batang Ai",
+        "address": "KK Batang Ai, Batang Ai, 95900 Sri Aman, 95900, Lubok Antu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Danau",
+        "address": "KK Batu Danau, Batu Danau, 98700 Limbang, 98700, Limbang, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Niah",
+        "address": "KK Batu Niah, Batu Niah, 98200 Miri, Sarawak, 98200, Subis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bawang Assan",
+        "address": "KK Bawang Assan, Bawang Assan, 96000 Sibu, Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beladin",
+        "address": "KK Beladin, Beladin, Pusa, Saribas, 94950 Betong, Sarawak, 94950, Pusa, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Belawai",
+        "address": "KK Belawai, Lot 161, Rajang Town District, Belawai, 96200, Tanjung Manis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beluru",
+        "address": "KK Beluru, Beluru, 98050 Baram , 98050, Beluru, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Betanak",
+        "address": "KK Betanak, Lot 5 Block 5 Bruit  Land District, 96200, Daro, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Biawak",
+        "address": "KK Biawak, Kampung Biawak, 94500 Lundu, Sarawak, 94500, Lundu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bintulu",
+        "address": "KK Bintulu, Lebuh Raya Abang Galau, 97000 Bintulu, 97000, Bintulu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Braang Bayor",
+        "address": "KK Braang Bayor, KM 20 Jalan Puncak Borneo, 93050, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bruit",
+        "address": "KK Bruit, Lot 38 Block 4 Bruit Land District, 96200, Daro, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bunan Gega",
+        "address": "KK Bunan Gega, Kampung Bunan Gega, 94750 Tebakang, 94750, Tebedu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bunuk",
+        "address": "KK Bunuk, Klinik Jalan Puncak Borneo, 93250 Kuching, 93250, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chemenong",
+        "address": "KK Chemenong, Kampung Chemenong, 96850 Song, Sarawak, 96850, Song, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Daro",
+        "address": "KK Daro, Klinik Kesihatan Daro Sementara, d/a Hospital Daro, Jalan Itol, 96200, Daro, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Debak",
+        "address": "KK Debak, Debak, Saribas, 95500 Betong, 95500, Betong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Durin",
+        "address": "KK Durin, Klinik Kesihatan Durin, Jln Durin, 96000 Sibu, Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ensengei",
+        "address": "KK Ensengei, Kampung Ensengei, 94700 Serian, Sarawak, 94700, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Gedong",
+        "address": "KK Gedong, Kampung Gedong, 94800 Simunjan, Sarawak, 94300, Simunjan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jalan Lanang",
+        "address": "KK Jalan Lanang, Poliklinik Lanang, Jln Ulu Lanang, Sibu, 96000 Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jambatan Suai",
+        "address": "KK Jambatan Suai, Jambatan Suai, 98000 Miri, Sarawak, 98000, Subis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jemukan",
+        "address": "KK Jemukan, Kampung Jemukan, 94600 Asajaya, 94600, Asajaya, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jepak",
+        "address": "KK Jepak, Jln Jepak Kuala Tatau, 97000 Bintulu Sarawak, 97000, Bintulu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kabong",
+        "address": "KK Kabong, Kabong, 94650 Betong, Sarawak, 94650, Kabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kakus",
+        "address": "KK Kakus, Kakus, 97000 Bintulu, Sarawak, 97000, Tatau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Teh",
+        "address": "KK Kampung Teh, Lot 234 Block 109 Mukah Land Distrcit,96400 Mukah, Sarawak, 96300, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kedup",
+        "address": "KK Kedup, Kampung Mentong Merauh, 94700 Serian, Sarawak, 94700, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kemalih",
+        "address": "KK Kemalih, Klinik Kesihatan Kemalih,Ulu Entabai, 96150 Pakan, Sarawak, 96150, Pakan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Samarahan",
+        "address": "KK Kota Samarahan, Kota Samarahan, Jalan Datuk Muhamad Musa, 94300 Kota Samarahan, Sarawak, 94300, Samarahan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Krokong",
+        "address": "KK Krokong, Jalan Bau Serikin, Kampung Krokong, Bau, 93250, Bau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Balingian",
+        "address": "KK Kuala Balingian, Quarters MM 3/1 MPOM, Jalan Mukah - Selangau, 96400, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Igan",
+        "address": "KK Kuala Igan, Lot 2217 Block Jemoreng Land District, Matu, Sarawak, 96300, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Lawas",
+        "address": "KK Kuala Lawas, Bandar Kuala Lawas, 98850 Lawas, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Matu",
+        "address": "KK Kuala Matu, Lot 30 Matu Town District, Matu, Sarawak, 96250, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Medalam",
+        "address": "KK Kuala Medalam, Pekan Kuala Mendalam, 98700 Limbang , 99700, Limbang, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Oya",
+        "address": "KK Kuala Oya, Lot 467 Block 15 Oya-Dalat Land District, 96300, Dalat, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Rejang",
+        "address": "KK Kuala Rejang, Lot 354 Block 1 Kedang Land District, Daro, 96150, Tanjung Manis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Tatau",
+        "address": "KK Kuala Tatau, Kampung Kuala Tatau, 97200 Bintulu, Sarawak, 97200, Tatau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Labang",
+        "address": "KK Labang, Klinik Kesihatan Labang, Sebauh, Bintulu, Sarawak, 97000, Sebauh, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ladang Tiga",
+        "address": "KK Ladang Tiga, Pekan Ladang Tiga, 98000 Miri, Sarawak, 98120, Subis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lassi",
+        "address": "KK Lassi, Kampung Lassi, 96600 Julau, 96600, Julau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lawas",
+        "address": "KK Lawas, Lot 335-338, Jalan Hospital, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ldg. Sawit",
+        "address": "KK Ldg. Sawit, Lot 2 Block 6, Sikat Land District, 96400 Mukah, Sarawak, 96400, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lingga",
+        "address": "KK Lingga, Kampung Lingga, 95007 Sri Aman, Sarawak, 94500, Sri Aman, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lio Mato",
+        "address": "KK Lio Mato, Kampung Lio Mato, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Banga",
+        "address": "KK Long Banga, Rumah Panjang Long Banga, 98050 Baram, Sarawak, 98050, Miri, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Busang",
+        "address": "KK Long Busang, Klinik Kesihatan Long Busang, Belaga, 96900, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Jegan",
+        "address": "KK Long Jegan, Kampung Long Jegan,98050 Baram, Sarawak, 98050, Beluru, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Jekitan",
+        "address": "KK Long Jekitan, d/a Pejabat Kesihatan Bahagian Miri, Jalan Temenggong Oyong Lawai Jau, 98000, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Kevok",
+        "address": "KK Long Kevok, Kampung Long Kevok, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Lama",
+        "address": "KK Long Lama, Kampung Long Lama, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Lellang",
+        "address": "KK Long Lellang, Kampung Long Lellang, 98050 Baram, Sarawak, 98050, Miri, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Loyang",
+        "address": "KK Long Loyang, Kampung Long Loyang, 98050 Baram, Sarawak, 98050, Beluru, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Miri",
+        "address": "KK Long Miri, Kampung Long Miri, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Moh",
+        "address": "KK Long Moh, Kampung Long Moh, 98050 Baram, Sarawak, 98000, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Naah",
+        "address": "KK Long Naah, Kampung Long Naah, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Panai",
+        "address": "KK Long Panai, Kampung Long Panai, 98050 Baram, Sarawak, 98050, Marudi, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Pillah",
+        "address": "KK Long Pillah, Kampung Long Pilah, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long San",
+        "address": "KK Long San, Kampung Long San, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Semadoh",
+        "address": "KK Long Semadoh, Long Semandoh, 98850 Lawas, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Seridan",
+        "address": "KK Long Seridan, Kampung Long Seridan, 98050 Baram, Sarawak, 98000, Miri, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Sukang",
+        "address": "KK Long Sukang, Long Sukang, 98850 Lawas, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Teran",
+        "address": "KK Long Teran, Kampung Long Teran, 98050 Baram, Srawak, 98050, Beluru, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Long Teru",
+        "address": "KK Long Teru, Kampung Long Teru, 98050, Beluru, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lubok Tapang",
+        "address": "KK Lubok Tapang, Lubok Tapang, 97000 Bintulu, Sarawak, 97000, Sebauh, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Lusong Laku",
+        "address": "KK Lusong Laku, Kampung Lusong Laku, 96800 Belaga, 96800, Belaga, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Machan",
+        "address": "KK Machan, Pekan Machan, 96700 Kanowit, 96700, Kanowit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Malihah",
+        "address": "KK Malihah, Lot 3144, Blok 8, Land District, 93050, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Marudi",
+        "address": "KK Marudi, Jalan Hospital Marudi, 98050 Baram, Sarawak, 98050, Marudi, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Matu",
+        "address": "KK Matu, Lot 2 Block 12 Lassa Land District, Matu, Sarawak, 96000, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Medong",
+        "address": "KK Medong, Lot 66 Block 168 Oya Dalat Land District, 96300, Dalat, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Meludam",
+        "address": "KK Meludam, Meludam, Saribas, 94850 Betong, Sarawak, 94850, Pusa, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Mentu",
+        "address": "KK Mentu, Kampung Mentu, 94800 Simunjan, Sarawak, 94300, Simunjan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Merapok",
+        "address": "KK Merapok, Merapok, Jalan Sindumin, 98850 Lawas, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Merindun",
+        "address": "KK Merindun, Merindun, 95900 Sri Aman, 95900, Lubok Antu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Muara Tebas",
+        "address": "KK Muara Tebas, Jalan Muara Tebas, Off Jalan Bako, 93150, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Munggu Lallang",
+        "address": "KK Munggu Lallang, Kampung Munggu Lallang, 94800 Simunjan, Sarawak, 94800, Simunjan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Atoi",
+        "address": "KK Nanga Atoi, Kampung Nanga Atoi, 95400 Saratok, Sarawak, 95400, Saratok, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Bangkit",
+        "address": "KK Nanga Bangkit, Kampung Nanga Bangkit, 96850 Song, Sarawak, 96850, Song, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Baoh",
+        "address": "KK Nanga Baoh, Lot 4 Block 251 Oya-Dalat Land District, 96300, Dalat, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Bena",
+        "address": "KK Nanga Bena, Jalan Sungai Bena, Rumah Panjang, 96800, Kapit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Delok",
+        "address": "KK Nanga Delok, Nanga Delok, 95900 Sri Aman, Sarawak, 95900, Lubok Antu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Engkuah",
+        "address": "KK Nanga Engkuah, Kampung Engkuah, 96850 Song, Sarawak, 96850, Song, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Ensiring",
+        "address": "KK Nanga Ensiring, Kampung Ensiring, 96600 Julau, 96600, Julau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Entabai",
+        "address": "KK Nanga Entabai, Kampung Nanga Entabai, 96600 Julau, 96600, Julau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Entaih",
+        "address": "KK Nanga Entaih, Kampung Entaih, 96150 Pakan , Sarawak, 96150, Pakan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Entalau",
+        "address": "KK Nanga Entalau, Kampung Nanga Entalau, 95007 Sri Aman, 95007, Sri Aman, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Entawau",
+        "address": "KK Nanga Entawau, Kampung Entawau, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Gaat",
+        "address": "KK Nanga Gaat, Kampung Nanga Gaat, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Ibau",
+        "address": "KK Nanga Ibau, Kampung Nanga Ibau, Sungai Batang Rajang, 96800 Kapit, 96800, Kapit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Jagau",
+        "address": "KK Nanga Jagau, Kampung Nanga Jagau, 96700 Kanowit , 96700, Kanowit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Kara",
+        "address": "KK Nanga Kara, Kampung Nanga Kara, 96150 Pakan, Sarawak, 96150, Pakan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Maong (Mujok)",
+        "address": "KK Nanga Maong (Mujok), Kampung Maong, 96600 Julau, 96600, Julau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Medamit",
+        "address": "KK Nanga Medamit, Kampung Nanga Merit, 98700, Limbang, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Melinau",
+        "address": "KK Nanga Melinau, Nanga Melinau, Sungai Mujong, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Merirai",
+        "address": "KK Nanga Merirai, Kampung Nanga Merirai, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Merit",
+        "address": "KK Nanga Merit, Klinik Kesihatan Nanga Merit, 96800 Kapit, Sarawak, 96800, Kapit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Merit",
+        "address": "KK Nanga Merit, Kampung Nanga Merit, 96800 Kapit, 98700, Limbang, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Mujau",
+        "address": "KK Nanga Mujau, Nanga Lawih, 95700 Betong, 95700, Betong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Mujong",
+        "address": "KK Nanga Mujong, Kampung Nanga Mujong, Sungai Mujong, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Passin",
+        "address": "KK Nanga Passin, Kampung Nanga Passin, 96000 Matu, Sarawak, 96000, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Patoh",
+        "address": "KK Nanga Patoh, Nanga Patoh, 95900 Sri Aman, 95900, Lubok Antu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Poi (Menalun)",
+        "address": "KK Nanga Poi (Menalun), Kampung Nanga Poi, 96700 Kanowit, 96700, Kanowit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Semah",
+        "address": "KK Nanga Semah, Lot 37 Block 8 Semah  Land District, 96200, Daro, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Stamang",
+        "address": "KK Nanga Stamang, Nanga Stamang, 95900 Sri Aman, Sarawak, 95900, Lubok Antu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Taroh",
+        "address": "KK Nanga Taroh, Lot 112 Block 110 Mukah Land District,96400 Mukah, Sarawak, 96400, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Tau",
+        "address": "KK Nanga Tau, Nanga Tau, 97000 Bintulu, Sarawak, 97000, Tatau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Tekalit",
+        "address": "KK Nanga Tekalit, Nanga Tekalit, 96850 Kapit, Sarawak, 96850, Song, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Tiga",
+        "address": "KK Nanga Tiga, Kampung Ng Tiga, 95700 Betong, 95700, Betong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nanga Wak",
+        "address": "KK Nanga Wak, Kampung Wak, 96150 Pakan, Sarawak, 96150, Pakan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ng Tada",
+        "address": "KK Ng Tada, Lot. 10, Section 7, Mapai Land District, Kanowit, 96700, Kanowit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ngungun",
+        "address": "KK Ngungun, Kampung Ngungun, 96700 Kanowit, 96700, Kanowit, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nyabor",
+        "address": "KK Nyabor, Lot 159 Block 9 Kedang Land District, Belawai, 95300, Kabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Nyalau",
+        "address": "KK Nyalau, Kampung Tengah Nyalau, 97000 Bintulu, 97000, Bintulu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pa' Dalih",
+        "address": "KK Pa' Dalih, Jalan Kayu Balak, 98050 Baram, Sarawak, 98050, Miri, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Padawan",
+        "address": "KK Padawan, Jalan Puncak Borneo, 93250 Kuching, 93250, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pakan",
+        "address": "KK Pakan, Pekan Pakan, 96150 Pakan, Sarawak, 96150, Pakan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Paloh",
+        "address": "KK Paloh, Perumahan STIDC, Belawai, 96250, Tanjung Manis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pangkalan Amo",
+        "address": "KK Pangkalan Amo, Kampung Pengkalan Amo, 94700 Serian, Sarawak, 94700, Tebedu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pantai Damai",
+        "address": "KK Pantai Damai, Bandar Baru, Semariang,93050 Petrajaya, Kuching, Sarawak, 93050, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Passai Siong",
+        "address": "KK Passai Siong, Passai Siong, 96000 Sibu, Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Penganan",
+        "address": "KK Penganan, Penganan, 98700 Limbang, 98700, Limbang, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Punan Bah",
+        "address": "KK Punan Bah, Kampung Punan Bah, 96800 Belaga, 96800, Belaga, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pusa",
+        "address": "KK Pusa, Pekan Pusa, 94950 Betong, Sarawak, 94950, Pusa, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Rassau",
+        "address": "KK Rassau, Lot 1037 Block 12 Jemoreng Land District, 96250 Matu, Sarawak, 96000, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Roban",
+        "address": "KK Roban, Pekan Kechil Roban, 95300 Saratok, Sarawak, 95300, Saratok, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sadong Jaya",
+        "address": "KK Sadong Jaya, Kampung Sadong Jaya, 94600 Asajaya, 94600, Asajaya, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Samarindah",
+        "address": "KK Samarindah, Sub.lot 669 Jln Samarindah, Taman Samarindah, 94300 Kota Samarahan, Sarawak, 94300, Samarahan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sambir",
+        "address": "KK Sambir, Kampung Sambir, 94300 Kota Samarahan, Sarawak, 94600, Samarahan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sampadi",
+        "address": "KK Sampadi, Kampung Sampadi, 94500 Lundu, Sarawak, 94500, Lundu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sangan",
+        "address": "KK Sangan, Sangan, 97000 Bintulu , 97000, Tatau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Santubong",
+        "address": "KK Santubong, Jalan Sultan Tengah, 93050 Kuching, 93050, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sarikei",
+        "address": "KK Sarikei, Sarikei, Jalan Hospital Lama, 96100 Sarikei, Sarawak, 96100, Sarikei, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sebangan",
+        "address": "KK Sebangan, Pekan Sebangan, 94800 Simunjan, Sarawak, 94800, Simunjan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sebauh",
+        "address": "KK Sebauh, Pekan Sebauh, 97000 Bintulu, Sarawak, 97000, Sebauh, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sekalong",
+        "address": "KK Sekalong, Kampung Sekalong, 96600 Julau, 96600, Julau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sekeroh",
+        "address": "KK Sekeroh, Sungai Sekeroh, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sekuau",
+        "address": "KK Sekuau, Kampung Sekau, 96000 Selangau, Sarawak, 96000, Selangau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Selangau",
+        "address": "KK Selangau, Kampung Selangau, 96000 Selangau, Sarawak, 96000, Selangau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Semarang",
+        "address": "KK Semarang, Pekan Semarang, Pusa, 94950 Bentong, Sarawak, 94950, Pusa, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sematan",
+        "address": "KK Sematan, Jalan Sungai Kilang, Sematan, 94100 Lundu, Sarawak, 94100, Lundu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Semera",
+        "address": "KK Semera, Kampunga Samera, 94600 Asajaya, 94600, Asajaya, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Serasot",
+        "address": "KK Serasot, Kampung Serasot, 93250 Bau, 93250, Bau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sesok",
+        "address": "KK Sesok, Lot 136, Blok 109 (sesok) Mukah Land District, 96400, Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sibu Jaya",
+        "address": "KK Sibu Jaya, Klinik Kesihatan Sibu Jaya, 96000 Sibu, Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Siburan",
+        "address": "KK Siburan, KM 27, Jalan Kuching/Serian, 93250 Kuching, Sarawak, 94200, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Simpang Bukut",
+        "address": "Lot 19, Block 12, Bawan Land District, Simpang Bukut, 96400 Mukah, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Singai",
+        "address": "KK Singai, Jalan Kawah, Kampung Singai, 93250 Bau, 93250, Bau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Siniawan",
+        "address": "KK Siniawan, Jalan Siniawan, 94000 Bau, 94000, Bau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Skrang",
+        "address": "KK Skrang, Kampung Skrang, 95000 Sri Aman, Sarawak, 95000, Sri Aman, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Song",
+        "address": "KK Song, Pekan Kecil Song, 96850 Song , Sarawak, 96850, Song, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Spaoh",
+        "address": "KK Spaoh, Kampung Spaoh, 95600 Betong, 95600, Betong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sri Aman",
+        "address": "KK Sri Aman, Sri Aman, Jalan Hospital, 95000 Sri Aman, Sarawak, 95000, Sri Aman, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Stoh Rambungan",
+        "address": "KK Stoh Rambungan, Kampung Rambungan, 94500 Lundu, Sarawak, 94500, Lundu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Stungkor",
+        "address": "KK Stungkor, Lot 405, Block 9 Stungkor Land District, Jalan Bokah/Rasau/Stungkor, Off Jln. Bau-Lundu, 94500, Lundu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Suai Tegageng",
+        "address": "KK Suai Tegageng, Kampung Suai Tegageng, 98000 Miri, Sarawak, 98000, Subis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Arip",
+        "address": "KK Sungai Arip, Kampung Sungai Arip, 96000 Selangau, Sarawak, 96000, Selangau, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Asap",
+        "address": "KK Sungai Asap, Pekan Sungai Asap, 96800 Belaga, 96800, Belaga, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Koyan",
+        "address": "KK Sungai Koyan, Kampung Sungai Koyan, 96800 Belaga, 96800, Belaga, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Negara Mulu",
+        "address": "KK Taman Negara Mulu, Lot 696 Block 361 Oya-Dalat Land District, Matu, Sarawak, 98050, Marudi, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tanah Puteh",
+        "address": "KK Tanah Puteh, Tanah Puteh, Jalan Pending, Kuching, 93450, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tang Lapadan",
+        "address": "KK Tang Lapadan, Tang Lapadan, 98850 Lawas, 98850, Lawas, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tanjung Manis",
+        "address": "KK Tanjung Manis, Pekan Tanjung Manis, 96200 Daro, Sarawak, 96150, Tanjung Manis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tebakang",
+        "address": "KK Tebakang, Kampung Tebekang, 94750 Tekabang, Sarawak, 94750, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tebedu",
+        "address": "KK Tebedu, Pekan Tebedu, 94750 Tebedu, Sarawak, 94750, Tebedu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tekajong",
+        "address": "KK Tekajong, Lot 245 Bruit Land District, 96200, Daro, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telaga Air",
+        "address": "KK Telaga Air, Jalan Matang, Kampung Telaga Air, 93150 Kuching, 93050, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tg.Embang",
+        "address": "KK Tg.Embang, Kampung Tanjung Embang, 93150 Kuching, 93150, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tian",
+        "address": "KK Tian, Kampung Tian, 96250 Matu, Sarawak, 96250, Matu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Triboh",
+        "address": "KK Triboh, Kampung Triboh, 94700 Serian, Sarawak, 94700, Serian, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tubau",
+        "address": "KK Tubau, Pekan Tubau, 97000 Bintulu, Sarawak, 97000, Sebauh, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tuie",
+        "address": "KK Tuie, Kampung Tuie, Pusa, Saribas, 95500, Betong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tun Haji Openg",
+        "address": "KK Tun Haji Openg, Jalan Tun Haji Openg, 98000 Miri, Sarawak, 98000, Subis, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tunoh Scheme",
+        "address": "KK Tunoh Scheme, Kampung Tunoh Scheme, 96800 Kapit, Sarawak, 96800, Bukit Mabong, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Kuching",
+        "address": "KK UTC Kuching, Aras 2, UTC Sarawak, Jalan Bukit Mata, Kuching, 93100, Kuching, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Sibu",
+        "address": "KK UTC Sibu, Central Market, Municipal Council Sibu, Sarawak, 96000, Sibu, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Teru",
+        "address": "KK Ulu Teru, Ulu Teru, 98050 Baram, Sarawak, 98050, Telang Usan, Sarawak",
+        "in_osm": false
+      },
+      {
+        "name": "KK Uma Sambop",
+        "address": "KK Uma Sambop, Kampung Uma Sambop, 96800 Belaga, 96900, Belaga, Sarawak",
+        "in_osm": false
+      }
+    ],
+    "Selangor": [
+      {
+        "name": "KK AU2",
+        "address": "KK AU2, Jalan AU2, Taman Seri Keramat, Kuala Lumpur, 54200, Gombak, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Anika Klang",
+        "address": "KK Anika Klang, Jalan Pegawai, Off Tengku Kelana, Klang, 41000, Klang, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bagan Terap",
+        "address": "KK Bagan Terap, Jalan Bagan Terap, Sungai Besar, 45300, Sabak Bernam, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Seri Putra",
+        "address": "KK Bandar Seri Putra, Jalan Seri Putra, Bandar Seri Putra Bangi, Kajang, 43000, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bandar Tun Hussien Onn",
+        "address": "KK Bandar Tun Hussien Onn, Jalan Suadamai, Bandar Tun Hussien Onn, Cheras, 43200, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu 13 1/2 Puchong",
+        "address": "KK Batu 13 1/2 Puchong, Batu 13 1/2 Puchong, 47800, Petaling, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu 14",
+        "address": "KK Batu 14, Batu 13 3/4, Hulu Langat, 43100, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu 8 Gombak",
+        "address": "KK Batu 8 Gombak, Batu 8, Jalan Gombak Utara, Gombak, 53100, Gombak, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Beranang",
+        "address": "KK Beranang, Jalan Seremban, Beranang, 43700, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bestari Jaya",
+        "address": "KK Bestari Jaya, Lot 1867 Jalan Kampong, 45600, Kuala Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Cerakah",
+        "address": "KK Bukit Cerakah, Jalan Rizab Masjid, Kg Bukit Cherakah, Jeram, 45800, Kuala Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cyberjaya",
+        "address": "D/A Asrama Jururawat Hospital Cyberjaya, Persiaran Multimedia, Cyber 11, 63000 Cyberjaya",
+        "in_osm": false
+      },
+      {
+        "name": "KK Hulu Kelang",
+        "address": "KK Hulu Kelang, Jalan Datok Abu Samah Kampong Pasir, Ampang, 68000, Gombak, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kampung Sungai Lang",
+        "address": "KK Kampung Sungai Lang, Banting, Selangor, 42700, Kuala Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kanchong Darat",
+        "address": "KK Kanchong Darat, Jalan Durian, Kanchong Darat, 42700, Kuala Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kg. Melayu Subang",
+        "address": "Klinik Kesihatan Kg. Melayu Subang, Jalan Merbau, Kg. Melayu Subang, 40152 Petaling, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Parit Baru",
+        "address": "KK Parit Baru, Jalan Masjid, Sungai Air Tawar, 45100, Sabak Bernam, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Puchong",
+        "address": "KK Puchong, Batu 14, Jalan Puchong, Puchong, 47100, Petaling, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Indah",
+        "address": "KK Pulau Indah, Jalan Rahmat, Pelabuhan Klang, 42920, Klang, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sabak Bernam",
+        "address": "KK Sabak Bernam, Jalan Raja Chulan, Sabak Bernam, 45200, Sabak Bernam, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Seksyen 7 Shah Alam",
+        "address": "KK Seksyen 7 Shah Alam, No.2 Persiaran Kayangan Seksyen 7, Shah Alam, 40000, Petaling, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sg. Chua",
+        "address": "KK Sg. Chua, Kawasan Perindustrian Sungai Chua, Sungai Ramal Luar, Kajang, 43000, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Soeharto",
+        "address": "KK Soeharto, Kuala Kubu Baru, 44010, Hulu Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Air Tawar",
+        "address": "KK Sungai Air Tawar, Jln Sekolah, Sungai Air Tawar, Sabak Bernam, 45100, Sabak Bernam, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Bertik",
+        "address": "KK Sungai Bertik, Jalan Tepi Sungai, 41100, Klang, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Buaya",
+        "address": "Klinik Kesihatan Sungai Buaya, Kampung Sungai Buaya, 48010 Rawang Selangor.",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Selisek",
+        "address": "KK Sungai Selisek, Hulu Selangor, 44020, Hulu Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sungai Tengi Kanan",
+        "address": "KK Sungai Tengi Kanan, Jalan Kiai Hj Moid, Kampung Sungai Tengi Kanan, Tanjong Karang, 45500, Kuala Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Taman Nirwana",
+        "address": "KK Taman Nirwana,  Kampung Pandan, Kuala Lumpur, 55100, Hulu Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tanjung Karang",
+        "address": "KK Tanjung Karang, Jalan Sungai Kajang, Tanjung Karang, 45500, Kuala Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telok Datok",
+        "address": "KK Telok Datok, Jln Pegawai, Banting, 42700, Kuala Langat, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Selangor",
+        "address": "KK UTC Selangor, Lot G, Anggerik Mall, Jalan 14/7, Seksyen 14, 40000, Petaling, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ulu Bernam",
+        "address": "Klinik Kesihatan Ulu Bernam, Taman Hulu Bernam, 35900 Kerling, Hulu Selangor, Selangor",
+        "in_osm": false
+      },
+      {
+        "name": "Klinik Kesihatan Ibu dan Anak KK Beranang",
+        "address": "KK Beranang, Jalan Seremban, Beranang,",
+        "in_osm": false
+      }
+    ],
+    "Terengganu": [
+      {
+        "name": "KK Ajil",
+        "address": "KK Ajil, Ajil, Hulu Terengganu, 21800, Hulu Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Almuktafi Billah Shah",
+        "address": "KK Almuktafi Billah Shah, Al-Muktafi Billah Shah, Dungun, 23400, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Rakit",
+        "address": "KK Batu Rakit, Jalan Batu Rakit, 21030, Kuala Nerus, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Binjai Rendah",
+        "address": "KK Binjai Rendah, Bukit Payong, Marang, 21040, Marang, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Besi",
+        "address": "KK Bukit Besi, Bukit Besi, Dungun, 23200, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Bukit Tunggal",
+        "address": "KK Bukit Tunggal, Kampung Bukit Tunggal, Kuala Terengganu, 21200, Kuala Nerus, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Chendering",
+        "address": "KK Chendering, Kampung Kubang Ikan, 21070, Kuala Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cheneh",
+        "address": "KK Cheneh, Bnadar Baru Cheneh, Kemaman, 24000, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Cherul",
+        "address": "KK Cherul, 24000, Kemaman, Terengganu, 24000, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Felda Mengkawang",
+        "address": "KK Felda Mengkawang, Ajil, Hulu Terengganu, 21800, Hulu Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jerangau",
+        "address": "KK Jerangau, Ajil, Terengganu, 21820, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kemasik",
+        "address": "KK Kemasik, Kemasik, Kemaman, 24200, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Ketengah Jaya",
+        "address": "KK Ketengah Jaya, Bandar Ketengah Jaya, Dungun, 23300, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kijal",
+        "address": "KK Kijal, Jalan Pantai Penunjuk, Kemaman, 24100, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kota Putera",
+        "address": "Lot 763, Jalan Jerteh, Besut, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Kuala Dungun",
+        "address": "KK Kuala Dungun, Jalan Alor Tembesu, Dungun, 23000, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Akar",
+        "address": "KK Pasir Akar, Jerteh, Besut, 22010, Besut, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Gajah",
+        "address": "KK Pasir Gajah, Pasir Gajah, Kemaman, 24300, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pasir Raja",
+        "address": "KK Pasir Raja, Jalan Sekolah Pasir Raja, 23000, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pengkalan Berangan",
+        "address": "KK Pengkalan Berangan, 21600 Marang, Terengganu, 21600, Marang, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Perhentian",
+        "address": "KK Pulau Perhentian, Kg. Pulau Perhentian, Kuala Besut, 22300, Besut, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Pulau Redang",
+        "address": "KK Pulau Redang, Kampung Baru Pulau Redang, Kuala Terengganu, 21090, Kuala Nerus, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Seberang Takir",
+        "address": "KK Seberang Takir, Jalan Telok Ketapang, Kuala Terengganu, 21300, Kuala Nerus, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Seberang Tayor",
+        "address": "KK Seberang Tayor, Kg. Seberang Tayor, Kemaman, 24020, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sri Bandi",
+        "address": "KK Sri Bandi, Jalan Bunga Raya, Kemaman, 24000, Kemaman, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Telemong",
+        "address": "KK Telemong, Jalan Kuala Telemong, Hulu Terengganu, Kuala Berang, 21210, Hulu Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tengkawang",
+        "address": "KK Tengkawang, Kuala Berang, Hulu Terengganu, 21700, Hulu Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Tok Kah",
+        "address": "KK Tok Kah, Lot 2004, Jalan Tok Kah, 23000, Dungun, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Paya Bunga",
+        "address": "KK UTC Paya Bunga, L4-UTC-03, UTC Terengganu, Paya Bunga Square, Jalan Masjid Abidin, Kuala Terengganu, 20100, Kuala Terengganu, Terengganu",
+        "in_osm": false
+      },
+      {
+        "name": "KK Wakaf Tapai",
+        "address": "KK Wakaf Tapai, 21040 Marang, Terengganu , 21040, Marang, Terengganu",
+        "in_osm": false
+      }
+    ],
+    "WP Kuala Lumpur": [
+      {
+        "name": "KK Bandar Tun Razak",
+        "address": "KK Bandar Tun Razak, No. 16 & 18 Jalan Jujur 3, Bandar Tun Razak, 56000, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK Batu Muda",
+        "address": "KK Batu Muda, No. 7, Jalan 3/124, Taman Batu Muda, 51100, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK Jinjang",
+        "address": "KK Jinjang, No.2, Jalan Jinjang Setia 3, Jinjang Utara Tambahan, 52000, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK Segambut",
+        "address": "KK Segambut, Lot 13725  Segambut Tengah, Kuala Lumpur, 52100, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK Sentul",
+        "address": "KK Sentul, Tingkat 2, Kompleks Perniagaan & Komuniti, Jalan 3/48A, Bandar Baru Sentul, 55100, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK Setapak",
+        "address": "KK Setapak, Tingkat 2, Wisma Rampai, Blok Pasifik, Jln. 34/26, Taman Sri Rampai, 53300, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Keramat Mall",
+        "address": "KK UTC Keramat Mall, Lot No. 3, Tingkat UG, UTC Keramat Mall, Jalan Dato' Keramat, 51200, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      },
+      {
+        "name": "KK UTC Pudu Sentral",
+        "address": "KK UTC Pudu Sentral, Aras G Lot A42-A46 Pudu Sentral, Jalan Pudu, 55100, WP Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "in_osm": false
+      }
+    ],
+    "WP Labuan": [
+      {
+        "name": "KK UTC Labuan",
+        "address": "KK UTC Labuan, Lot G-2, Aras Bawah, UTC Labuan, Pasar Sentral Labuan, 87000,   Labuan, Wilayah Persekutuan Labuan",
+        "in_osm": false
+      }
+    ],
+    "WP Putrajaya": [
+      {
+        "name": "KK Putrajaya Presint 11",
+        "address": "KK Putrajaya Presint 11, Kuarters Penjawat Awam, Zon 6B, Jalan P11J, Presint 11, Putrajaya, 62300, Putrajaya, Wilayah Persekutuan Putrajaya",
+        "in_osm": false
+      },
+      {
+        "name": "KK Putrajaya Presint 14",
+        "address": "KK Putrajaya Presint 14, Lot Bilik Bacaan, Blok E, Kuarters Kakitangan Kerajaan Presint 14, Putrajaya, 62250, Putrajaya, Wilayah Persekutuan Putrajaya",
+        "in_osm": false
+      },
+      {
+        "name": "KK Putrajaya Presint 9",
+        "address": "KK Putrajaya Presint 9, No 1, Jalan Presint 9E, Presint 9, Putrajaya, 62250, Putrajaya, Wilayah Persekutuan Putrajaya",
+        "in_osm": false
+      }
+    ]
+  }
+}

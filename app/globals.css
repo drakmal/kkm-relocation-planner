@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Base element styling. Lives in @layer base so Tailwind utility classes
+  (which sit in the later `utilities` layer) always win over these defaults.
+*/
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f8fc;
+    color: #0f172a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Allow the page to grow taller than the viewport and scroll naturally. */
+    overflow-y: auto;
+    background: linear-gradient(135deg, #eef5ff 0%, #f8fbff 100%);
+    color: #10213a;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.25rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: #16324f;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid #c7d8e8;
+    background: #fbfdff;
+    color: #0f172a;
+    font: inherit;
+  }
+
+  input:focus,
+  select:focus {
+    outline: 2px solid #2f80ed;
+    outline-offset: 1px;
+  }
+
+  button {
+    cursor: pointer;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0f5fb4 0%, #1f7de2 100%);
+    color: white;
+    border: none;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+  }
+
+  select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+/*
+  Reusable component classes. Lives in @layer components so individual utility
+  classes in the markup (e.g. text-white) can override them where needed.
+*/
+@layer components {
+  .card {
+    background: #ffffff;
+    border: 1px solid #dbe7f5;
+    border-radius: 24px;
+    padding: 0.65rem 0.65rem 0.75rem;
+    box-shadow: 0 7px 16px rgba(15, 33, 58, 0.08);
+  }
+
+  .hero-card {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .hero-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, #0f5fb4 0%, #1f7de2 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.3rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #dceeff;
+  }
+
+  .hero-banner h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  }
+
+  .hero-pill {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .info-card {
+    background: #f7fbff;
+    border: 1px solid #dce9f6;
+    border-radius: 16px;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .info-card h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #104b89;
+  }
+
+  .info-card p {
+    margin: 0;
+    color: #4b5f74;
+    line-height: 1.5;
+  }
+
+  .section-heading {
+    display: grid;
+    gap: 0.1rem;
+    margin-top: 0.05rem;
+  }
+
+  .section-heading h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f4c92;
+  }
+
+  .section-heading p,
+  .helper,
+  .muted {
+    margin: 0;
+    color: #60748a;
+    line-height: 1.5;
+  }
+
+  .selected-office {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 12px;
+    background: #f0f7ff;
+    border: 1px solid #d8ebff;
+  }
+
+  .selected-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    background: #0f5fb4;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .report-body {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: #f7fbff;
+    border: 1px solid #dce9f6;
+    color: #16324f;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .success {
+    color: #166534;
+    font-weight: 600;
+  }
+
+  .error {
+    color: #b91c1c;
+    font-weight: 600;
+  }
+}
