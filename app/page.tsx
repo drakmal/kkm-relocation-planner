@@ -315,8 +315,8 @@ export default function HomePage() {
 
       setStatus(
         payload.emailed
-          ? `Request received — your reference ID (${payload.id}) has been emailed to ${form.userEmail}. Your full report will follow by ${readyAt}.`
-          : `Request received. Reference ID: ${payload.id} — please save it. Your full report will follow by ${readyAt}.`,
+          ? `Request received — your reference ID (${payload.id}) has been emailed to ${form.userEmail}. Your report will be ready by ${readyAt}.`
+          : `Request received! Save your reference ID: ${payload.id}. Your report will be ready by ${readyAt} — open it any time with the button below (bookmark it).`,
       );
       setSavedRequestId(payload.id);
       setUsage((current) => (current ? { ...current, used: current.used + 1 } : current));
@@ -348,7 +348,7 @@ export default function HomePage() {
             </article>
             <article className="info-card">
               <h2>What will happen next</h2>
-              <p>Your detailed relocation report will be generated and emailed to you automatically after the system finishes collecting traffic data for your selected duration (1–5 working days).</p>
+              <p>Your detailed relocation report is generated automatically once the system finishes collecting traffic data for your selected period (1–5 working days). View it any time using the reference ID and link you receive after submitting.</p>
             </article>
             <article className="info-card">
               <h2>Limitations</h2>
@@ -576,9 +576,10 @@ export default function HomePage() {
 
             <div className="info-card">
               <p>
-                📧 Your relocation report will be emailed to <strong>{form.userEmail || 'your MOH email'}</strong> shortly
-                after tracking ends on your end date — around{' '}
-                <strong>{formatReadyDateTime(computeReportReady(form.endDate, form.arriveOfficeTime))}</strong>.
+                📅 Your report will be ready around{' '}
+                <strong>{formatReadyDateTime(computeReportReady(form.endDate, form.arriveOfficeTime))}</strong>. After you
+                submit, you&apos;ll get a <strong>reference ID</strong> and a link — bookmark it to check tracking status
+                and view the final report any time.
               </p>
             </div>
 
