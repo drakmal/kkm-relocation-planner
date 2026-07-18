@@ -1,0 +1,33 @@
+{
+  "country": "MY",
+  "scope": "national",
+  "note": "Malaysia nationwide (federal) public holidays. State-specific holidays (e.g. Thaipusam, Federal Territory Day, Harvest Festival, Nuzul Al-Quran) are NOT included. Islamic dates are subject to moon sighting and may shift by a day.",
+  "source": "Google Malaysia holiday calendar, filtered to nationwide holidays",
+  "holidays": [
+    { "date": "2026-01-01", "name": "New Year's Day" },
+    { "date": "2026-02-17", "name": "Chinese New Year" },
+    { "date": "2026-02-18", "name": "Chinese New Year (Second Day)" },
+    { "date": "2026-03-20", "name": "Hari Raya Aidilfitri" },
+    { "date": "2026-03-21", "name": "Hari Raya Aidilfitri (Second Day)" },
+    { "date": "2026-05-01", "name": "Labour Day" },
+    { "date": "2026-05-27", "name": "Hari Raya Aidiladha" },
+    { "date": "2026-05-31", "name": "Wesak Day" },
+    { "date": "2026-06-01", "name": "Agong's Birthday" },
+    { "date": "2026-06-17", "name": "Awal Muharram" },
+    { "date": "2026-08-25", "name": "Maulidur Rasul" },
+    { "date": "2026-08-31", "name": "National Day (Merdeka)" },
+    { "date": "2026-09-16", "name": "Malaysia Day" },
+    { "date": "2026-11-08", "name": "Deepavali" },
+    { "date": "2026-12-25", "name": "Christmas Day" },
+    { "date": "2027-01-01", "name": "New Year's Day" },
+    { "date": "2027-02-06", "name": "Chinese New Year" },
+    { "date": "2027-02-07", "name": "Chinese New Year (Second Day)" },
+    { "date": "2027-03-10", "name": "Hari Raya Aidilfitri" },
+    { "date": "2027-03-11", "name": "Hari Raya Aidilfitri (Second Day)" },
+    { "date": "2027-05-01", "name": "Labour Day" },
+    { "date": "2027-05-17", "name": "Hari Raya Aidiladha" },
+    { "date": "2027-08-31", "name": "National Day (Merdeka)" },
+    { "date": "2027-09-16", "name": "Malaysia Day" },
+    { "date": "2027-12-25", "name": "Christmas Day" }
+  ]
+}
