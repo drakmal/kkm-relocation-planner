@@ -1,0 +1,2473 @@
+[
+ {
+  "type": "Hospital",
+  "name": "Hospital Beaufort",
+  "district": "Beaufort",
+  "address": "Hospital Beaufort, Peti Surat 40, 89807, Beaufort, Sabah",
+  "tel": "087-212333"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bangkalalak",
+  "district": "Beaufort",
+  "address": "KD Bangkalalak, Jalan Gadung, Beaufort , 89807, Beaufort, Sabah",
+  "tel": "087-212096"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Binsuluk",
+  "district": "Beaufort",
+  "address": "KD Binsuluk, Kampung Binsuluk, Jalan Baru Ke Kuala Penyu, 89807, Beaufort, Sabah",
+  "tel": "087-214101"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bukau",
+  "district": "Beaufort",
+  "address": "KD Bukau, Jalan Sipitang, Kampung Bakau, 89807, Beaufort, Sabah",
+  "tel": "087-224690"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Gadong",
+  "district": "Beaufort",
+  "address": "KD Gadong, Jalan Gadong, 89807, Beaufort, Sabah",
+  "tel": "087-224677"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kabajang",
+  "district": "Beaufort",
+  "address": "KD Kabajang, Jalan Beaufort Gadang, Kg Kabajang, 89807, Beaufort, Sabah",
+  "tel": "087-208334"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Klias Scheme",
+  "district": "Beaufort",
+  "address": "KD Klias Scheme, Jalan Beaufort Menumbuk, Kg Rancangan, 89807, Beaufort, Sabah",
+  "tel": "087-223088"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lingkungan",
+  "district": "Beaufort",
+  "address": "KD Lingkungan, Jalan Sipitang, Kg Lingkungan, 89807 Beaufort, 89807, Beaufort, Sabah",
+  "tel": "087-871296"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lubak",
+  "district": "Beaufort",
+  "address": "KD Lubak, Jalan Padas Damit, Kg Lubak, 89807, 89807, Beaufort, Sabah",
+  "tel": "087-223578"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pimping",
+  "district": "Beaufort",
+  "address": "KD Pimping, Kampung Pimping, Membakut, 89807, Beaufort, Sabah",
+  "tel": "087-889569"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sinoko",
+  "district": "Beaufort",
+  "address": "KD Sinoko, Kampung Sinoko, Membakut, 89807, Beaufort, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Takuli",
+  "district": "Beaufort",
+  "address": "KD Takuli, Kampung Takuli, Jalan Menumbuk, 89807, Beaufort, Sabah",
+  "tel": "087-221172"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kota Klias",
+  "district": "Beaufort",
+  "address": "KK Kota Klias, Kampung Kilas, Beaufort, 89807, Beaufort, Sabah",
+  "tel": "087-881143"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Membakut",
+  "district": "Beaufort",
+  "address": "KK Membakut, Pekan Membakut, Beaufort, Peti Surat 173, Membakut, 89728, 89728, Beaufort, Sabah",
+  "tel": "087-887541 / 087-887542"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Padas Damit",
+  "district": "Beaufort",
+  "address": "KK Padas Damit, Kampung Padas Damit, Beaufort, 89807, Beaufort, Sabah",
+  "tel": "087-209653"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Weston",
+  "district": "Beaufort",
+  "address": "KK Weston, Pekan Weston, 89807, Beaufort, Sabah",
+  "tel": "087- 871201"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Beaufort",
+  "district": "Beaufort",
+  "address": "KKIA Beaufort, Pejabat Kesihatan Kawasan Beaufort, Peti Surat 101, 89807, Beaufort, Sabah",
+  "tel": "087-211182"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Kampung Limbawang",
+  "district": "Beaufort",
+  "address": "KKom Kampung Limbawang, Kampung Limbawang, 89807 Beaufort, 89807, Beaufort, Sabah",
+  "tel": "087-211473"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Beluran",
+  "district": "Beluran",
+  "address": "Hospital Beluran, Karung Berkunci No. 02, Pekan Beluran, 90109, Beluran, Sabah",
+  "tel": "089-511233/333"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Botition",
+  "district": "Beluran",
+  "address": "KD Botition, Kampung Botition, Beluran, 90107, Beluran, Sabah",
+  "tel": "089-511122 / 089-511469"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kaniongan",
+  "district": "Beluran",
+  "address": "KD Kaniongan, Pulau Keniongan, Beluran, 90108, Beluran, Sabah",
+  "tel": "089-239005"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kolapis",
+  "district": "Beluran",
+  "address": "KD Kolapis, Kampung Kolapis, 90108 Beluran, 90108, Beluran, Sabah",
+  "tel": "089-512985"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Malalin",
+  "district": "Beluran",
+  "address": "KD Malalin, Kampung Malalin, Beluran, 90107, Beluran, Sabah",
+  "tel": "089-511122 / 089-511469"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Abuan",
+  "district": "Beluran",
+  "address": "KK Abuan, Kampung Abuan, Beluran, 90108, Beluran, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Jambongan",
+  "district": "Beluran",
+  "address": "KK Jambongan, Pulau Jambongan, Jambongan, Beluran, 90108, Beluran, Sabah",
+  "tel": "089-239304"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kuala Sapi",
+  "district": "Beluran",
+  "address": "KK Kuala Sapi, Kampung Kuala Sapi, Sapi, Beluran, 90108, Beluran, Sabah",
+  "tel": "088-552602"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Lingkabau",
+  "district": "Beluran",
+  "address": "KK Lingkabau, Kampung Lingkabau, Lingkabau, Beluran, 90108, Beluran, Sabah",
+  "tel": "013-8973550 (JM)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Nangoh Rumedi",
+  "district": "Beluran",
+  "address": "KK Nangoh Rumedi, Kampung Nangoh Rumedi, Nangoh, Beluran, 90108, Beluran, Sabah",
+  "tel": "019-8500990 (JM)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Paitan",
+  "district": "Beluran",
+  "address": "KK Paitan, Pekan Paitan, Paitan, Beluran, 90108, Beluran, Sabah",
+  "tel": "089-262005"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sungai-Sungai",
+  "district": "Beluran",
+  "address": "KK Sungai-Sungai, Kampung Sungai-Sungai, Sungai Sungai, Beluran, 90108, Beluran, Sabah",
+  "tel": "088-511122 / 088-892002"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tagas-Tagas",
+  "district": "Beluran",
+  "address": "KK Tagas-Tagas, Kampung Tagas-Tagas, Tagas-Tagas, Beluran, 90108, Beluran, Sabah",
+  "tel": "089-239700"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tangkarason",
+  "district": "Beluran",
+  "address": "KK Tangkarason, Kampung Tangkarason, Tangkarason, Beluran, 90108, Beluran, Sabah",
+  "tel": "088-511122 / 088-892001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Terusan Sugut",
+  "district": "Beluran",
+  "address": "KK Terusan Sugut, Kampung Terusan Sugut, Beluran, 90108, Beluran, Sabah",
+  "tel": "098-239006"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Beluran",
+  "district": "Beluran",
+  "address": "KKIA Beluran, Klinik Kesihatan Ibu dan Anak Beluran, Peti Surat 117, 90107, Beluran, Sabah",
+  "tel": "089-511236 / 089-511122"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Duchess Of Kent",
+  "district": "Sandakan",
+  "address": "Hospital Duchess Of Kent, KM 3.2, Jalan Utara, 90000, Sandakan, Sabah",
+  "tel": "089-212111/089-213975"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Batu 7",
+  "district": "Sandakan",
+  "address": "KD Batu 7, Batu 7, Jalan Labuk, 90500, Sandakan, Sabah",
+  "tel": "089-672902"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Berhala Darat",
+  "district": "Sandakan",
+  "address": "KD Berhala Darat, Kampung Berhala Barat, 90009, Sandakan, Sabah",
+  "tel": "089-212780"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Gum-Gum",
+  "district": "Sandakan",
+  "address": "KD Gum-Gum, Kampung Gum-Gum, 90500, Sandakan, Sabah",
+  "tel": "089-535385"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Karamunting",
+  "district": "Sandakan",
+  "address": "KD Karamunting, Kampung Karamunting, 90500, Sandakan, Sabah",
+  "tel": "089-617042"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mumiang",
+  "district": "Sandakan",
+  "address": "KD Mumiang, Kampung Mumiang, 90500, Sandakan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sibuga",
+  "district": "Sandakan",
+  "address": "KD Sibuga, Kampung Sibunga, 90500, Sandakan, Sabah",
+  "tel": "089-663770"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tanjung Aru",
+  "district": "Sandakan",
+  "address": "KD Tanjung Aru, Kampung Tanjung Aru , 90509, Sandakan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tronglit",
+  "district": "Sandakan",
+  "address": "KD Tronglit, Kampung Tronglit, 90009, Sandakan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Batu 10",
+  "district": "Sandakan",
+  "address": "KK Batu 10, Batu 10, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pulau Libaran",
+  "district": "Sandakan",
+  "address": "KK Pulau Libaran, Kg Pulau Libaran, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-232948"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pulau Nunuyan",
+  "district": "Sandakan",
+  "address": "KK Pulau Nunuyan, Kg Pulau Nunuyun, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-531377"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sandakan",
+  "district": "Sandakan",
+  "address": "KK Sandakan, Kilometer 3.2, Jalan Utara, 90500 Sandakan, 90009, Sandakan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Suan Lamba",
+  "district": "Sandakan",
+  "address": "KK Suan Lamba, Kampung Suan Lamba, Suan Lamba, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-568826"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sungai Manila",
+  "district": "Sandakan",
+  "address": "KK Sungai Manila, Kampung Sungai Manila, Sungai Manila, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-792003 / 089-786060"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Ulu Dusun",
+  "district": "Sandakan",
+  "address": "KK Ulu Dusun, Kampung Ulu Dusun, Ulu Dusun, Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-781695"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Sandakan",
+  "district": "Sandakan",
+  "address": "KKIA Sandakan, Klinik Kesihatan Ibu dan Anak, Bandar Sandakan, 90009, Sandakan, Sabah",
+  "tel": "089-212517"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Bandar Labuk Jaya",
+  "district": "Sandakan",
+  "address": "KKom Bandar Labuk Jaya, Lot No.4, Tingkat Bawah Blok 6, Batu 7, Bandar Labuk Jaya, 90000, Sandakan, Sabah",
+  "tel": "089-668806"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Bandar Leetat Sandakan",
+  "district": "Sandakan",
+  "address": "KKom Bandar Leetat Sandakan, Blok C, Lot 3, Ground Floor, Bandar Leetat, 90000, Sandakan, Sabah",
+  "tel": "089-668808"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Bandar Leila",
+  "district": "Sandakan",
+  "address": "KKom Bandar Leila, Lot 7A &7B, Tingkat Bawah, Blok B Mile 1, Jalan Leila Sandakan, 90700, Sandakan, Sabah",
+  "tel": "089-613204"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Bandar Sri Perdana",
+  "district": "Sandakan",
+  "address": "KKom Bandar Sri Perdana, Lot 34, Bangunan Perniagaan, MDLD 6942,, 91100, Lahad Datu, Sabah",
+  "tel": "089-862326"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom IPD Kepayan",
+  "district": "Sandakan",
+  "address": "KKom IPD Kepayan, JKR No. 7642, IPD Kontinjen Sabah, Jalan Kepayan, 88560 Kota Kinabalu, 88560, Kota Kinabalu, Sabah",
+  "tel": "088-236262"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Kampung Pimping",
+  "district": "Sandakan",
+  "address": "KKom Kampung Pimping, Lot 10, Bangunan Sedco, Kampung Pimping, 89728 Membakut, 89728, Beaufort, Sabah",
+  "tel": "087-211473 / 472 / 212096"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Karamunting",
+  "district": "Sandakan",
+  "address": "KKom Karamunting, Lot 6, Tingkat Bawah, Kedai Batu, Kg. Karamunting, 90000 Sandakan, 90500, Sandakan, Sabah",
+  "tel": "089-668806 / 089-668807 / 089-668808"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Layung",
+  "district": "Sandakan",
+  "address": "KKom Layung, Lot 60, MDLD 8346, Blok F. Layung Industrial Light, KM 5 Jalan Tengah Nipah, 91100, Lahad Datu, Sabah",
+  "tel": "089-883198"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom PPR Taman Gum-Gum Jaya",
+  "district": "Sandakan",
+  "address": "KKom PPR Taman Gum-Gum Jaya, Tingkat Bawah, Blok C, PPR Taman Gum-Gum Jaya, Batu 16, Off Jalan Labuk, 90500, Sandakan, Sabah",
+  "tel": "089-531115"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Murni",
+  "district": "Sandakan",
+  "address": "KKom Taman Murni, Blok A, Tingkat Bawah, PPR Taman Murni, Batu 7, 90000, Sandakan, Sabah",
+  "tel": "089-668808 (PKK) / 089-668807 (PKK) / 089-668806 (PKK)"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Pengalat Besar",
+  "district": "Sandakan",
+  "address": "KKom Taman Pengalat Besar, Lot. No.2, Phase 6, Taman Pengalat Besar, Papar, 89600, Papar, Sabah",
+  "tel": "088-911760"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Seletar",
+  "district": "Sandakan",
+  "address": "KKom Taman Seletar, Ground Floor, Taman Seletar, Shop House, Mile 4.5 Jalan Sibunga, 90712, Sandakan, Sabah",
+  "tel": "089-668806 / 07 / 08"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Telipok Ria",
+  "district": "Sandakan",
+  "address": "KKom Taman Telipok Ria, Lot Kedai B04 & B05, PPR Taman Telipok Ria, Fasa III, Telipok, 89208, Tuaran, Sabah",
+  "tel": "088-792330 (PKK) / 088-793881 (PKK) / 088-792390 (PKK)"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Keningau",
+  "district": "Keningau",
+  "address": "Hospital Keningau, Peti Surat 11, 89007, Keningau, Sabah",
+  "tel": "087-313000"
+ },
+ {
+  "type": "Klinik Desa",
+  "name": "KD Ansip",
+  "district": "Keningau",
+  "address": "KD Ansip, Jalan Ansip-Dalit, Kampung Ansip Laut, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-332334"
+ },
+ {
+  "type": "Klinik Desa",
+  "name": "KD Baginda",
+  "district": "Keningau",
+  "address": "KD Baginda, Kampung Baginda Keningau, 89007, Keningau, Sabah",
+  "tel": "087-391896"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Biah",
+  "district": "Keningau",
+  "address": "KD Biah, Jalan Ansip-Dalit, Kampung Ansip, 89007, Keningau, Sabah",
+  "tel": "087-336799"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bulu Silau",
+  "district": "Keningau",
+  "address": "KD Bulu Silau, Bt 4, Jalan Sook-Nabawan, Kampung Bilah, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-336823"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bunga Raya",
+  "district": "Keningau",
+  "address": "KD Bunga Raya, Kampung Tonobon Baru, Off Kg Bunga Raya, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-304006"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Dalit",
+  "district": "Keningau",
+  "address": "KD Dalit, Kampung Dalit Station, SK Dalit, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-723007"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Karamatoi",
+  "district": "Keningau",
+  "address": "KD Karamatoi, Skim Penempatan SAFODA, Karamatoi, Sook, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-723002"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kebatang Baru",
+  "district": "Keningau",
+  "address": "KD Kebatang Baru, Jalan Sook-Tulid, Kg Kebatang Baru, Sook, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-306008"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Merapok",
+  "district": "Keningau",
+  "address": "KD Merapok, Kampung Merapok, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-721813"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD P.P.H. Kem Keningau",
+  "district": "Keningau",
+  "address": "KD P.P.H. Kem Keningau, Jalan Apin Apin, Off Jalan Kompleks Polis Keningau, 89007, Keningau, Sabah",
+  "tel": "087-337334"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Senagang",
+  "district": "Keningau",
+  "address": "KD Senagang, Jalan Tenom, Kampung Senagang, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-302051"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tiulon",
+  "district": "Keningau",
+  "address": "KD Tiulon, Skim Penempatan Rancangan Belia Tiulon, Sook, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-730412"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tuarid Taud",
+  "district": "Keningau",
+  "address": "KD Tuarid Taud, Jalan Kota Ayangan (Lama), Kg Tuarid Taud, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-336916"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Apin-Apin",
+  "district": "Keningau",
+  "address": "KK Apin-Apin, Jalan Apin-Apin-Kota Kinabalu, Kg Kikiran, Apin-Apin, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-337371"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bingkor",
+  "district": "Keningau",
+  "address": "KK Bingkor, Jalan Bunsit, Pekan Bingkor, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-391158"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Mansiat",
+  "district": "Keningau",
+  "address": "KK Mansiat, Kg Mansiat, Sook, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-391158"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sook",
+  "district": "Keningau",
+  "address": "KK Sook, Jalan Tulid-Mansiat, Sook Keningau, 89007, Keningau, Sabah",
+  "tel": "087-724003"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tulid",
+  "district": "Keningau",
+  "address": "KK Tulid, Jalan Tulid, Kg. Tulid, Sook, Keningau, 89007, Keningau, Sabah",
+  "tel": "087-345002"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK UTC Keningau",
+  "district": "Keningau",
+  "address": "KK UTC Keningau, Lot 1, Bangunan UTC, Jalan Market, Keningau, 89008, Keningau, Sabah",
+  "tel": "087-3337255 (PKK) / 087-339275 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Keningau",
+  "district": "Keningau",
+  "address": "KKIA Keningau , d/a Pejabat Kesihatan Kawasan Keningau, Peti Surat 94, 89007, Keningau, Sabah",
+  "tel": "087-331204"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Kinabatangan",
+  "district": "Kinabatangan",
+  "address": "Hospital Kinabatangan, W.D.T 200, 90020, Kinabatangan, Sabah",
+  "tel": "089-561858/089-561857"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Batu Putih",
+  "district": "Kinabatangan",
+  "address": "KK Batu Putih, Kampung Batu Putih, Jalan Kinabatangan Lahad Datu, Batu Putih, Kinabatangan, 89108, Kinabatangan, Sabah",
+  "tel": "088-667320 / 088-612321"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bukit Garam",
+  "district": "Kinabatangan",
+  "address": "KK Bukit Garam, Bukit Garam, Kinabatangan, 90200, Kinabatangan, Sabah",
+  "tel": "019-8005359 / 089-561975 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kuamut",
+  "district": "Kinabatangan",
+  "address": "KK Kuamut, Pekan Kuamut, Kuamut, Kinabatangan, 90200, Kinabatangan, Sabah",
+  "tel": "088-661533"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sukau",
+  "district": "Kinabatangan",
+  "address": "KK Sukau, Pekan Sukau, Sukau, Kinabatangan, 90200, Kinabatangan, Sabah",
+  "tel": "089-232669"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kota Kinabatangan",
+  "district": "Kinabatangan",
+  "address": "KKIA Kota Kinabatangan, d/a Pejabat Kesihatan Kawasan Kinabatangan, WDT 40, 90200, Kinabatangan, Sabah",
+  "tel": "089-561451"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Kota Belud",
+  "district": "Kota Belud",
+  "address": "Hospital Kota Belud, Peti Surat 159, 89150, Kota Belud, Sabah",
+  "tel": "088-976333/088-976334"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Dudar",
+  "district": "Kota Belud",
+  "address": "KD Dudar, Kg Dudar, Jalan Kudat, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-963010"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kaung Ulu",
+  "district": "Kota Belud",
+  "address": "KD Kaung Ulu, Kg Kaung, Jalan Ranau 89158, 89158, Kota Belud, Sabah",
+  "tel": "088-883047"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kebayau",
+  "district": "Kota Belud",
+  "address": "KD Kebayau, Jalan Bypass Ranau, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-883002"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kelawat, Tuaran",
+  "district": "Kota Belud",
+  "address": "KD Kelawat, Tuaran, Kg.Kelawat, Jalan Kota Kinabalu, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kiau",
+  "district": "Kota Belud",
+  "address": "KD Kiau, Kg Kiau Taburi, P/S 485, 89308 Ranau, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kuala Abai",
+  "district": "Kota Belud",
+  "address": "KD Kuala Abai, Kg. Kuala Abai, Jalan Port Usukan, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-961006"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lasau Takulung",
+  "district": "Kota Belud",
+  "address": "KD Lasau Takulung, Kg Lasau Takulung, Jalan Kompleke Sukan, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-959021"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pandasan",
+  "district": "Kota Belud",
+  "address": "KD Pandasan, Kg Pandasan, Jalan Kudat, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Payas-Payas",
+  "district": "Kota Belud",
+  "address": "KD Payas-Payas, Kg Pantai Emas, Jalan Port Usukan, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pengkalan Abai",
+  "district": "Kota Belud",
+  "address": "KD Pengkalan Abai, Kg Pengkalan Abai, Jalan Kota Kinabalu, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Rampaian Laut",
+  "district": "Kota Belud",
+  "address": "KD Rampaian Laut, Kg Nanuman, Jalan Kudat, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Rosok",
+  "district": "Kota Belud",
+  "address": "KD Rosok, Kg.Rosok, Jalan Kompleks Sukan, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sayap",
+  "district": "Kota Belud",
+  "address": "KD Sayap, Kg Sayap, Jalan Sorob, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-959023"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tamau",
+  "district": "Kota Belud",
+  "address": "KD Tamau, Kg Tamau, Jalan Kudat, 89158 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Jawi-Jawi",
+  "district": "Kota Belud",
+  "address": "KK Jawi-Jawi, Kg Jawi-jawi, Jalan Bypass Kudat, 89150 Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-976437"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Taginambur",
+  "district": "Kota Belud",
+  "address": "KK Taginambur, Batu 10, Jalan Ranau Bypass, 89158 Kota Belud, 88300, Kota Belud, Sabah",
+  "tel": "088-433357"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kota Belud",
+  "district": "Kota Belud",
+  "address": "KKIA Kota Belud, Klinik Kesihatan Ibu dan Anak, Kg. Pirasan, Jalan Bypass Kota Belud-Ranau, Kota Belud, 89158, Kota Belud, Sabah",
+  "tel": "088-976611"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Alap Bana",
+  "district": "Kota Belud",
+  "address": "KKom Alap Bana, Bangunan Alap Bana, Kota Belud, 88590, Kota Belud, Sabah",
+  "tel": "088-792330"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Kota Marudu",
+  "district": "Kota Marudu",
+  "address": "Hospital Kota Marudu, Peti Surat 255, 89108, Kota Marudu, Sabah",
+  "tel": "088-663286"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Gana",
+  "district": "Kota Marudu",
+  "address": "KD Gana, Kampung Gana, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661884 / 088-896240"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Goshen",
+  "district": "Kota Marudu",
+  "address": "KD Goshen, Kampung Goshen, Jalan Goshen, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661304"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Marak Parak",
+  "district": "Kota Marudu",
+  "address": "KD Marak Parak, Kampung Marak Parak, 89108 Kota Kinabalu, 89108, Kota Marudu, Sabah",
+  "tel": "088-959022"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Marudu",
+  "district": "Kota Marudu",
+  "address": "KD Marudu, Pekan Lama, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661715"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mosolog",
+  "district": "Kota Marudu",
+  "address": "KD Mosolog, Kampung Masolog, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-663632"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Salimandut",
+  "district": "Kota Marudu",
+  "address": "KD Salimandut, Kampung Salimandut, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661506"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Samparita",
+  "district": "Kota Marudu",
+  "address": "KD Samparita, Kampung Samparita, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-666103 / 088-897400"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tagaroh",
+  "district": "Kota Marudu",
+  "address": "KD Tagaroh, Kampung Tagaroh, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-663829"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tanjong Batu",
+  "district": "Kota Marudu",
+  "address": "KD Tanjong Batu, Kampung Tanjung Batu, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-630010"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Timbang Batu",
+  "district": "Kota Marudu",
+  "address": "KD Timbang Batu, Kampung Timbang Batu, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-664762"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Langkon",
+  "district": "Kota Marudu",
+  "address": "KK Langkon, Kampung Langkon, Kudat, 89059, Kota Marudu, Sabah",
+  "tel": "087-831066"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tandek",
+  "district": "Kota Marudu",
+  "address": "KK Tandek, Pekan Tandek, Tandek, Kota Murudu, 89059, Kota Marudu, Sabah",
+  "tel": "087-897260"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kota Marudu",
+  "district": "Kota Marudu",
+  "address": "KKIA Kota Marudu, Jalan Lotong, Peti Surat 421, Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661884 (PKD Kota Marudu)"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Hexan Industrial Centre",
+  "district": "Kota Marudu",
+  "address": "KKom Hexan Industrial Centre, Lot B9, Ground Floor, Hexan Industrial Centre, 89107 Kota Marudu, Sabah, 89107, Kota Marudu, Sabah",
+  "tel": "088-663580/ 81/82"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Langkon Commercial Centre",
+  "district": "Kota Marudu",
+  "address": "KKom Langkon Commercial Centre, Lot No. 28,Tingkat Bawah, Langkon Commercial Centre,KM 10, Simpang Tiga,89108 Kota Marudu, 89108, Kota Marudu, Sabah",
+  "tel": "088-661884 (PKD Marudu)"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Kuala Penyu",
+  "district": "Kuala Penyu",
+  "address": "Hospital Kuala Penyu, W.D.T. 35, 89740, Kuala Penyu, Sabah",
+  "tel": "087-853100"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bundu",
+  "district": "Kuala Penyu",
+  "address": "KD Bundu, Batu 4, Kg Bundu, Kuala Penyu, 89747, Kuala Penyu, Sabah",
+  "tel": "087-885078"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kiambor",
+  "district": "Kuala Penyu",
+  "address": "KD Kiambor, Kampung Kiambor, Kuala Penyu, 89747, Kuala Penyu, Sabah",
+  "tel": "087-885071"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kerukan",
+  "district": "Kuala Penyu",
+  "address": "KK Kerukan, Kampung Kerukan, Kuala Penyu, 89807, Kuala Penyu, Sabah",
+  "tel": "088-621897"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Menumbok",
+  "district": "Kuala Penyu",
+  "address": "KK Menumbok, Pekan Menumbok, Menumbok, Kuala Penyu, 89807, Kuala Penyu, Sabah",
+  "tel": "088-671526"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kuala Penyu",
+  "district": "Kuala Penyu",
+  "address": "KKIA Kuala Penyu, d/a Pejabat Kesihatan Daerah Kuala Penyu, 89747, Kuala Penyu, Sabah",
+  "tel": "087-884333"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Kunak",
+  "district": "Kunak",
+  "address": "Hospital Kunak, W.D.T. 150, 91209, Kunak, Sabah",
+  "tel": "089-894100/ 089-894299/ 089-853326"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lormalong",
+  "district": "Kunak",
+  "address": "KD Lormalong, Kampung Lormalong, 91207, Kunak, Sabah",
+  "tel": "089-821741"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Madai",
+  "district": "Kunak",
+  "address": "KD Madai, Kampung Madai, 91207, Kunak, Sabah",
+  "tel": "089-851733 (PKD)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Mesej Pangi",
+  "district": "Kunak",
+  "address": "KK Mesej Pangi, Pejabat Kesihatan Daerah Kunak, Peti Surat 06, 91207, Kunak, Sabah",
+  "tel": "089-851733"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kunak 1",
+  "district": "Kunak",
+  "address": "KKIA Kunak 1, d/a Pejabat Kesihatan Daerah Kunak, Peti Surat 990, Kunak, 91008, Kunak, Sabah",
+  "tel": "089-851745"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kunak 2",
+  "district": "Kunak",
+  "address": "KKIA Kunak 2, d/a Pejabat Kesihatan Daerah Kunak, Peti Surat 6, 91008, Kunak, Sabah",
+  "tel": "089-894100"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Lahad Datu",
+  "district": "Lahad Datu",
+  "address": "Hospital Lahad Datu, Peti Surat 60065, 91110, Lahad Datu, Sabah",
+  "tel": "089-895111"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Cenderawasih",
+  "district": "Lahad Datu",
+  "address": "KD Cenderawasih, Felda Sahabat 7, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-812854"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Fajar Harapan",
+  "district": "Lahad Datu",
+  "address": "KD Fajar Harapan, Felda Sahabat 22, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Hamparan Badai",
+  "district": "Lahad Datu",
+  "address": "KD Hamparan Badai, Felda Sahabat 27, Lahat Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kembara Sakti",
+  "district": "Lahad Datu",
+  "address": "KD Kembara Sakti, Felda Sahabat 43, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kuala Taburi",
+  "district": "Lahad Datu",
+  "address": "KD Kuala Taburi, Jalan Ulu Tungku, Lahad Datu , 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lamag",
+  "district": "Lahad Datu",
+  "address": "KD Lamag, Kg Silam Jalan Silam, LahaD Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Nala",
+  "district": "Lahad Datu",
+  "address": "KD Nala, Kg. Nala, Tungku, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-662178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pulau Sakar",
+  "district": "Lahad Datu",
+  "address": "KD Pulau Sakar, Kg Tanjung Paras, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Segama",
+  "district": "Lahad Datu",
+  "address": "KD Segama, Batu 6, Kg Cocos, Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sepagaya",
+  "district": "Lahad Datu",
+  "address": "KD Sepagaya, Kampung Sepayaga, Jalan Sialm, Peti Surat 61167 Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tanjung Labian",
+  "district": "Lahad Datu",
+  "address": "KD Tanjung Labian, Kampung Tanjung Labian, 61167 Lahad Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tengah Nipah",
+  "district": "Lahad Datu",
+  "address": "KD Tengah Nipah, Jalan Tungku, Peti Surat 61167 Lahat Datu, 61167, Lahad Datu, Sabah",
+  "tel": "089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bukit Belacon",
+  "district": "Lahad Datu",
+  "address": "KK Bukit Belacon, Bukit Belacon, Segama, Lahad Datu, 91120, Lahad Datu, Sabah",
+  "tel": "089-816001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Felda Sahabat",
+  "district": "Lahad Datu",
+  "address": "KK Felda Sahabat, Desa Kencana,Felda Sahabat 16, Lahat Datu, 91120, Lahad Datu, Sabah",
+  "tel": "089-817005 (KK) 089-882178 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Lahad Datu",
+  "district": "Lahad Datu",
+  "address": "KK Lahad Datu, Jalam Silam, Bandar Lahad Datu, Lahad Datu, 91120, Lahad Datu, Sabah",
+  "tel": "089-811912"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pulau Tambisan",
+  "district": "Lahad Datu",
+  "address": "KK Pulau Tambisan, Pekan Tambisan, Tambisan, Lahat Datu, 91120, Lahad Datu, Sabah",
+  "tel": "089-871125"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Silabukan",
+  "district": "Lahad Datu",
+  "address": "KK Silabukan, Batu 10, Jalan Tungku, Lahad Datu, 91120, Lahad Datu, Sabah",
+  "tel": "089-821510 / 089-882178"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tungku",
+  "district": "Lahad Datu",
+  "address": "KK Tungku, Pekan Tungku, Tungku, Lahat Datu, 91120, Lahad Datu, Sabah",
+  "tel": "087-743001"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Mesra Bukit Padang",
+  "district": "Kota Kinabalu",
+  "address": "Hospital Mesra Bukit Padang, Peti Surat 11342, Bukit Padang, 88815, Kota Kinabalu, Sabah",
+  "tel": "088-240985/088-240986/088-240984"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Queen Elizabeth",
+  "district": "Kota Kinabalu",
+  "address": "Hospital Queen Elizabeth, Karung Berkunci No. 2029,  88586, Kota Kinabalu, Sabah",
+  "tel": "088-517555"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Queen Elizabeth II",
+  "district": "Kota Kinabalu",
+  "address": "Hospital Queen Elizabeth II, Lorong Bersatu, Off Jalan Damai Luyang, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-324600"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Wanita dan Kanak - Kanak",
+  "district": "Kota Kinabalu",
+  "address": "Hospital Wanita dan Kanak - Kanak,  Karung Berkunci 187, 88996,  Kota Kinabalu, Sabah",
+  "tel": "088-522600"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Karambunai",
+  "district": "Kota Kinabalu",
+  "address": "KD Karambunai, Jalan Sepangar, Kota Kinabalu, 88450, Kota Kinabalu, Sabah",
+  "tel": "088-411045"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kionsom",
+  "district": "Kota Kinabalu",
+  "address": "KD Kionsom, Kampung Kionsom, Kota Kinabalu, 89350, Kota Kinabalu, Sabah",
+  "tel": "088-430108"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kokol",
+  "district": "Kota Kinabalu",
+  "address": "KD Kokol, Kampung Kokol, Kota Kinabalu, 89350, Kota Kinabalu, Sabah",
+  "tel": "088-302554"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pomotodon",
+  "district": "Kota Kinabalu",
+  "address": "KD Pomotodon, Kampung Pomotodon, Kota Kinabalu, 89530, Kota Kinabalu, Sabah",
+  "tel": "088-431285"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tombongan",
+  "district": "Kota Kinabalu",
+  "address": "KD Tombongan, Kampung Tombongan, Kota Kinabalu, 88450, Kota Kinabalu, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Inanam",
+  "district": "Kota Kinabalu",
+  "address": "KK Inanam, Jalan Kionsom, Pekan Inanam, Inanam, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-715000 / 088-719424 / 088-719427"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Jalan Kebajikan",
+  "district": "Kota Kinabalu",
+  "address": "Klinik Kesihatan Jalan Kebajikan, Jalan Kebajikan, Kuarters Hospital Queen Elizabeth, Kota Kinabalu, 88300 Sabah",
+  "tel": "088-318460"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Likas",
+  "district": "Kota Kinabalu",
+  "address": "KK Likas, Jalan Haiwan, Kampung Likas, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-421694"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Luyang",
+  "district": "Kota Kinabalu",
+  "address": "KK Luyang, Jalan Lintas, Luyang, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-493915 / 088-491479"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Menggatal",
+  "district": "Kota Kinabalu",
+  "address": "KK Menggatal, Jalan Tuaran Lama, Pekan Menggatal, Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-492057 / 088-494691"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Telipok",
+  "district": "Kota Kinabalu",
+  "address": "KK Telipok, Jalan Tuaran, Pekan Telipok, Telipok, Kota Kinabalu, 89200, Kota Kinabalu, Sabah",
+  "tel": "088-765704 / 088-765661"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK UTC Kota Kinabalu",
+  "district": "Kota Kinabalu",
+  "address": "KK UTC Kota Kinabalu, Tingkat Bawah, Wisma UTC Sabah, Off Jalan Tunku Abdul Rahman, 88100 Kota Kinabalu , 88100, Kota Kinabalu, Sabah",
+  "tel": "088-236813"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Pekan",
+  "district": "Kota Kinabalu",
+  "address": "KKIA Pekan, Klinik Kesihatan Ibu dan Anak, Jalan Kg. Air, Bandar Raya Kota Kinabalu, 88300, Kota Kinabalu, Sabah",
+  "tel": "088-255242"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Polytechnic Commercial Centre",
+  "district": "Kota Kinabalu",
+  "address": "KKom Polytechnic Commercial Centre, Ground Floor Coner, Lot No. 8, Blok A-2, Polytechnic Commercial Centre (PCC),Sepanggar, 88450 Kota Kinabalu, 88450, Kota Kinabalu, Sabah",
+  "tel": "088-726309 / 088-726324 / 088-726354"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Sulaman Sentral",
+  "district": "Kota Kinabalu",
+  "address": "KKom Sulaman Sentral, Lot 37, Tingkat Bawah Blok E, Fasa 2, Sulaman Sentral, Kota Kinabalu, 88450, Kota Kinabalu, Sabah",
+  "tel": "088-473128 / 088-473127"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Canggih",
+  "district": "Kota Kinabalu",
+  "address": "KKom Taman Canggih, Ground Floor, Shoplot No. 3 (S3), Intermediate Lot, Taman Canggih Commercial Centre, Inanam, 88450 Kota Kinabalu, 88450, Kota Kinabalu, Sabah",
+  "tel": "088-726309 / 088-726324 / 088-726354"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Tanjung Aru",
+  "district": "Kota Kinabalu",
+  "address": "KKom Tanjung Aru, Lot No.C-G-2, Ground Floor, Blok C, Plaza Tanjung Aru, Jalan Mat Salleh, Tanjung Aru, 88100 Kota Kinabalu, 88100, Kota Kinabalu, Sabah",
+  "tel": "088-215670"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Papar",
+  "district": "Papar",
+  "address": "Hospital Papar,  Peti Surat No. 6, 89607,  Papar, Sabah",
+  "tel": "088-913333"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Benoni",
+  "district": "Papar",
+  "address": "KD Benoni, Kampung Benoni, 89608 Papar , 89608, Papar, Sabah",
+  "tel": "088-913167"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Biau",
+  "district": "Papar",
+  "address": "KD Biau, Kampung Biau, 89608 Papar, 89608, Papar, Sabah",
+  "tel": "088-911102"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Gadong Kimanis",
+  "district": "Papar",
+  "address": "KD Gadong Kimanis, Jalan Kimanis, Papar , 89608, Papar, Sabah",
+  "tel": "088-916399"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kawang",
+  "district": "Papar",
+  "address": "KD Kawang, Kampung Kawang, Papar , 89608, Papar, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kelatuan",
+  "district": "Papar",
+  "address": "KD Kelatuan, Kampung Kelatuan, Papar, 89607, Papar, Sabah",
+  "tel": "088-916400"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pengalat Besar",
+  "district": "Papar",
+  "address": "KD Pengalat Besar, Kampung Pengalat Besar, 89608 Papar, 89608, Papar, Sabah",
+  "tel": "088-915013"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Simpudu",
+  "district": "Papar",
+  "address": "KD Simpudu, Kampung Simpudu, 89608 Papar, 89608, Papar, Sabah",
+  "tel": "088-912134"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tibabar",
+  "district": "Papar",
+  "address": "KD Tibabar, Kampung Tibabar, 89608 Papar, 89608, Papar, Sabah",
+  "tel": "088-915729"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bongawan",
+  "district": "Papar",
+  "address": "KK Bongawan, Jln. Besar Pekan Bongawan, 89700 Bongawan, Papar, 89600, Papar, Sabah",
+  "tel": "088-722017 (PKK) / 088-722642 (PKK) / 088-722857 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kinarut",
+  "district": "Papar",
+  "address": "KK Kinarut, Jalan Spur, Pekan Kinarut, Kinarut, Kinarut, Papar, 89600, Papar, Sabah",
+  "tel": "087-861771"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kuala Papar",
+  "district": "Papar",
+  "address": "KK Kuala Papar, Kampung Kuala Papar, Papar , 89600, Papar, Sabah",
+  "tel": "087-730204"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Ulu Kimanis",
+  "district": "Papar",
+  "address": "KK Ulu Kimanis, Kampung Ulu Kimanis, Kimanis, 89700 Papar, 89600, Papar, Sabah",
+  "tel": "088-717978 / 088-715621"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Papar",
+  "district": "Papar",
+  "address": "KKIA Papar, d/a Pejabat Kesihatan Daerah Papar, Jalan Hospital Lama, Peti Surat 109, 89608 Papar, 89608, Papar, Sabah",
+  "tel": "088-913580"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Pitas",
+  "district": "Pitas",
+  "address": "Hospital Pitas, Peti Surat 88,  89100, Pitas, Sabah",
+  "tel": "088-676100"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bawing",
+  "district": "Pitas",
+  "address": "KD Bawing, Kg Bawing, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-611376"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kanibongan",
+  "district": "Pitas",
+  "address": "KD Kanibongan, Kg Kanibongan, Pitas, 89507, Pitas, Sabah",
+  "tel": "088-886202"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mandurian",
+  "district": "Pitas",
+  "address": "KD Mandurian, Kg Mandurian, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-896323"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mapan-Mapan",
+  "district": "Pitas",
+  "address": "KD Mapan-Mapan, Kg Mapan, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-611376"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mengkabau",
+  "district": "Pitas",
+  "address": "KD Mengkabau, Kg Mangkubau, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-897503"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pingan-Pingan",
+  "district": "Pitas",
+  "address": "KD Pingan-Pingan, Kg Pinggan-Pinggan, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-625066"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Rosob",
+  "district": "Pitas",
+  "address": "KD Rosob, Kg Rosob, Pitas, 89059, Pitas, Sabah",
+  "tel": "088-611376"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bongkol",
+  "district": "Pitas",
+  "address": "KK Bongkol, Kampung Bongkol, Bongkol, 89108, Pitas, Sabah",
+  "tel": "088-877353"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Dandun",
+  "district": "Pitas",
+  "address": "KK Dandun, Kampung Dandun, Dandun, 89108, Pitas, Sabah",
+  "tel": "088-889505"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pantai",
+  "district": "Pitas",
+  "address": "KK Pantai, Kampung Pantai, Pantai, 89108, Pitas, Sabah",
+  "tel": "088-684940"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Telaga",
+  "district": "Pitas",
+  "address": "KK Telaga, Kampung Telaga, Telaga, Pitas, Kudat, 89108, Pitas, Sabah",
+  "tel": "088-687849 / 088-671849"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Pitas",
+  "district": "Pitas",
+  "address": "KKIA Pitas, Klinik Kesihatan Ibu dan Anak, Pejabat Kesihatan Daerah Pitas, Pekan Pitas, 89059, Pitas, Sabah",
+  "tel": "088-671376"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Pingan-Pingan",
+  "district": "Pitas",
+  "address": "KKom Pingan-Pingan, Lot No.5, Taman Pingan-Pingan Jaya, Jalan Pitas, 89059, Pitas, Sabah",
+  "tel": "088-62117 / 118 / 120"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Ranau",
+  "district": "Ranau",
+  "address": "Hospital Ranau,  Karung Berkunci 7, Jalan Hospital, 89300, Ranau, Sabah",
+  "tel": "088-875266"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bongkud",
+  "district": "Ranau",
+  "address": "KD Bongkud, Peti Surat 441, Kg Bongkud, 89300 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-875827"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kinarasan",
+  "district": "Ranau",
+  "address": "KD Kinarasan, Jalan Tambunan, Kinarasan, Ranau, 89200, Ranau, Sabah",
+  "tel": "088-897200"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Malinsau",
+  "district": "Ranau",
+  "address": "KD Malinsau, Kampung Malinsau, 89307 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-959025"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Matupang",
+  "district": "Ranau",
+  "address": "KD Matupang, Jalan Sandakan, Kg Matupang, Ranau, 89308, Ranau, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Nalapak",
+  "district": "Ranau",
+  "address": "KD Nalapak, Kampung Nalapak, Peti Surat 14, 89308 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-897300"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Narawang",
+  "district": "Ranau",
+  "address": "KD Narawang, Kampung Narawang, 89300 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-871235"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pinawantai",
+  "district": "Ranau",
+  "address": "KD Pinawantai, Kampung Pinawantai, 89300 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-959026"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Rondugung",
+  "district": "Ranau",
+  "address": "KD Rondugung, Kampung Rondugung, 89300 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-897209"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tampios",
+  "district": "Ranau",
+  "address": "KD Tampios, Kampung Tampios, 89300 Ranau, 89308, Ranau, Sabah",
+  "tel": "88778047"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Terolobou",
+  "district": "Ranau",
+  "address": "KD Terolobou, Kampung Terolobou, Jalan Bundu Tuhan 89308, 89308, Ranau, Sabah",
+  "tel": "088-897202"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Bundu Tuhan",
+  "district": "Ranau",
+  "address": "KK Bundu Tuhan, Jalan Keranau, Kg Bundu Tuhan, 89308 Ranau, 89308, Ranau, Sabah",
+  "tel": "088-889722"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kaingaran",
+  "district": "Ranau",
+  "address": "KK Kaingaran, Kampung Kaingaran, Ranau, 89308, Ranau, Sabah",
+  "tel": "088-897203"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kundasang",
+  "district": "Ranau",
+  "address": "KK Kundasang, Jalan Kampung Lembah Permai, Ranau, 89308, Ranau, Sabah",
+  "tel": "088-666102"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Lohan",
+  "district": "Ranau",
+  "address": "KK Lohan, Jalan Air Panas Poring, Kg Lohan, Ranau, 89308, Ranau, Sabah",
+  "tel": "088-894000"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Paginatan",
+  "district": "Ranau",
+  "address": "KK Paginatan, Kampung Paginatan, Ranau, 89308, Ranau, Sabah",
+  "tel": "088-959027"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Perancangan",
+  "district": "Ranau",
+  "address": "KK Perancangan, Kg Perancangan, Ranau, 89308, Ranau, Sabah",
+  "tel": "089-537649"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Timbua",
+  "district": "Ranau",
+  "address": "KK Timbua, Kampung Timbua, Ranau, 89308, Ranau, Sabah",
+  "tel": "089-225800"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Ranau",
+  "district": "Ranau",
+  "address": "KKIA Ranau, Klinik Kesihatan Ibu Dan Anak, Jalan Hospital Ranau, Pekan Ranau, 89200, Ranau, Sabah",
+  "tel": "088-876088"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Semporna",
+  "district": "Semporna",
+  "address": "Hospital Semporna, Peti Surat 80, 91307,  Semporna, Sabah",
+  "tel": "089-781522/089-782288"
+ },
+ {
+  "type": "Klinik Desa",
+  "name": "KD Bait",
+  "district": "Semporna",
+  "address": "KD Bait, Kampung Bait, 91308, Semporna, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bubul",
+  "district": "Semporna",
+  "address": "KD Bubul, Kampung Bubul, 91308, Semporna, Sabah",
+  "tel": "089-781811"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Egang-Egang",
+  "district": "Semporna",
+  "address": "KD Egang-Egang, Kampung Egang-Egang, 91308, Semporna, Sabah",
+  "tel": "089-786632"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Hampalan",
+  "district": "Semporna",
+  "address": "KD Hampalan, Kampung Hampalan, 91308, Semporna, Sabah",
+  "tel": "089-786461"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kabongan",
+  "district": "Semporna",
+  "address": "KD Kabongan, Kampung Kabongan, 91308, Semporna, Sabah",
+  "tel": "089-786608"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sungai Buaya",
+  "district": "Semporna",
+  "address": "KD Sungai Buaya, Jalan Bugaya, Kg Sg Buaya, 91308, Semporna, Sabah",
+  "tel": "089-792001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tagasan",
+  "district": "Semporna",
+  "address": "KD Tagasan, Kg Tagasan, 91308 Semporna, 91308, Semporna, Sabah",
+  "tel": "089-782360"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tanjung Kapor",
+  "district": "Semporna",
+  "address": "KD Tanjung Kapor, Jalan Bugaya, Kg Tanjung Kapur , 91308, Semporna, Sabah",
+  "tel": "089-786653"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pulau Bum-Bum",
+  "district": "Semporna",
+  "address": "KK Pulau Bum-Bum, Kg Pulau Bum-Bum, Semporna, 91308, Semporna, Sabah",
+  "tel": "087-821066 (PKD) 087-821533 (KKIA)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Semporna",
+  "district": "Semporna",
+  "address": "KK Semporna, Kg Semporna, Semporna, 91308, Semporna, Sabah",
+  "tel": "087-821066 (PKD) 087-821533 (KKIA)"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Sutera",
+  "district": "Semporna",
+  "address": "KKom Taman Sutera, Lot 3A, Double Storey Shophouse, Phase 1 Taman Sutera, Jalan Tanjong Kapor, Off Jalan Bubul, 91308, Semporna, Sabah",
+  "tel": "089-781068 (PKD Semporna)"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Sipitang",
+  "district": "Sipitang",
+  "address": "Hospital Sipitang,  Peti Surat 250,  89857, Sipitang, Sabah",
+  "tel": "087-822296/087-822297/087-822295/087-822298/300"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Banting",
+  "district": "Sipitang",
+  "address": "KD Banting, Jalan Samur, Kampung Banting, 89857, Sipitang, Sabah",
+  "tel": "087-811506"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Malaman",
+  "district": "Sipitang",
+  "address": "KD Malaman, Jalan Sipitang Tenom, Kampung Malaman, 89857, Sipitang, Sabah",
+  "tel": "087-812897"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mesapol",
+  "district": "Sipitang",
+  "address": "KD Mesapol, Jalan Sipitang, Kampung Pekan Mesapol, 89857, Sipitang, Sabah",
+  "tel": "087-822918"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pantai",
+  "district": "Sipitang",
+  "address": "KD Pantai, Kampung Pantai, Jalan Sipitang, 89857, Sipitang, Sabah",
+  "tel": "087-811507"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Long Pasia",
+  "district": "Sipitang",
+  "address": "KK Long Pasia, Kampung Long Pasia, Long Pasia, Sipitang, 89657, Sipitang, Sabah",
+  "tel": "087-773854"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Meligan",
+  "district": "Sipitang",
+  "address": "KK Meligan, Kampung Meligan, Meligan, Sipitang, 89857, Sipitang, Sabah",
+  "tel": "087-811134"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Mendolong",
+  "district": "Sipitang",
+  "address": "KK Mendolong, Kampung Mendulong, Mendulong, Sipitang, 89857, Sipitang, Sabah",
+  "tel": "087-821066 (PKD) 087-821533 (KKIA)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sindumin",
+  "district": "Sipitang",
+  "address": "KK Sindumin, Pekan Sindumin, Sindumin, Sipitang, 89657, Sipitang, Sabah",
+  "tel": "087-773318"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Sipitang",
+  "district": "Sipitang",
+  "address": "KKIA Sipitang, Klinik Kesihatan Ibu dan Anak, Pekan Sipitang, 89807, Sipitang, Sabah",
+  "tel": "087-821320"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Tambunan",
+  "district": "Tambunan",
+  "address": "Hospital Tambunan, Peti Surat 10, 89657, Tambunan, Sabah",
+  "tel": "087-774333 / 087-774286"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Garas",
+  "district": "Tambunan",
+  "address": "KD Garas, Jalan Tambunan-Ranau, Simpang Kiri, Jalan Kg Pahu, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "088-899607"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kerokot",
+  "district": "Tambunan",
+  "address": "KD Kerokot, Jalan Tambunan-Ranau, Simpang Kanan, Jln SK Kerokot, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "088-899608"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lotong",
+  "district": "Tambunan",
+  "address": "KD Lotong, Jalan Tambunan-Keningau, Simpang Kanan, SK Lotong Tambunan, 89650, Tambunan, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lumondou",
+  "district": "Tambunan",
+  "address": "KD Lumondou, Jalan Tambunan-Ranau, Jln Kg Tangaban, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "087-773464"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Nambayan",
+  "district": "Tambunan",
+  "address": "KD Nambayan, Jalan Tambunan-Keningau, Simpang Kiri, Jalan Kg Lubong Tambunan, 89650, Tambunan, Sabah",
+  "tel": "087-773541"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Rompon",
+  "district": "Tambunan",
+  "address": "KD Rompon, Jalan Tambunan-Keningau, Simpang Kiri, Jln Kg Rompon Tambunan, 89650, Tambunan, Sabah",
+  "tel": "087-777003"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Toboh",
+  "district": "Tambunan",
+  "address": "KD Toboh, Simpang Kanan, Jalan Kg Toboh, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "087-773544"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tontolob Liwan",
+  "district": "Tambunan",
+  "address": "KD Tontolob Liwan, Sempadan Jalan Tambunan-Ranau, Kg Tontolob Liwan, Tambunan , 89650, Tambunan, Sabah",
+  "tel": "088-899608"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Patau",
+  "district": "Tambunan",
+  "address": "KK Patau, Jalan Tambunan-Ranau, KM 12, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "089-902601"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sunsuron",
+  "district": "Tambunan",
+  "address": "KK Sunsuron, Jalan Tambunan-Kota Kinabalu, Simpang Kanan, SK Sunsuron, Tambunan, 89650, Tambunan, Sabah",
+  "tel": "089-951029"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Tambunan",
+  "district": "Tambunan",
+  "address": "KKIA Tambunan, Pejabat Kesihatan Daerah Tambunan, Peti Surat 10, 89657 Tambunan, 89007, Tambunan, Sabah",
+  "tel": "087-774219"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Pekan Tambunan",
+  "district": "Tambunan",
+  "address": "KKom Pekan Tambunan, Lot No.4, Blok A, Lppb Shop Lot, 89657, Tambunan, Sabah",
+  "tel": "087-333725"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Tawau",
+  "district": "Tawau",
+  "address": "Hospital Tawau, Peti Surat 67,  91000, Tawau, Sabah",
+  "tel": "089-773533/089-771206/089-773161"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Balung Cocos",
+  "district": "Tawau",
+  "address": "KD Balung Cocos, Jalan Tawau, Semporna Kg Balung Cocos, 91000, Tawau, Sabah",
+  "tel": "089-757535"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kuala Merotai",
+  "district": "Tawau",
+  "address": "KD Kuala Merotai, Kampung Iban, 91800 Tawau , 91000, Tawau, Sabah",
+  "tel": "089-796117"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Quoin Hill",
+  "district": "Tawau",
+  "address": "KD Quoin Hill, Jalan Bukit Quoin, 91000 Tawau, 91000, Tawau, Sabah",
+  "tel": "089-916010"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sungai Imam",
+  "district": "Tawau",
+  "address": "KD Sungai Imam, Kampung Sungai Imam, Jalan Merotai, 91000, Tawau, Sabah",
+  "tel": "089-796289"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tanjung Batu Darat",
+  "district": "Tawau",
+  "address": "KD Tanjung Batu Darat, Jalan Utara Baru, Kg Tanjung Batu Darat, 91000, Tawau, Sabah",
+  "tel": "089-755896"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Apas Balung",
+  "district": "Tawau",
+  "address": "KK Apas Balung, Jalan Apas Balung, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-926540"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Felda Umas-Umas",
+  "district": "Tawau",
+  "address": "KK Felda Umas-Umas, Felda Umas-Umas, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-775733"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kalabakan",
+  "district": "Tawau",
+  "address": "KK Kalabakan, Kampung Kalabakan, Jalan Kalabakan, 91000, Tawau, Sabah",
+  "tel": "087-736896"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kinabutan",
+  "district": "Tawau",
+  "address": "KK Kinabutan, Lot 334, Tingkat Bawah, Bandar Sri Indah Batu 10, Jalan Apas, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-754171"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Merotai Besar",
+  "district": "Tawau",
+  "address": "KK Merotai Besar, Jalan SMK Merotai, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-797100"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sungai Tamang",
+  "district": "Tawau",
+  "address": "KK Sungai Tamang, Kampung Sungai Tamang, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-232287"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Taman Sejati",
+  "district": "Tawau",
+  "address": "KK Taman Sejati , Lot 12857,Taman Sejati Off Taman Semarak, Jalan Kuhara, 91000, Tawau, Sabah",
+  "tel": "089-715129"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tawau",
+  "district": "Tawau",
+  "address": "KK Tawau, d/a Pejabat Kesihatan Kawasan Tawau, Peti Surat 990, Jln. Datuk Chong Thien Vun, Sin On, Tawau, 91000, Tawau, Sabah",
+  "tel": "089-775733"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK UTC Tawau",
+  "district": "Tawau",
+  "address": "KK UTC Tawau, Taman Sejati, Lot 18, TB12857, Two Storey Intermediate Commercial Building, Batu 5, Jalan Kuhara, 91000, Tawau, Sabah",
+  "tel": "087-741004 / 013-8670865 (JM)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kinabutan",
+  "district": "Tawau",
+  "address": "KKIA Kinabutan, PKK Tawau,Peti Surat 990, Jalan Datuk Chong Thien Vun, Sin On, 91000 Tawau, 91000, Tawau, Sabah",
+  "tel": "089-920523"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Tawau 1",
+  "district": "Tawau",
+  "address": "KKIA Tawau 1, PKK Tawau,Peti Surat 990, Jalan Datuk Chong Thien Vun, Sin On, 91000 Tawau, 91000, Tawau, Sabah",
+  "tel": "089-772526"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Tenom",
+  "district": "Tenom",
+  "address": "Hospital Tenom,  Peti surat 97, 89907,  Tenom, Sabah",
+  "tel": "087-735577/087-735540/087-735589"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Baru Jumpa",
+  "district": "Tenom",
+  "address": "KD Baru Jumpa, Kampung Baru Jumpa, Jalan Kemabong, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-734577"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Batu-Batu",
+  "district": "Tenom",
+  "address": "KD Batu-Batu, Kampung Batu-Batu, Jalan Saga, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-739001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lagud Sebarang",
+  "district": "Tenom",
+  "address": "KD Lagud Sebarang, Jalan Taman Pertanian, Lagud Sebarang, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-736355"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mandalom",
+  "district": "Tenom",
+  "address": "KD Mandalom, Kampung Mandalum, Jalan Saga, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-739003"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Paal",
+  "district": "Tenom",
+  "address": "KD Paal, Kampung Paal, Jalan Kemabong, Kemabong, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-739015"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pamilaan",
+  "district": "Tenom",
+  "address": "KD Pamilaan, Kampung Pamilaan, Jalan Tenom Keningau Pamilaan, 89907, Tenom, Sabah",
+  "tel": "087-739005"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sapong",
+  "district": "Tenom",
+  "address": "KD Sapong, Kampung Sapong, Jalan Kemabong, Sapong, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-733816"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Ulu Tomani",
+  "district": "Tenom",
+  "address": "KD Ulu Tomani, Kampung Ulu Tomani, Ulu Tomani, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-746001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kemabong",
+  "district": "Tenom",
+  "address": "KK Kemabong, Pekan Kemabong, Kemabong, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-302409"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kuala Tomani",
+  "district": "Tenom",
+  "address": "KK Kuala Tomani, Kampung Kuala Tomani, Tenom, 89907, Tenom, Sabah",
+  "tel": "087-721917"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Melalap",
+  "district": "Tenom",
+  "address": "KK Melalap, Pekan Melalap, Tenom, 89907, Tenom, Sabah",
+  "tel": "089-719004"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Tenom",
+  "district": "Tenom",
+  "address": "KKIA Tenom, Pejabat Kesihatan Daerah Tenom, Peti Surat 97, 89907 Tenom, 89907, Tenom, Sabah",
+  "tel": "087-735355"
+ },
+ {
+  "type": "Hospital",
+  "name": "Hospital Tuaran",
+  "district": "Tuaran",
+  "address": "Hospital Tuaran,  Peti Surat 996, 89207,  Tuaran, Sabah",
+  "tel": "088-788317"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bantayan",
+  "district": "Tuaran",
+  "address": "KD Bantayan, Kampung Bantayan, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-788224"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bolong",
+  "district": "Tuaran",
+  "address": "KD Bolong, Kampung Bolong, Jalan Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-792010"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bundung",
+  "district": "Tuaran",
+  "address": "KD Bundung, Kampung Bundung, 89208 Tuaran, 89200, Tuaran, Sabah",
+  "tel": "088-897100"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Gaya Ratau",
+  "district": "Tuaran",
+  "address": "KD Gaya Ratau, Jalan Tamparuli, Kampung Gaya Ratau, 89208, Tuaran, Sabah",
+  "tel": "088-783151"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kauluan",
+  "district": "Tuaran",
+  "address": "KD Kauluan, Jalan Tamparuli, Kampung Kauluan, 89208, Tuaran, Sabah",
+  "tel": "088-783519"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kayangat",
+  "district": "Tuaran",
+  "address": "KD Kayangat, Kampung Rani Tenghilan, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-8886012 / 088-981593"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kelawat",
+  "district": "Tuaran",
+  "address": "KD Kelawat, Kg.Kelawat, Jalan Kota Kinabalu, 89150 Kota Belud, 89208, Tuaran, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Mengkabong",
+  "district": "Tuaran",
+  "address": "KD Mengkabong, Jalan Mengkabong, Tuaran , 89208, Tuaran, Sabah",
+  "tel": "088-792324"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pahu",
+  "district": "Tuaran",
+  "address": "KD Pahu, Kampung Tomis Lamar, Tuaran , 89208, Tuaran, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Penimbawan",
+  "district": "Tuaran",
+  "address": "KD Penimbawan, Kampung Penimbawan, Tuaran, 89209, Tuaran, Sabah",
+  "tel": "088-792431"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pukak",
+  "district": "Tuaran",
+  "address": "KD Pukak, Kampung Pukak, 89208 Tuaran, 89200, Tuaran, Sabah",
+  "tel": "088-886707"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Togop",
+  "district": "Tuaran",
+  "address": "KD Togop, Kampung Togop, 89208, Tuaran, Sabah",
+  "tel": "088-886105"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Topokon",
+  "district": "Tuaran",
+  "address": "KD Topokon, Kampung Topokon, Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088- 792431"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Kiulu",
+  "district": "Tuaran",
+  "address": "KK Kiulu, Jalan Keluk, 89207 Tamparuli, 89208, Tuaran, Sabah",
+  "tel": "088-981249"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Serusop",
+  "district": "Tuaran",
+  "address": "KK Serusop, Jalan SRK Serusop, Kampung Serusop, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-794311"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Simpangan",
+  "district": "Tuaran",
+  "address": "KK Simpangan, Jalan Ranau, Pekan Nabalu, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-792330 / 088-792330 / 088-792390"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tamparuli",
+  "district": "Tuaran",
+  "address": "KK Tamparuli, W.D.T 59, 89275 Tamparuli, 89208, Tuaran, Sabah",
+  "tel": "088-792330 / 088-792330 / 088-792390"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tenghilan",
+  "district": "Tuaran",
+  "address": "KK Tenghilan, Jalan Kampung Tenghilan Tuaran, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-794311"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Tuaran",
+  "district": "Tuaran",
+  "address": "KKIA Tuaran, d/a Pejabat Kesihatan Kawasan Tuaran WDT 10, 89200, Tuaran, Sabah",
+  "tel": "088-788655"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Sri Rugading",
+  "district": "Tuaran",
+  "address": "KKom Taman Sri Rugading, Lot Tabika, Blok R, Taman Sri Rugading, KM 8, Jln Telipok Tuaran, 89208 Tuaran, 89208, Tuaran, Sabah",
+  "tel": "088-489816 / 088-489817"
+ },
+ {
+  "type": "Klinik Desa",
+  "name": "KD Babagon",
+  "district": "Penampang",
+  "address": "KD Babagon, Kampung Babagon, Jalan Moyog Tambunan, Babagon, Penampang, 89500, Penampang, Sabah",
+  "tel": "088-722054"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Limbanak",
+  "district": "Penampang",
+  "address": "KD Limbanak, Kampung Limbanak, Jalan Papar Lama, Limbanak Penampang, 89500, Penampang, Sabah",
+  "tel": "088-710845"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Moyog",
+  "district": "Penampang",
+  "address": "KD Moyog, Kampung Moyog, Jalan Moyog, Tambunan, Moyog, 89500, Penampang, Sabah",
+  "tel": "088-727499"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Nosoob",
+  "district": "Penampang",
+  "address": "KD Nosoob, Kampung Nosoob, Jalan Kabusak, Penampang, 89500, Penampang, Sabah",
+  "tel": "088-724045"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Sungoi",
+  "district": "Penampang",
+  "address": "KD Sungoi, Kampung Sungoi, Simpang Jalan Tudan Poring, Penampang, 89500, Penampang, Sabah",
+  "tel": "088-886734 / 019-5309819"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Penampang",
+  "district": "Penampang",
+  "address": "KK Penampang, KM 12, Jalan Tambunan, WDT 29, Penampang, Sabah, 89500, Penampang, Sabah",
+  "tel": "088-675008 / 088-675000"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Terian",
+  "district": "Penampang",
+  "address": "KK Terian, Kampong Terian, Peti Surat 434, 89500, Penampang, Sabah",
+  "tel": "088-638005"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Bundusan Square",
+  "district": "Penampang",
+  "address": "KKom Bundusan Square, Lot 67, Tingkat bawah, Blok H, Bundusan Square, Penampang, 88300, Penampang, Sabah",
+  "tel": "088-731225 / 088-731226"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Cyber Square",
+  "district": "Penampang",
+  "address": "KKom Cyber Square, Lot L9,Ground Floor, Cyber Square, 88200, Penampang, Sabah",
+  "tel": "088-722017 (PKK Penampang)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bahagia",
+  "district": "Nabawan",
+  "address": "KD Bahagia, Kg Bahagia, Nabawan, 89957, Nabawan, Sabah",
+  "tel": "087-366220"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Pandewan",
+  "district": "Nabawan",
+  "address": "KD Pandewan, Kg Pandewan, Jalan Sepulot, 89957, Nabawan, Sabah",
+  "tel": "87722100"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Nabawan",
+  "district": "Nabawan",
+  "address": "KK Nabawan, Pekan Nabawan, Pesiangan, 89957, Nabawan, Sabah",
+  "tel": "087-366220"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pagalungan",
+  "district": "Nabawan",
+  "address": "KK Pagalungan, Simpang Tiga Sungai Pensiangan Lolongan, Kampung Pagalungan, Pensiangan, 89957, Nabawan, Sabah",
+  "tel": "087-773005"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Pensiangan",
+  "district": "Nabawan",
+  "address": "KK Pensiangan, Pekan Pensiangan, Pensiangan, 89957, Nabawan, Sabah",
+  "tel": "088-911028"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sepulot",
+  "district": "Nabawan",
+  "address": "KK Sepulot, Pekan Sepulot, Sepulot, Pensiangan, 89957, Nabawan, Sabah",
+  "tel": "088-754039 / 088-754145"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Bangau",
+  "district": "Kudat",
+  "address": "KD Bangau, Kg Bangau , 89059, Kudat, Sabah",
+  "tel": "088-641002"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Dualog",
+  "district": "Kudat",
+  "address": "KD Dualog, Kg Dualog, 89507, Kudat, Sabah",
+  "tel": "088-896870"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Lajong",
+  "district": "Kudat",
+  "address": "KD Lajong, Kg Lanjong, 89059, Kudat, Sabah",
+  "tel": "088-671019"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Milau",
+  "district": "Kudat",
+  "address": "KD Milau, Kg Milau, 89059, Kudat, Sabah",
+  "tel": "088-896519"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Tambuluran",
+  "district": "Kudat",
+  "address": "KD Tambuluran, Kg Tambuluran, 89059, Kudat, Sabah",
+  "tel": "088-637004"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Indarason",
+  "district": "Kudat",
+  "address": "KK Indarason, Kg Indarason, 89059, Kudat, Sabah",
+  "tel": "089-885110"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Karakit",
+  "district": "Kudat",
+  "address": "KK Karakit, Kampung Karakit, Pulau Banggi, Banggi, Kudat, 89059, Kudat, Sabah",
+  "tel": "088-637014 / 088-896537"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Matunggong",
+  "district": "Kudat",
+  "address": "KK Matunggong, Kg. Matunggong, Matunggong, Kudat, 89059, Kudat, Sabah",
+  "tel": "088-612381"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Nangka Lotong",
+  "district": "Kudat",
+  "address": "KK Nangka Lotong, Kg Lotong, Lotong, Kudat, 89058, Kudat, Sabah",
+  "tel": "088-613702"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Narandang",
+  "district": "Kudat",
+  "address": "KK Narandang, Kampung Garau, Narandang, Kudat, 89059, Kudat, Sabah",
+  "tel": "088-896609"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Sikuati",
+  "district": "Kudat",
+  "address": "KK Sikuati, Pekan Sikuati, Sikuati, Kudat, 89059, Kudat, Sabah",
+  "tel": "088-896524"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Suangpai",
+  "district": "Kudat",
+  "address": "KK Suangpai, Kg Suangpai, 89059, Kudat, Sabah",
+  "tel": "089-845001"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tinangol",
+  "district": "Kudat",
+  "address": "KK Tinangol, Kampung Tinangol, Tinangol, Kudat, 89507, Kudat, Sabah",
+  "tel": "088-896812"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KKIA Kudat",
+  "district": "Kudat",
+  "address": "KKIA Kudat, d/a Pejabat Kesihatan Kawasan Kudat, Beg Berkunci 6, 89059, Kudat, Sabah",
+  "tel": "088-611581 / 088-622118"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Kudat",
+  "district": "Kudat",
+  "address": "KKom Kudat, Lot. No.3, Ground Floor, Kudat Maju Shopping Centre, Jalan Paduka Mat Salleh, 89059 Kudat, 89059, Kudat, Sabah",
+  "tel": "088-611588"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Karamuak",
+  "district": "Tongod",
+  "address": "KD Karamuak, Kampung Karamuak Dalam, Tongod, 90200, Tongod, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Entilibon",
+  "district": "Tongod",
+  "address": "KK Entilibon, Jalan Tongod, Kampung Entilibon, Kinabatangan, 89320, Tongod, Sabah",
+  "tel": "087-721923"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Mengkawagu",
+  "district": "Tongod",
+  "address": "KK Mengkawagu, Jalan Tongod, Kampung Mengkawagu, 89320, Tongod, Sabah",
+  "tel": "088-782830"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Minusoh",
+  "district": "Tongod",
+  "address": "KK Minusoh, Kampung Minusoh, Kinabatangan, 89320, Tongod, Sabah",
+  "tel": "088-782349"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Penangah",
+  "district": "Tongod",
+  "address": "KK Penangah, Pekan Penangah, Penangah, Kinabatangan, 89320, Tongod, Sabah",
+  "tel": "089-561975 (PKK)"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Tongod",
+  "district": "Tongod",
+  "address": "KK Tongod, Pekan Tongod, Tongod, Kinabatangan, 89320, Tongod, Sabah",
+  "tel": "087-721918"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Kiabau",
+  "district": "Telupid",
+  "address": "KD Kiabau, Jalan Telupid, Kampung Kiabau, 90108, Telupid, Sabah",
+  "tel": "-"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Telupid",
+  "district": "Telupid",
+  "address": "KK Telupid, Klinik Kesihatan Telupid, Peti Surat 11, 89300 Telupid, 89300, Telupid, Sabah",
+  "tel": "089-521733"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KD Petagas",
+  "district": "Putatan",
+  "address": "KD Petagas, Kampung Petagas, Jalan Putatan Kota Kinabalu, Petagas, 89500, Putatan, Sabah",
+  "tel": "088-763892"
+ },
+ {
+  "type": "Klinik Kesihatan",
+  "name": "KK Putatan",
+  "district": "Putatan",
+  "address": "KK Putatan, KM 11 Jalan Putatan, Pekan Putatan, Kota Kinabalu, 89500, Putatan, Sabah",
+  "tel": "089-562151 / 089-562259"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Putatan Jaya",
+  "district": "Putatan",
+  "address": "KKom Putatan Jaya, Lot 8,Putatan Jaya, 88200 Kota Kinabalu, 88200, Putatan, Sabah",
+  "tel": "08-8722017"
+ },
+ {
+  "type": "Klinik Komuniti",
+  "name": "KKom Taman Ketiau",
+  "district": "Putatan",
+  "address": "KKom Taman Ketiau, Lot 2, Kedai Tingkat Bawah,Blok A, Taman Ketiau Fasa 1, Tombovo, Putatan, Kota Kinabalu, 88200, Putatan, Sabah",
+  "tel": "088-763328"
+ }
+]
