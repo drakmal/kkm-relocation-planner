@@ -37,7 +37,7 @@ not an official MOH commission.**
 - `app/api/requests/route.ts` — POST submit + GET weekly usage; MOH email gate + 3/week limit + confirmation email (best-effort)
 - `app/api/feedback/route.ts` — POST "can't find my facility" / issue reports -> Supabase `feedback` table (admin reads in Supabase dashboard); light IP/day spam cap
 - `app/lib/` — `originAnchors` (anchor discovery), `holidays`, `rental`, `email`
-- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `add_penang_facilities`, `add_state_facilities` (generic KK reconciler — `"<state key>" [--dry-run]`), `add_kd_from_osm` (best-effort KD top-up from OSM), `add_mukah_sarawak_facilities`, `add_sabah_facilities` (Sabah SKN directory — hospitals+KK+KD), `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder)
+- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `add_penang_facilities`, `add_state_facilities` (generic KK reconciler — `"<state key>" [--dry-run]`), `add_kd_from_osm` (best-effort KD top-up from OSM), `add_mukah_sarawak_facilities`, `add_sabah_facilities` (Sabah SKN directory — hospitals+KK+KD), `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder), `notify_feedback` (feedback -> Telegram)
 - `data/` — `public_holidays_my.json`, `klinik_kesihatan_official.json`, `klinik_kesihatan_missing.json`, `sabah_health_facilities.json` (SKN scrape), `mukah_sarawak_facilities.xlsx`
 - `.github/workflows/` — `daily_tracker.yml` (collection), `create_anchors.yml` (anchor builder), `generate_reports.yml`, `keep_alive.yml`
 
@@ -61,6 +61,7 @@ MOH `@moh.gov.my` email gate · **3 requests/email/week** · **1–5 working day
 | `RESEND_API_KEY` / `RESEND_FROM` / `APP_BASE_URL` | ✅ (dormant) | ✅ (dormant) |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | ⬜ needs Cloudflare Turnstile keys | — |
 | `TURNSTILE_SECRET_KEY` | ⬜ needs Cloudflare Turnstile keys | — |
+| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | — | ⬜ needs Telegram bot for feedback alerts |
 
 GitHub secrets are all set (`gh secret list`). Vercel env is managed in its dashboard.
 
@@ -75,6 +76,7 @@ never a broken form.
 - `create_anchors.yml` — `run_pending_anchors.py` every 10 min; builds Overpass anchors for any non-completed request that has none (moved off the submit path).
 - `generate_reports.yml` — `run_due_reports.py` hourly; generates + (dormant) emails reports whose window ended.
 - `keep_alive.yml` — pings Supabase every 3 days (prevents free-tier pause).
+- `notify_feedback.yml` — `notify_feedback.py` every 15 min; pushes NEW `feedback` rows to Telegram (only when there's un-notified feedback — silent otherwise; stamps `notified_at`). Inert until `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` secrets + `db/005` are set.
 
 ## STATUS: deployed & verified end-to-end (reads, submit+anchors, MOH gate, all 3 Actions succeed).
 
@@ -96,7 +98,7 @@ never a broken form.
 5. **[Feature, DEFERRED by owner]** Activate email: buy any domain (need NOT be moh.gov.my) → verify in Resend → set `RESEND_FROM` to it in Vercel + GitHub. Then confirmation + report emails auto-send. **Owner is not buying a domain for now** — revisit if another project needs one (then item #1's email-OTP option also unblocks). App runs fine on the reference-ID + `/report/[id]` link flow meanwhile.
 6. **[Testing]** Full report pipeline not yet exercised with real collected traffic data (needs a real request run through a weekday collection cycle + `run_due_reports`).
 7. ✅ **[Collection] Done.** Collection window widened to **05:00–12:00 MYT** (`daily_tracker.yml` cron `*/15 21-23,0-3 * * *`); with the 30-min lead this covers leave-home times up to ~12:15. Widen further only if users report leaving home after noon.
-8. ✅ **[Feedback] Built.** "Can't find your facility?" form on `app/page.tsx` -> `app/api/feedback/route.ts` -> Supabase `feedback` table. Owner reads reports in the Supabase Table Editor (no email/domain needed). **ACTION REQUIRED:** run `db/004_add_feedback_table.sql` in the Supabase SQL editor — until then submissions 500 (the form renders fine either way). Light spam guard: 20 reports/IP/day (best-effort, self-disables if `ip_address` column absent).
+8. ✅ **[Feedback] Built + Telegram alerts.** "Can't find your facility?" form sits **beside Box 5** on `app/page.tsx` -> `app/api/feedback/route.ts` -> Supabase `feedback` table (`db/004`, run). Reports also push to **Telegram** via `notify_feedback.yml` (only when new — never messages on empty). **ACTION REQUIRED for alerts:** run `db/005_feedback_notified.sql`, create a Telegram bot (@BotFather) + get your chat id (@userinfobot), and add `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` as GitHub secrets. Until then reports still save; you read them in the Supabase Table Editor. Light spam guard: 20 reports/IP/day.
 
 ## Gotchas
 - Google Geocoding is disabled on the key → use **Nominatim** (postcode query works best for MY).
