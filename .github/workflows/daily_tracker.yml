@@ -2,10 +2,12 @@ name: Commute Traffic Collector
 
 on:
   schedule:
-    # Every 15 min during the morning-commute window: 21:00-01:59 UTC = 05:00-09:59 MYT.
+    # Every 15 min during the morning-commute window: 21:00-03:59 UTC = 05:00-11:59 MYT.
+    # (Widened from 05:00-09:59; the last tick 11:45 MYT + the 30-min collection
+    # lead covers leave-home times up to ~12:15, so late departures still record.)
     # Runs every calendar day; collect_traffic.py skips weekends, Malaysia public
     # holidays, and any request whose leave-home time is not near "now".
-    - cron: '*/15 21-23,0-1 * * *'
+    - cron: '*/15 21-23,0-3 * * *'
   workflow_dispatch:
 
 jobs:
