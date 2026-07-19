@@ -112,6 +112,46 @@ export default function HomePage() {
   const [usage, setUsage] = useState<{ used: number; limit: number; resetAt: string | null } | null>(null);
   const [limitModal, setLimitModal] = useState<{ resetAt: string | null } | null>(null);
 
+  // "Can't find your facility?" feedback -> Supabase (see app/api/feedback).
+  const [fbOpen, setFbOpen] = useState(false);
+  const [fbFacility, setFbFacility] = useState('');
+  const [fbMessage, setFbMessage] = useState('');
+  const [fbEmail, setFbEmail] = useState('');
+  const [fbStatus, setFbStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [fbError, setFbError] = useState<string | null>(null);
+
+  async function submitFeedback(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setFbError(null);
+    if (!fbMessage.trim()) {
+      setFbError('Please describe the issue or the facility you could not find.');
+      return;
+    }
+    setFbStatus('sending');
+    try {
+      const res = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          kind: fbFacility.trim() ? 'missing_facility' : 'issue',
+          facilityQuery: fbFacility.trim() || null,
+          message: fbMessage.trim(),
+          userEmail: fbEmail.trim() || null,
+          pageContext: { selectedTarget: form.targetOfficeName || null },
+        }),
+      });
+      const p = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(p.error || 'Could not send your report. Please try again.');
+      setFbStatus('sent');
+      setFbFacility('');
+      setFbMessage('');
+      setFbEmail('');
+    } catch (err) {
+      setFbStatus('idle');
+      setFbError(err instanceof Error ? err.message : 'Could not send your report.');
+    }
+  }
+
   // Cloudflare Turnstile CAPTCHA. Only rendered when a site key is configured;
   // the server verifies the token (see app/api/requests/route.ts).
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
@@ -412,6 +452,58 @@ export default function HomePage() {
                 <li>• A weekly usage counter is shown; when the free quota is reached the planner pauses.</li>
                 <li>• The service goes offline until the next weekly reset when the free limit is hit.</li>
               </ul>
+            </article>
+            <article className="info-card">
+              <h2>Can&apos;t find your facility?</h2>
+              {fbStatus === 'sent' ? (
+                <p className="success" style={{ margin: 0 }}>
+                  Thanks — your report was sent. We&apos;ll use it to improve the facility list.
+                </p>
+              ) : (
+                <>
+                  <p style={{ marginTop: 0 }}>
+                    Our facility list may be incomplete or slightly off. Tell us what&apos;s missing or wrong and we&apos;ll fix it.
+                  </p>
+                  {fbOpen ? (
+                    <form onSubmit={submitFeedback} className="flex flex-col gap-2">
+                      <label style={{ fontSize: '0.85rem' }}>
+                        Facility name (if missing)
+                        <input
+                          type="text"
+                          placeholder="e.g. Klinik Kesihatan Kampung ..."
+                          value={fbFacility}
+                          onChange={(e) => setFbFacility(e.target.value)}
+                        />
+                      </label>
+                      <label style={{ fontSize: '0.85rem' }}>
+                        Details / issue
+                        <textarea
+                          required
+                          rows={3}
+                          placeholder="What's missing or wrong? Where is it located?"
+                          value={fbMessage}
+                          onChange={(e) => setFbMessage(e.target.value)}
+                        />
+                      </label>
+                      <label style={{ fontSize: '0.85rem' }}>
+                        Your email (optional, only if you want a reply)
+                        <input
+                          type="email"
+                          placeholder="name@moh.gov.my"
+                          value={fbEmail}
+                          onChange={(e) => setFbEmail(e.target.value)}
+                        />
+                      </label>
+                      {fbError ? <p className="error" style={{ margin: 0 }}>{fbError}</p> : null}
+                      <button type="submit" disabled={fbStatus === 'sending'}>
+                        {fbStatus === 'sending' ? 'Sending…' : 'Send report'}
+                      </button>
+                    </form>
+                  ) : (
+                    <button type="button" onClick={() => setFbOpen(true)}>Report a missing or wrong facility</button>
+                  )}
+                </>
+              )}
             </article>
           </div>
 
