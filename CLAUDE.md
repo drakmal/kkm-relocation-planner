@@ -1,0 +1,84 @@
+# KKM Relocation Planner — Project Context
+
+Read this first. It is the handoff/state doc; `docs/DATA.md` has full facility-data detail.
+
+## What this is
+A free web tool for Malaysian Ministry of Health (MOH) staff to evaluate commute
+reliability (real traffic + weather) to a target health facility over a few
+working days, then receive a report recommending the best residential areas to
+live within commuting range — with rental-listing links. **Independent project,
+not an official MOH commission.**
+
+## Live
+- **App:** https://kkm-relocation-planner.vercel.app  (Vercel, auto-deploys on push to `main`)
+- **Repo:** https://github.com/drakmal/kkm-relocation-planner  (public; owner `drakmal`, `gh` CLI is authed)
+- **DB:** Supabase (cloud)
+
+## Tech stack
+- Frontend: **Next.js 14 App Router**, hand-rolled utility CSS + Tailwind
+- Backend/DB: **Supabase** (Postgres)
+- Data collection + reports: **Python** run in **GitHub Actions**
+- Traffic: **Google Distance Matrix** (paid — the main cost) + **Open-Meteo** weather
+- Geocoding: **OSM Nominatim** (⚠️ Google Geocoding is NOT enabled on the key)
+- Report AI: **Groq** (Llama 3.3)
+- Email: **Resend** — currently **dormant** (no verified sending domain). App uses an
+  on-screen **reference ID + `/report/[id]` link** instead (Option B). Email code is
+  left in place best-effort; it auto-activates if a domain is verified later.
+
+## Run locally
+- Dev: `npm run dev`  (⚠️ do NOT run `next build` while dev is running — it corrupts `.next`; stop dev first, or `rm -rf .next` after)
+- Prod build check: `npm run build`
+- Python: `python python_scripts/<name>.py` (auto-loads `.env` + `.env.local`)
+
+## Key files
+- `app/page.tsx` — main form: 5-box facility cascade, OSM map of selected target, date-range tracking period, weekly usage counter, limit-reached modal
+- `app/report/[id]/page.tsx` — status/report page + rental links
+- `app/api/locations/route.ts` — dropdown data (server-side parent filtering; returns `category` + coords)
+- `app/api/requests/route.ts` — POST submit + GET weekly usage; MOH email gate + 3/week limit + confirmation email (best-effort)
+- `app/lib/` — `originAnchors` (anchor discovery), `holidays`, `rental`, `email`
+- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`
+- `data/` — `public_holidays_my.json`, `klinik_kesihatan_official.json`, `klinik_kesihatan_missing.json`
+- `.github/workflows/` — `daily_tracker.yml` (collection), `generate_reports.yml`, `keep_alive.yml`
+
+## Facility data (Supabase `locations`, ~3,119 rows)
+5-box hierarchy, driven by `metadata.category`:
+- Box 1 JKN (tier `state`) → Box 2 Hospital/PKD/PKPD (tier `district`) → Box 3 KK/KKP (tier `clinic`)
+- Box 4 Klinik Desa (tier `clinic`, `klinik_desa`) · Box 5 Others (static MOH HQ, NIH, + Hospital KL as ministry root)
+Sources: official MOH directories (hospitals, KK, KKP) + OSM Overpass, geocoded via Nominatim. See `docs/DATA.md`.
+
+## Cost model & guardrails
+Google Distance Matrix is the **only paid dependency** (~$10/1,000 traffic-aware calls; ~$200/mo free credit ≈ 20k calls). Guardrails already built:
+MOH `@moh.gov.my` email gate · **3 requests/email/week** · **1–5 working days** · skip weekends + MY public holidays · ~120 anchors/request (Overpass, 25 km radius).
+
+## Environment variables
+| Var | Vercel (web app) | GitHub Actions (python) |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SUPABASE_URL` / `_ANON_KEY` | ✅ | — |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | ✅ | ✅ |
+| `GOOGLE_MAPS_API_KEY` | ✅ | ✅ |
+| `GROQ_API_KEY` | — | ✅ |
+| `RESEND_API_KEY` / `RESEND_FROM` / `APP_BASE_URL` | ✅ (dormant) | ✅ (dormant) |
+
+GitHub secrets are all set (`gh secret list`). Vercel env is managed in its dashboard.
+
+## Scheduled jobs (GitHub Actions — all verified running)
+- `daily_tracker.yml` — `collect_traffic.py` every 15 min in 05:00–10:00 MYT; collects per request near its leave-home time; skips weekends/holidays/off-window; once/day dedup.
+- `generate_reports.yml` — `run_due_reports.py` hourly; generates + (dormant) emails reports whose window ended.
+- `keep_alive.yml` — pings Supabase every 3 days (prevents free-tier pause).
+
+## STATUS: deployed & verified end-to-end (reads, submit+anchors, MOH gate, all 3 Actions succeed).
+
+## Pending / next steps (priority order)
+1. **[Security, HIGH]** Email is only *format*-checked — a fake `@moh.gov.my` passes and each fake email gets its own 3/week quota → can run up Google cost. Add **IP-based rate limit** (needs an `ip_address` column migration; cap ~5/IP/week) and/or **Cloudflare Turnstile** CAPTCHA. True email OTP needs a sending domain.
+2. **[Reliability]** Submit calls Overpass inline (~14 s). If it ever times out on Vercel, move anchor creation into a background Action.
+3. **[Data]** ~61 facilities still on approximate (state-centre) coords (no usable postcode/OSM entry).
+4. **[Data]** Only **Perlis + Perak** reconciled exactly vs official directory. Other 14 states could be done the same way: browser-scrape `moh.gov.my/en/health-facilities/health-clinic/<state>`, then an `add_<state>_facilities.py` like `add_perak_facilities.py`.
+5. **[Feature]** Activate email: buy any domain (need NOT be moh.gov.my) → verify in Resend → set `RESEND_FROM` to it in Vercel + GitHub. Then confirmation + report emails auto-send.
+6. **[Testing]** Full report pipeline not yet exercised with real collected traffic data (needs a real request run through a weekday collection cycle + `run_due_reports`).
+7. **[Collection]** Window is 05:00–10:00 MYT; widen the `daily_tracker.yml` cron if users leave home after 10am.
+
+## Gotchas
+- Google Geocoding is disabled on the key → use **Nominatim** (postcode query works best for MY).
+- `moh.gov.my` and `mudah.my` block bots (HTTP 403) → scrape via the in-app **browser** using same-origin `fetch()`.
+- `next build` while `next dev` is running corrupts `.next` (clear it + restart dev).
+- Facility geocoding on public Nominatim is rate-limited — run one geocoding job at a time.
