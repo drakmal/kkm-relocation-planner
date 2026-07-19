@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { createAnchorsForRequest } from '@/app/lib/originAnchors';
 import { workingDaysBetween } from '@/app/lib/holidays';
 import { sendConfirmationEmail } from '@/app/lib/email';
 
@@ -227,22 +226,11 @@ export async function POST(request: Request) {
       }
     }
 
-    // Best-effort: find residential anchors around the target office so daily
-    // traffic collection has somewhere to measure from. The tracking request
-    // is already saved, so a failure here must not fail the whole submission.
-    try {
-      const anchorCount = await createAnchorsForRequest(
-        supabase,
-        data.id,
-        payload.targetOfficeName,
-        payload.targetOfficeTier
-      );
-      if (anchorCount === 0) {
-        console.warn(`[requests] no anchors created for "${payload.targetOfficeName}" (could not resolve coordinates)`);
-      }
-    } catch (anchorError) {
-      console.warn('[requests] anchor creation failed', anchorError);
-    }
+    // Residential anchors (the Overpass call ~14 s) are no longer built inline:
+    // that risked timing out the serverless function. The Create Origin Anchors
+    // Action (.github/workflows/create_anchors.yml -> run_pending_anchors.py)
+    // runs every 10 min and builds anchors for any request that has none yet.
+    // Collection only starts the next morning, so the short delay is harmless.
 
     // Best-effort confirmation email carrying the reference ID (in case the
     // user forgets it). Never block the submission on email delivery.
