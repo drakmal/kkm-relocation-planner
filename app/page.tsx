@@ -453,58 +453,6 @@ export default function HomePage() {
                 <li>• The service goes offline until the next weekly reset when the free limit is hit.</li>
               </ul>
             </article>
-            <article className="info-card">
-              <h2>Can&apos;t find your facility?</h2>
-              {fbStatus === 'sent' ? (
-                <p className="success" style={{ margin: 0 }}>
-                  Thanks — your report was sent. We&apos;ll use it to improve the facility list.
-                </p>
-              ) : (
-                <>
-                  <p style={{ marginTop: 0 }}>
-                    Our facility list may be incomplete or slightly off. Tell us what&apos;s missing or wrong and we&apos;ll fix it.
-                  </p>
-                  {fbOpen ? (
-                    <form onSubmit={submitFeedback} className="flex flex-col gap-2">
-                      <label style={{ fontSize: '0.85rem' }}>
-                        Facility name (if missing)
-                        <input
-                          type="text"
-                          placeholder="e.g. Klinik Kesihatan Kampung ..."
-                          value={fbFacility}
-                          onChange={(e) => setFbFacility(e.target.value)}
-                        />
-                      </label>
-                      <label style={{ fontSize: '0.85rem' }}>
-                        Details / issue
-                        <textarea
-                          required
-                          rows={3}
-                          placeholder="What's missing or wrong? Where is it located?"
-                          value={fbMessage}
-                          onChange={(e) => setFbMessage(e.target.value)}
-                        />
-                      </label>
-                      <label style={{ fontSize: '0.85rem' }}>
-                        Your email (optional, only if you want a reply)
-                        <input
-                          type="email"
-                          placeholder="name@moh.gov.my"
-                          value={fbEmail}
-                          onChange={(e) => setFbEmail(e.target.value)}
-                        />
-                      </label>
-                      {fbError ? <p className="error" style={{ margin: 0 }}>{fbError}</p> : null}
-                      <button type="submit" disabled={fbStatus === 'sending'}>
-                        {fbStatus === 'sending' ? 'Sending…' : 'Send report'}
-                      </button>
-                    </form>
-                  ) : (
-                    <button type="button" onClick={() => setFbOpen(true)}>Report a missing or wrong facility</button>
-                  )}
-                </>
-              )}
-            </article>
           </div>
 
           <form onSubmit={handleSubmit} className="col-span-1 lg:col-span-2 flex flex-col gap-3 pr-2">
@@ -616,6 +564,52 @@ export default function HomePage() {
                   ))}
                 </select>
               </label>
+
+              <div className="feedback-box" style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                {fbStatus === 'sent' ? (
+                  <p className="success" style={{ margin: 0, fontSize: '0.85rem' }}>
+                    Thanks — your report was sent. We&apos;ll use it to improve the facility list.
+                  </p>
+                ) : fbOpen ? (
+                  <form onSubmit={submitFeedback} className="flex flex-col gap-2">
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Can&apos;t find your facility?</span>
+                    <input
+                      type="text"
+                      placeholder="Facility name (if missing)"
+                      value={fbFacility}
+                      onChange={(e) => setFbFacility(e.target.value)}
+                    />
+                    <textarea
+                      required
+                      rows={2}
+                      placeholder="What's missing or wrong? Where is it located?"
+                      value={fbMessage}
+                      onChange={(e) => setFbMessage(e.target.value)}
+                    />
+                    <input
+                      type="email"
+                      placeholder="Your email (optional, for a reply)"
+                      value={fbEmail}
+                      onChange={(e) => setFbEmail(e.target.value)}
+                    />
+                    {fbError ? <p className="error" style={{ margin: 0, fontSize: '0.8rem' }}>{fbError}</p> : null}
+                    <div className="flex gap-2">
+                      <button type="submit" disabled={fbStatus === 'sending'}>
+                        {fbStatus === 'sending' ? 'Sending…' : 'Send report'}
+                      </button>
+                      <button type="button" className="secondary" onClick={() => { setFbOpen(false); setFbError(null); }}>Cancel</button>
+                    </div>
+                  </form>
+                ) : (
+                  <>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>Can&apos;t find your facility?</span>
+                    <span className="muted" style={{ fontSize: '0.8rem' }}>
+                      The list may be incomplete. Tell us what&apos;s missing and we&apos;ll add it.
+                    </span>
+                    <button type="button" onClick={() => setFbOpen(true)}>Report a missing facility</button>
+                  </>
+                )}
+              </div>
             </div>
 
             <div className="selected-office">
