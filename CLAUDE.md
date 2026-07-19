@@ -58,8 +58,16 @@ MOH `@moh.gov.my` email gate · **3 requests/email/week** · **1–5 working day
 | `GOOGLE_MAPS_API_KEY` | ✅ | ✅ |
 | `GROQ_API_KEY` | — | ✅ |
 | `RESEND_API_KEY` / `RESEND_FROM` / `APP_BASE_URL` | ✅ (dormant) | ✅ (dormant) |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | ⬜ needs Cloudflare Turnstile keys | — |
+| `TURNSTILE_SECRET_KEY` | ⬜ needs Cloudflare Turnstile keys | — |
 
 GitHub secrets are all set (`gh secret list`). Vercel env is managed in its dashboard.
+
+**Turnstile CAPTCHA is coded but inert until keys are set.** Create a free Turnstile
+widget at Cloudflare (dash.cloudflare.com → Turnstile), then add both vars in Vercel.
+Client renders the widget only when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is present; server
+verifies only when `TURNSTILE_SECRET_KEY` is present — so missing keys = no CAPTCHA,
+never a broken form.
 
 ## Scheduled jobs (GitHub Actions — all verified running)
 - `daily_tracker.yml` — `collect_traffic.py` every 15 min in 05:00–10:00 MYT; collects per request near its leave-home time; skips weekends/holidays/off-window; once/day dedup.
@@ -69,7 +77,11 @@ GitHub secrets are all set (`gh secret list`). Vercel env is managed in its dash
 ## STATUS: deployed & verified end-to-end (reads, submit+anchors, MOH gate, all 3 Actions succeed).
 
 ## Pending / next steps (priority order)
-1. **[Security, HIGH]** Email is only *format*-checked — a fake `@moh.gov.my` passes and each fake email gets its own 3/week quota → can run up Google cost. Add **IP-based rate limit** (needs an `ip_address` column migration; cap ~5/IP/week) and/or **Cloudflare Turnstile** CAPTCHA. True email OTP needs a sending domain.
+1. **[Security, HIGH]** Email is only *format*-checked — a fake `@moh.gov.my` passes and each fake email gets its own 3/week quota → can run up Google cost.
+   - ✅ **IP-based rate limit implemented** (`app/api/requests/route.ts`, `IP_WEEKLY_LIMIT = 5`). Best-effort: `ip_address` is written via a post-insert update and the gate is skipped if the column is missing, so it deploys safely before migration. **ACTION REQUIRED:** run `db/003_add_ip_rate_limit.sql` in the Supabase SQL editor to add the `ip_address` column + index; the cap is inert until then.
+   - ✅ **IP cap = 5/IP/week** (`IP_WEEKLY_LIMIT = 5`) — a bit above the 3/email cap so a shared office (several colleagues behind one NAT) isn't blocked in normal use.
+   - ✅ **Cloudflare Turnstile CAPTCHA implemented** (client widget in `app/page.tsx`, server verify in `route.ts`). Gated on env keys — inert until `NEXT_PUBLIC_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY` are set in Vercel (see env table). **ACTION REQUIRED:** create a Turnstile widget at Cloudflare and add both keys.
+   - ⬜ Still open: true email OTP (needs a sending domain).
 2. **[Reliability]** Submit calls Overpass inline (~14 s). If it ever times out on Vercel, move anchor creation into a background Action.
 3. **[Data]** ~61 facilities still on approximate (state-centre) coords (no usable postcode/OSM entry).
 4. **[Data]** Only **Perlis + Perak** reconciled exactly vs official directory. Other 14 states could be done the same way: browser-scrape `moh.gov.my/en/health-facilities/health-clinic/<state>`, then an `add_<state>_facilities.py` like `add_perak_facilities.py`.
