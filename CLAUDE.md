@@ -36,7 +36,7 @@ not an official MOH commission.**
 - `app/api/locations/route.ts` — dropdown data (server-side parent filtering; returns `category` + coords)
 - `app/api/requests/route.ts` — POST submit + GET weekly usage; MOH email gate + 3/week limit + confirmation email (best-effort)
 - `app/lib/` — `originAnchors` (anchor discovery), `holidays`, `rental`, `email`
-- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder)
+- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `add_penang_facilities` (state-reconcile template), `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder)
 - `data/` — `public_holidays_my.json`, `klinik_kesihatan_official.json`, `klinik_kesihatan_missing.json`
 - `.github/workflows/` — `daily_tracker.yml` (collection), `create_anchors.yml` (anchor builder), `generate_reports.yml`, `keep_alive.yml`
 
@@ -88,7 +88,7 @@ never a broken form.
    runs `run_pending_anchors.py` every 10 min to build anchors for any request
    that has none. Removes the ~14 s inline Overpass call (Vercel timeout risk).
 3. **[Data]** ~61 facilities still on approximate (state-centre) coords (no usable postcode/OSM entry).
-4. **[Data]** Only **Perlis + Perak** reconciled exactly vs official directory. Other 14 states could be done the same way: browser-scrape `moh.gov.my/en/health-facilities/health-clinic/<state>`, then an `add_<state>_facilities.py` like `add_perak_facilities.py`.
+4. **[Data]** **Perlis + Perak + Pulau Pinang** reconciled vs the official directory. **Key discovery:** the official KK directory for ALL 16 states is already committed at `data/klinik_kesihatan_official.json` (name + address + `in_osm` flag) — **no browser scraping needed for KK**. Use `add_penang_facilities.py` as the **template**: copy it, change `STATE`/`JKN_NAME`/`ORIGIN`, dry-run, then run. It dedupes against the LIVE DB by normalized name, geocodes by postcode, and parents to the nearest PKD. (Penang added just 1 missing KK — OSM coverage was already good; other states will vary.) **Caveat:** that JSON is KK-only — it does NOT include Klinik Desa (KD); Perak's KD came from a fuller manual scrape. Remaining unreconciled: Johor, Kedah, Kelantan, Melaka, N. Sembilan, Pahang, Sabah, Sarawak, Selangor, Terengganu, WP KL, WP Labuan, WP Putrajaya.
 5. **[Feature, DEFERRED by owner]** Activate email: buy any domain (need NOT be moh.gov.my) → verify in Resend → set `RESEND_FROM` to it in Vercel + GitHub. Then confirmation + report emails auto-send. **Owner is not buying a domain for now** — revisit if another project needs one (then item #1's email-OTP option also unblocks). App runs fine on the reference-ID + `/report/[id]` link flow meanwhile.
 6. **[Testing]** Full report pipeline not yet exercised with real collected traffic data (needs a real request run through a weekday collection cycle + `run_due_reports`).
 7. **[Collection]** Window is 05:00–10:00 MYT; widen the `daily_tracker.yml` cron if users leave home after 10am.
