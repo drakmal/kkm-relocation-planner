@@ -584,7 +584,7 @@ export default function HomePage() {
             </div>
 
             <label>
-              Your MOH email
+              MOH email (for access &amp; weekly limit)
               <input
                 type="email"
                 required
@@ -594,6 +594,9 @@ export default function HomePage() {
                 value={form.userEmail}
                 onChange={(e) => setForm((current) => ({ ...current, userEmail: e.target.value }))}
               />
+              <span className="muted" style={{ fontWeight: 400, fontSize: '0.8rem' }}>
+                Used to confirm you&apos;re MOH staff and to count your weekly requests. No promotional emails are sent.
+              </span>
             </label>
 
             {usage ? (
