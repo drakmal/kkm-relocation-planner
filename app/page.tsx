@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import {
   workingDaysBetween,
   holidaysInRange,
@@ -111,6 +111,51 @@ export default function HomePage() {
   const [selectedBoxFiveId, setSelectedBoxFiveId] = useState('');
   const [usage, setUsage] = useState<{ used: number; limit: number; resetAt: string | null } | null>(null);
   const [limitModal, setLimitModal] = useState<{ resetAt: string | null } | null>(null);
+
+  // Cloudflare Turnstile CAPTCHA. Only rendered when a site key is configured;
+  // the server verifies the token (see app/api/requests/route.ts).
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!turnstileSiteKey) return;
+    const SCRIPT_ID = 'cf-turnstile-script';
+
+    function renderWidget() {
+      const turnstile = (window as unknown as { turnstile?: any }).turnstile;
+      if (!turnstile || !turnstileRef.current || turnstileWidgetId.current !== null) return;
+      turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
+        sitekey: turnstileSiteKey,
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(null),
+        'error-callback': () => setTurnstileToken(null),
+      });
+    }
+
+    if (document.getElementById(SCRIPT_ID)) {
+      renderWidget();
+      return;
+    }
+    const script = document.createElement('script');
+    script.id = SCRIPT_ID;
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    script.onload = renderWidget;
+    document.head.appendChild(script);
+  }, [turnstileSiteKey]);
+
+  // Clear the solved token and re-arm the widget so a new challenge is required
+  // for the next submission.
+  function resetTurnstile() {
+    setTurnstileToken(null);
+    const turnstile = (window as unknown as { turnstile?: any }).turnstile;
+    if (turnstile && turnstileWidgetId.current !== null) {
+      turnstile.reset(turnstileWidgetId.current);
+    }
+  }
 
   async function fetchLocations(parentId?: string | null, mode?: string) {
     const params = new URLSearchParams();
@@ -281,6 +326,11 @@ export default function HomePage() {
       return;
     }
 
+    if (turnstileSiteKey && !turnstileToken) {
+      setError('Please complete the "I\'m human" check before submitting.');
+      return;
+    }
+
     const readyAt = formatReadyDateTime(computeReportReady(form.endDate, form.arriveOfficeTime));
 
     try {
@@ -300,11 +350,15 @@ export default function HomePage() {
           returnTime: form.exitHomeTime,
           exitHomeTime: form.exitHomeTime,
           arriveOfficeTime: form.arriveOfficeTime,
+          turnstileToken,
           created_at: new Date().toISOString(),
         }),
       });
 
       const payload = await response.json();
+      // Turnstile tokens are single-use; re-arm the widget for the next attempt
+      // regardless of the outcome.
+      resetTurnstile();
       if (response.status === 429) {
         setLimitModal({ resetAt: payload.resetAt ?? null });
         return;
@@ -351,10 +405,10 @@ export default function HomePage() {
               <p>Your detailed relocation report is generated automatically once the system finishes collecting traffic data for your selected period (1–5 working days). View it any time using the reference ID and link you receive after submitting.</p>
             </article>
             <article className="info-card">
-              <h2>Limitations</h2>
+              <h2>Access &amp; fair use</h2>
               <ul style={{ margin: 0, padding: 0, listStyle: 'none', color: '#4b5f74', lineHeight: 1.5, textAlign: 'left' }}>
                 <li>• Restricted to MOH staff (<strong>moh.gov.my</strong> email).</li>
-                <li>• Maximum <strong>3 requests per email per week</strong>.</li>
+                <li>• Maximum <strong>3 requests per week</strong>.</li>
                 <li>• A weekly usage counter is shown; when the free quota is reached the planner pauses.</li>
                 <li>• The service goes offline until the next weekly reset when the free limit is hit.</li>
               </ul>
@@ -584,7 +638,7 @@ export default function HomePage() {
             </div>
 
             <label>
-              MOH email (for access &amp; weekly limit)
+              MOH email
               <input
                 type="email"
                 required
@@ -605,6 +659,8 @@ export default function HomePage() {
                 {usage.used >= usage.limit && usage.resetAt ? ` · resets ${formatShortDate(usage.resetAt)}` : ''}.
               </p>
             ) : null}
+
+            {turnstileSiteKey ? <div ref={turnstileRef} className="mt-2" /> : null}
 
             <div className="mt-2">
               <button type="submit" className="w-full">Start tracking my commute</button>

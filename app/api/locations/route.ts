@@ -85,8 +85,10 @@ export async function GET(request: Request) {
         .eq('tier', 'ministry').is('parent_location_id', null).limit(5000);
       if (error) return NextResponse.json({ error: error.message }, { status: 500 });
       const staticOther = [
-        { id: 'other-moh-hq', name: 'MOH HQ', tier: 'ministry', parent_id: null, latitude: null, longitude: null, category: 'other' },
-        { id: 'other-nih', name: 'NIH', tier: 'ministry', parent_id: null, latitude: null, longitude: null, category: 'other' },
+        // MOH Headquarters — Kompleks E, Parcel E, Presint 1, Putrajaya.
+        { id: 'other-moh-hq', name: 'MOH HQ', tier: 'ministry', parent_id: null, latitude: 2.9416956, longitude: 101.7070911, category: 'other' },
+        // National Institute of Health (Institut Kesihatan Negara) — Setia Alam, Shah Alam, Selangor.
+        { id: 'other-nih', name: 'NIH', tier: 'ministry', parent_id: null, latitude: 3.1088187, longitude: 101.4506716, category: 'other' },
       ];
       return NextResponse.json(sortLocations([...staticOther, ...(data || []).map(normalize)]));
     }
