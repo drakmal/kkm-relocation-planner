@@ -7,6 +7,8 @@ type TrackingRequest = {
   id: string;
   target_office_name?: string | null;
   target_office_tier?: string | null;
+  arrival_time?: string | null; // arrive-office time
+  return_time?: string | null;  // repurposed: leave-home time
   tracking_duration?: string | null;
   user_email?: string | null;
   created_at?: string | null;
@@ -33,6 +35,11 @@ function formatDate(value?: string | null) {
 function formatDuration(value?: string | null) {
   if (!value) return '—';
   return value.replace(/_/g, ' ');
+}
+
+function formatTime(value?: string | null) {
+  if (!value) return '—';
+  return value.slice(0, 5); // "07:30:00" -> "07:30"
 }
 
 export default function ReportPage({ params }: { params: { id: string } }) {
@@ -98,6 +105,11 @@ export default function ReportPage({ params }: { params: { id: string } }) {
               </span>
               <strong>{request.target_office_name || 'Unknown office'}</strong>
               <span className="muted">Tier: {request.target_office_tier || '—'}</span>
+              {request.return_time || request.arrival_time ? (
+                <span className="muted">
+                  🏠 Leave home {formatTime(request.return_time)} → 🏢 Arrive office {formatTime(request.arrival_time)}
+                </span>
+              ) : null}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
