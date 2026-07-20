@@ -725,17 +725,32 @@ export default function HomePage() {
 
             <label>
               MOH email
-              <input
-                type="email"
-                required
-                placeholder="name@moh.gov.my"
-                pattern="[^@\s]+@([a-zA-Z0-9-]+\.)*moh\.gov\.my"
-                title="Please use your Ministry of Health email (ending in moh.gov.my)."
-                value={form.userEmail}
-                onChange={(e) => setForm((current) => ({ ...current, userEmail: e.target.value }))}
-              />
+              <div style={{ display: 'flex', alignItems: 'stretch' }}>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. a.akmal"
+                  pattern="[A-Za-z0-9._%+\-]+"
+                  title="Enter your MOH email username — the part before @moh.gov.my."
+                  value={form.userEmail.replace(/@moh\.gov\.my$/i, '')}
+                  onChange={(e) => {
+                    const username = e.target.value.replace(/@.*$/, '').trim();
+                    setForm((current) => ({ ...current, userEmail: username ? `${username}@moh.gov.my` : '' }));
+                  }}
+                  style={{ flex: 1, borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
+                />
+                <span
+                  style={{
+                    display: 'flex', alignItems: 'center', padding: '0 0.7rem', whiteSpace: 'nowrap',
+                    background: '#eef2f7', border: '1px solid #cbd5e1', borderLeft: 'none',
+                    borderTopRightRadius: '8px', borderBottomRightRadius: '8px', color: '#4b5f74', fontSize: '0.88rem',
+                  }}
+                >
+                  @moh.gov.my
+                </span>
+              </div>
               <span className="muted" style={{ fontWeight: 400, fontSize: '0.8rem' }}>
-                Used to confirm you&apos;re MOH staff and to count your weekly requests. No promotional emails are sent.
+                Just your username — the <strong>@moh.gov.my</strong> is added automatically. Used to confirm you&apos;re MOH staff and count weekly requests. No promotional emails are sent.
               </span>
             </label>
 
@@ -768,16 +783,26 @@ export default function HomePage() {
           style={{ position: 'fixed', inset: 0, background: 'rgba(15,33,58,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', zIndex: 50 }}
           onClick={() => setLimitModal(null)}
         >
-          <div className="card" style={{ maxWidth: '440px' }} onClick={(e) => e.stopPropagation()}>
-            <h2 style={{ marginTop: 0, color: '#b45309' }}>Free weekly limit reached</h2>
-            <p style={{ color: '#4b5f74', lineHeight: 1.6 }}>
+          <div
+            className="card"
+            style={{ width: '100%', maxWidth: '420px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign: 'left' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 style={{ margin: 0, color: '#b45309', fontSize: '1.15rem' }}>Free weekly limit reached</h2>
+            <p style={{ margin: 0, color: '#4b5f74', lineHeight: 1.55, fontSize: '0.92rem' }}>
               This planner is free for MOH staff, so each user is limited to {WEEKLY_LIMIT} tracking
               requests per week to keep it within our free operating budget. You have used all {WEEKLY_LIMIT}.
             </p>
-            <p style={{ color: '#16324f' }}>
+            <p style={{ margin: 0, color: '#16324f', fontSize: '0.92rem' }}>
               Please try again on <strong>{formatShortDate(limitModal.resetAt)}</strong>, when your weekly quota resets.
             </p>
-            <button type="button" onClick={() => setLimitModal(null)}>Got it</button>
+            <button
+              type="button"
+              onClick={() => setLimitModal(null)}
+              style={{ alignSelf: 'flex-end', width: 'auto', padding: '0.5rem 1.5rem', marginTop: '0.25rem' }}
+            >
+              Got it
+            </button>
           </div>
         </div>
       ) : null}
