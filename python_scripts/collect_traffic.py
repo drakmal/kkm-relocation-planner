@@ -185,6 +185,15 @@ def get_google_maps_travel_time(origin_lat: float, origin_lng: float, destinatio
     if GOOGLE_MAPS_API_KEY == "YOUR_GOOGLE_MAPS_API_KEY":
         raise RuntimeError("Please insert your Google Maps API key in the script or environment.")
 
+    # Distance Matrix rejects a departure_time in the past ("INVALID_REQUEST ...
+    # departure_time is in the past"). `departure_time` is computed once at the
+    # start of the run, but a batch of 100+ anchors takes minutes, so by the time
+    # this call fires the leave-home moment may already be past. Clamp to now (+1
+    # min buffer) so we always get current-traffic instead of a hard failure.
+    now_utc = datetime.now(timezone.utc)
+    if departure_time < now_utc:
+        departure_time = now_utc + timedelta(minutes=1)
+
     url = "https://maps.googleapis.com/maps/api/distancematrix/json"
     travel_mode = "driving"
     params = {

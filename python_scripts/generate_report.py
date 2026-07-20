@@ -117,10 +117,18 @@ def generate_report_with_groq(prompt: str):
     raise RuntimeError("Groq API request failed after retries.")
 
 
-def build_prompt(tracking_request_id: str, formatted_logs: str):
+def build_prompt(tracking_request_id: str, formatted_logs: str, office_name: str = "the target office",
+                 leave_home: str | None = None, arrive_office: str | None = None):
+    context = f"Target office: {office_name}."
+    if leave_home or arrive_office:
+        context += (
+            f" The user plans to leave home at {leave_home or '—'} and arrive at the office by "
+            f"{arrive_office or '—'}. Anchor your departure-time advice to these times."
+        )
     return f"""
 You are a transport analyst for Malaysian health workers.
 Analyze the following commute tracking data for tracking request {tracking_request_id}.
+{context}
 
 Use the travel times and weather conditions to identify which residential areas are most reliable for travel to the target office.
 Factor in weather delays from wind, rain, and temperature where relevant.
@@ -128,7 +136,7 @@ Factor in weather delays from wind, rain, and temperature where relevant.
 Return a clean text report with:
 1. A short summary of the overall pattern.
 2. The top 3 residential areas ranked by reliability.
-3. A recommendation for the exact time the user should leave home for the morning commute.
+3. A recommendation for the exact time the user should leave home to arrive by {arrive_office or 'their target time'}.
 4. Keep the report concise and practical.
 5. Ignore any travel times that appear unrealistic or above 120 minutes.
 
@@ -212,7 +220,7 @@ def process_request(tracking_request_id: str) -> str:
     """Full pipeline for one request: build report, persist, and email it."""
     request_row = (
         supabase.table("tracking_requests")
-        .select("user_email, target_office_name")
+        .select("user_email, target_office_name, arrival_time, return_time")
         .eq("id", tracking_request_id)
         .maybe_single()
         .execute()
@@ -222,7 +230,13 @@ def process_request(tracking_request_id: str) -> str:
     logs = fetch_tracking_logs(tracking_request_id)
     filtered_logs = filter_logs_for_analysis(logs)
     formatted_logs = format_logs_for_prompt(filtered_logs)
-    prompt = build_prompt(tracking_request_id, formatted_logs)
+    prompt = build_prompt(
+        tracking_request_id,
+        formatted_logs,
+        office_name=request_row.get("target_office_name") or "the target office",
+        leave_home=(request_row.get("return_time") or "")[:5] or None,   # return_time = leave-home
+        arrive_office=(request_row.get("arrival_time") or "")[:5] or None,
+    )
     report = generate_report_with_groq(prompt)
 
     save_report_to_file(report, tracking_request_id)
