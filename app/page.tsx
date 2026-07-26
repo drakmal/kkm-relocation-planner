@@ -629,7 +629,7 @@ export default function HomePage() {
                   src={`https://www.openstreetmap.org/export/embed.html?bbox=${form.targetLng - 0.02},${form.targetLat - 0.015},${form.targetLng + 0.02},${form.targetLat + 0.015}&layer=mapnik&marker=${form.targetLat},${form.targetLng}`}
                 />
                 <p className="muted" style={{ fontSize: '0.78rem', margin: '0.3rem 0 0' }}>
-                  📍 {form.targetOfficeName} — {form.targetLat.toFixed(5)}, {form.targetLng.toFixed(5)}
+                  {form.targetOfficeName} — {form.targetLat.toFixed(5)}, {form.targetLng.toFixed(5)}
                 </p>
               </div>
             ) : (
@@ -716,7 +716,7 @@ export default function HomePage() {
 
             <div className="info-card">
               <p>
-                📅 Your report will be ready around{' '}
+                Your report will be ready around{' '}
                 <strong>{formatReadyDateTime(computeReportReady(form.endDate, form.arriveOfficeTime))}</strong>. After you
                 submit, you&apos;ll get a <strong>reference ID</strong> and a link — bookmark it to check tracking status
                 and view the final report any time.

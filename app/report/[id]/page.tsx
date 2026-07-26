@@ -15,6 +15,9 @@ type TrackingRequest = {
   status?: string | null;
   report_text?: string | null;
   report_generated_at?: string | null;
+  // AI-estimated typical monthly rent per area (see generate_report.py) —
+  // NOT live listing data. Keyed by lowercased area name.
+  area_price_estimates?: Record<string, { low: number; high: number }> | null;
 };
 
 type Area = { name: string; lat: number; lng: number };
@@ -107,7 +110,7 @@ export default function ReportPage({ params }: { params: { id: string } }) {
               <span className="muted">Tier: {request.target_office_tier || '—'}</span>
               {request.return_time || request.arrival_time ? (
                 <span className="muted">
-                  🏠 Leave home {formatTime(request.return_time)} → 🏢 Arrive office {formatTime(request.arrival_time)}
+                  Leave home {formatTime(request.return_time)} → Arrive office {formatTime(request.arrival_time)}
                 </span>
               ) : null}
             </div>
@@ -158,15 +161,23 @@ export default function ReportPage({ params }: { params: { id: string } }) {
                   <h2>Rental options near recommended areas</h2>
                   <p>
                     Live rental listings for the residential areas within commuting range of your
-                    target office. Current prices are shown on each portal.
+                    target office. Where shown, the price range is an AI estimate of typical rent
+                    (not a live listing) — check the portal links for current listings.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {data.areas.map((area) => {
                     const links = rentalLinksFor(area.name);
+                    const estimate = request.area_price_estimates?.[area.name.toLowerCase()];
                     return (
                       <div key={area.name} className="info-card">
                         <h2 style={{ fontSize: '0.95rem' }}>{area.name}</h2>
+                        {estimate ? (
+                          <p className="muted" style={{ margin: '0 0 0.3rem', fontSize: '0.85rem' }}>
+                            Est. RM {estimate.low.toLocaleString()}–{estimate.high.toLocaleString()}/mo{' '}
+                            <span style={{ fontStyle: 'italic' }}>(AI estimate, not a live listing)</span>
+                          </p>
+                        ) : null}
                         <p style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
                           <a href={links.mudah} target="_blank" rel="noopener noreferrer" className="underline">
                             Mudah.my &#8599;

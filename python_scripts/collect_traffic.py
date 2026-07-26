@@ -180,7 +180,7 @@ def get_target_office_coordinates(tracking_request: dict):
 
 def get_google_maps_travel_time(origin_lat: float, origin_lng: float, destination_lat: float, destination_lng: float, departure_time: datetime, print_raw_response: bool = False):
     """
-    Call the Google Maps Distance Matrix API and return the travel time in minutes.
+    Call the Google Maps Distance Matrix API. Returns (travel_time_minutes, distance_km).
     """
     if GOOGLE_MAPS_API_KEY == "YOUR_GOOGLE_MAPS_API_KEY":
         raise RuntimeError("Please insert your Google Maps API key in the script or environment.")
@@ -229,7 +229,15 @@ def get_google_maps_travel_time(origin_lat: float, origin_lng: float, destinatio
     if travel_time_minutes > 90:
         raise ValueError(f"Sanity check failed: travel time {travel_time_minutes} minutes exceeds 90-minute limit")
 
-    return travel_time_minutes
+    # Distance Matrix already returns `distance` alongside `duration` at no
+    # extra cost. Capturing it lets generate_report.py derive an average speed
+    # (distance / time) per anchor -- a free proxy for whether a route looks
+    # direct/highway-fed or indirect and congested, without a separate paid
+    # Routes/Directions API call.
+    distance = element.get("distance", {})
+    distance_km = round(distance.get("value", 0) / 1000, 2) if isinstance(distance, dict) else None
+
+    return travel_time_minutes, distance_km
 
 
 def get_weather_for_location(lat: float, lng: float):
@@ -256,7 +264,7 @@ def get_weather_for_location(lat: float, lng: float):
     }
 
 
-def save_daily_logs(tracking_request_id: str, anchor_id: str, log_date: date, travel_time_minutes: int, weather_data: dict):
+def save_daily_logs(tracking_request_id: str, anchor_id: str, log_date: date, travel_time_minutes: int, distance_km: float | None, weather_data: dict):
     """
     Save the traffic and weather summary into the DailyTrafficLogs table.
     """
@@ -268,6 +276,7 @@ def save_daily_logs(tracking_request_id: str, anchor_id: str, log_date: date, tr
         "origin_anchor_id": anchor_id,
         "log_date": log_date.isoformat(),
         "travel_time_minutes": travel_time_minutes,
+        "distance_km": distance_km,
         "weather_temp_c": weather_data.get("temp_c"),
         "weather_condition": weather_data.get("weather_condition"),
         "weather_wind_kmh": weather_data.get("wind_kmh"),
@@ -280,10 +289,19 @@ def save_daily_logs(tracking_request_id: str, anchor_id: str, log_date: date, tr
 
 
 # How close to the leave-home time we collect. This script is meant to run
-# every ~15 min; we collect on the tick that falls in [leave-home - 30 min,
-# leave-home + 10 min], then dedupe so each request is collected once per day.
-COLLECT_LEAD_MAX_MIN = 30   # start up to 30 min before leave-home
-COLLECT_LEAD_MIN_MIN = -10  # ...still allow up to 10 min after (cron jitter)
+# every ~15 min, starting from (leave-home - 30 min) onward.
+#
+# There is deliberately NO upper bound on how late after leave-home a run may
+# still collect. GitHub Actions' `schedule` trigger is well known to be
+# delayed by 30-60+ min under load (sometimes skipping a tick's target minute
+# entirely), so a tight "leave-home + 10 min" cutoff caused entire collection
+# windows to be missed -> 0 logs -> empty reports, even after the
+# departure_time-in-the-past fix below. The daily dedup (already_collected_today)
+# still guarantees at most one data point per request per day, and the
+# workflow's own cron schedule (05:00-12:00 MYT, see daily_tracker.yml) already
+# bounds how late in the day a run can happen, so no separate upper bound is
+# needed here.
+COLLECT_LEAD_MAX_MIN = 30   # start collecting up to 30 min before leave-home
 
 MYT = timezone(timedelta(hours=8))
 
@@ -309,12 +327,12 @@ def collect_for_request(request, now_myt, today):
     logged = 0
     for index, anchor in enumerate(anchors):
         try:
-            travel_time = get_google_maps_travel_time(
+            travel_time, distance_km = get_google_maps_travel_time(
                 anchor["latitude"], anchor["longitude"], target_lat, target_lng,
                 departure_time, print_raw_response=(index == 0),
             )
             weather = get_weather_for_location(anchor["latitude"], anchor["longitude"])
-            save_daily_logs(request["id"], anchor["id"], today, travel_time, weather)
+            save_daily_logs(request["id"], anchor["id"], today, travel_time, distance_km, weather)
             logged += 1
         except Exception as exc:
             print(f"    anchor {anchor['name']}: {exc}")
@@ -337,8 +355,8 @@ if __name__ == "__main__":
         if start and end and not (start <= today <= end):
             continue  # outside this request's tracking window
         mins = minutes_until_leave(now, request.get("return_time"))
-        if mins is None or not (COLLECT_LEAD_MIN_MIN <= mins <= COLLECT_LEAD_MAX_MIN):
-            continue  # not near this user's leave-home time yet
+        if mins is None or mins > COLLECT_LEAD_MAX_MIN:
+            continue  # still too early — not yet near this user's leave-home time
         if already_collected_today(request["id"], today):
             continue  # already have today's data point
 
