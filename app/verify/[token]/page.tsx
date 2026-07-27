@@ -115,13 +115,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
           <>
             <div className="info-card">
               <p>
-                We&apos;ve sent a confirmation link to <strong>{peek.email}</strong> — click below to
-                confirm this is your request and start tracking your commute to{' '}
-                <strong>{peek.officeName}</strong>.
-              </p>
-              <p className="muted" style={{ fontSize: '0.8rem', marginTop: '0.4rem' }}>
-                If you don&apos;t see this arriving from elsewhere, check your spam/junk folder — this is
-                a newly-verified sending domain.
+                Click below to confirm your tracking request to <strong>{peek.officeName}</strong>.
               </p>
             </div>
 
@@ -140,11 +134,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
 
         {confirmed ? (
           <div className="info-card">
-            <p>
-              Tracking started. Your reference ID:{' '}
-              <strong className="break-words">{confirmed.id}</strong>
-              {confirmed.emailed ? ' (also emailed to you).' : '.'}
-            </p>
+            <p>Tracking started. Your report will be emailed to you once it&apos;s ready.</p>
             <a href={`/report/${confirmed.id}`} className="w-full" style={{ display: 'block', marginTop: '0.6rem' }}>
               <button type="button" className="w-full">View tracking status &amp; report</button>
             </a>

@@ -117,10 +117,6 @@ export default function ReportPage({ params }: { params: { id: string } }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="info-card">
-                <h2>Reference ID</h2>
-                <p className="break-words">{request.id}</p>
-              </div>
-              <div className="info-card">
                 <h2>Tracking duration</h2>
                 <p>{formatDuration(request.tracking_duration)}</p>
               </div>
@@ -149,8 +145,7 @@ export default function ReportPage({ params }: { params: { id: string } }) {
               <div className="info-card">
                 <p>
                   Status: <strong>{status}</strong>. Check back after the tracking window
-                  ({formatDuration(request.tracking_duration)}) has elapsed. We collect one data
-                  point per working day.
+                  ({formatDuration(request.tracking_duration)}) has elapsed.
                 </p>
               </div>
             )}

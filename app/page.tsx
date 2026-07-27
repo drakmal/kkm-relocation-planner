@@ -406,8 +406,8 @@ export default function HomePage() {
       }
 
       setStatus(
-        `Check your email — we've sent a confirmation link to ${form.userEmail}. Click it to start ` +
-        `tracking your commute. The link expires in 30 minutes. Once confirmed, your report will be ` +
+        `Check your email — we've sent a link to ${form.userEmail}. Open it to review and confirm ` +
+        `your tracking request. The link expires in 30 minutes. Once confirmed, your report will be ` +
         `ready by ${readyAt}.`,
       );
       // No tracking_requests row (and no quota use) exists until the emailed
