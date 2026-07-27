@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server';
+import { randomBytes } from 'crypto';
 import { createClient } from '@supabase/supabase-js';
 import { workingDaysBetween } from '@/app/lib/holidays';
-import { sendConfirmationEmail } from '@/app/lib/email';
+import { sendVerificationEmail } from '@/app/lib/email';
+
+const VERIFICATION_EXPIRY_MINUTES = 30;
 
 const MAX_WORKING_DAYS = 5;
 
@@ -26,14 +29,14 @@ function isMohEmail(email: string): boolean {
   return domain === ALLOWED_EMAIL_DOMAIN || domain.endsWith('.' + ALLOWED_EMAIL_DOMAIN);
 }
 
-const WEEKLY_LIMIT = 3;
+export const WEEKLY_LIMIT = 3;
 
 // Per-IP cap. The email gate only *format*-checks the address, so a fake
 // @moh.gov.my passes and each fake email gets its own 3/week quota. Capping by
 // source IP bounds paid Distance Matrix usage regardless of how many emails an
 // abuser invents. Set a bit above the email cap so a small shared office (a few
 // colleagues behind one NAT) is unlikely to trip it in normal use.
-const IP_WEEKLY_LIMIT = 5;
+export const IP_WEEKLY_LIMIT = 5;
 
 // Cloudflare Turnstile CAPTCHA. Blocks scripted abuse that would otherwise
 // invent many @moh.gov.my emails to run up paid Distance Matrix usage. Gated on
@@ -77,7 +80,7 @@ function getClientIp(request: Request): string | null {
 // Requests made from this IP in the rolling 7-day window. Returns null if the
 // lookup fails (e.g. the ip_address column has not been migrated yet), which
 // the caller treats as "IP gate disabled" so submissions still work.
-async function ipWeeklyUsage(ip: string): Promise<{ used: number; resetAt: string | null } | null> {
+export async function ipWeeklyUsage(ip: string): Promise<{ used: number; resetAt: string | null } | null> {
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   const { data, error } = await supabase!
     .from('tracking_requests')
@@ -95,7 +98,7 @@ async function ipWeeklyUsage(ip: string): Promise<{ used: number; resetAt: strin
 
 // Requests made by this email in the rolling 7-day window, plus when the quota
 // resets (7 days after the oldest request in the window).
-async function weeklyUsage(email: string): Promise<{ used: number; limit: number; resetAt: string | null }> {
+export async function weeklyUsage(email: string): Promise<{ used: number; limit: number; resetAt: string | null }> {
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   const { data } = await supabase!
     .from('tracking_requests')
@@ -196,57 +199,63 @@ export async function POST(request: Request) {
       }
     }
 
-    const { data, error } = await supabase.from('tracking_requests').insert([
-      {
-        target_office_tier: payload.targetOfficeTier,
-        target_office_name: payload.targetOfficeName,
-        arrival_time: payload.arrivalTime,
-        return_time: payload.returnTime,
-        travel_mode: payload.travelMode,
-        tracking_duration: payload.trackingDuration,
-        user_email: email,
-        created_at: payload.created_at,
-      },
-    ]).select().single();
+    // Nothing is written to tracking_requests yet: the submission only proves
+    // the request came from *a* @moh.gov.my-shaped address, not that the
+    // submitter owns that inbox. A pending_verifications row + magic-link
+    // email closes that gap; only confirming the link (POST
+    // /api/verify/[token]) creates the real tracking_requests row and counts
+    // against quota. Keeping this out of tracking_requests means the
+    // background jobs (collect_traffic.py, run_pending_anchors.py,
+    // run_due_reports.py — all of which treat any non-'completed' status as
+    // "still needs processing") never see, and never spend paid Distance
+    // Matrix calls on, an unconfirmed submission.
+    const token = randomBytes(32).toString('hex');
+    const expiresAt = new Date(Date.now() + VERIFICATION_EXPIRY_MINUTES * 60 * 1000).toISOString();
+    const pendingPayload = { ...payload, userEmail: email };
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    const { data: pending, error: pendingError } = await supabase
+      .from('pending_verifications')
+      .insert([
+        {
+          token,
+          email,
+          ip_address: clientIp,
+          payload: pendingPayload,
+          expires_at: expiresAt,
+        },
+      ])
+      .select()
+      .single();
+
+    if (pendingError) {
+      return NextResponse.json({ error: pendingError.message }, { status: 500 });
     }
 
-    // Best-effort: record the source IP for the per-IP weekly cap. Done as a
-    // separate update (not part of the insert above) so the submission still
-    // succeeds if the ip_address column has not been migrated yet.
-    if (clientIp) {
-      const { error: ipError } = await supabase
-        .from('tracking_requests')
-        .update({ ip_address: clientIp })
-        .eq('id', data.id);
-      if (ipError) {
-        console.warn('[requests] ip_address write failed (run db/003_add_ip_rate_limit.sql?)', ipError.message);
-      }
-    }
-
-    // Residential anchors (the Overpass call ~14 s) are no longer built inline:
-    // that risked timing out the serverless function. The Create Origin Anchors
-    // Action (.github/workflows/create_anchors.yml -> run_pending_anchors.py)
-    // runs every 10 min and builds anchors for any request that has none yet.
-    // Collection only starts the next morning, so the short delay is harmless.
-
-    // Best-effort confirmation email carrying the reference ID (in case the
-    // user forgets it). Never block the submission on email delivery.
     let emailed = false;
     try {
-      emailed = await sendConfirmationEmail({
+      emailed = await sendVerificationEmail({
         to: email,
-        refId: data.id,
+        token,
         officeName: payload.targetOfficeName || 'your target office',
-        reportReadyText: payload.reportReadyText,
+        expiresMinutes: VERIFICATION_EXPIRY_MINUTES,
       });
     } catch (mailError) {
-      console.warn('[requests] confirmation email failed', mailError);
+      console.warn('[requests] verification email failed', mailError);
     }
 
-    return NextResponse.json({ id: data.id, emailed, message: 'Tracking request saved' }, { status: 201 });
+    if (!emailed) {
+      // Unlike the old flow, there is no in-page reference-ID fallback here —
+      // confirming is the *only* path into tracking_requests, so a failed
+      // send must not report success. Clean up the now-unconfirmable row
+      // rather than leaving it to expire untouched.
+      await supabase.from('pending_verifications').delete().eq('id', pending.id);
+      return NextResponse.json(
+        { error: 'Unable to send the confirmation email. Please try again in a few minutes.' },
+        { status: 502 },
+      );
+    }
+
+    return NextResponse.json({ pending: true, email, message: 'Confirmation email sent' }, { status: 201 });
   } catch (error) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }

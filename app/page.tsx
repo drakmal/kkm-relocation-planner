@@ -96,7 +96,6 @@ function formatShortDate(value?: string | null): string {
 export default function HomePage() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<string | null>(null);
-  const [savedRequestId, setSavedRequestId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loadingLocations, setLoadingLocations] = useState(false);
   const [boxOneOptions, setBoxOneOptions] = useState<LocationOption[]>([]);
@@ -353,7 +352,6 @@ export default function HomePage() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus(null);
-    setSavedRequestId(null);
     setError(null);
 
     const workingDays = workingDaysBetween(form.startDate, form.endDate);
@@ -408,16 +406,20 @@ export default function HomePage() {
       }
 
       setStatus(
-        payload.emailed
-          ? `Request received — your reference ID (${payload.id}) has been emailed to ${form.userEmail}. Your report will be ready by ${readyAt}.`
-          : `Request received! Save your reference ID: ${payload.id}. Your report will be ready by ${readyAt} — open it any time with the button below (bookmark it).`,
+        `Check your email — we've sent a confirmation link to ${form.userEmail}. Click it to start ` +
+        `tracking your commute. The link expires in 30 minutes. Once confirmed, your report will be ` +
+        `ready by ${readyAt}.`,
       );
-      setSavedRequestId(payload.id);
-      setUsage((current) => (current ? { ...current, used: current.used + 1 } : current));
+      // No tracking_requests row (and no quota use) exists until the emailed
+      // link is confirmed — see app/api/verify/[token]/route.ts — so `usage`
+      // is intentionally left untouched here; the debounced GET effect above
+      // will reflect the real count once a link is actually confirmed.
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unexpected error');
     }
   }
+
+  const quotaReached = usage != null && usage.used >= usage.limit;
 
   return (
     <main className="min-h-screen w-full p-4">
@@ -431,31 +433,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full mt-2">
-          <div className="col-span-1 flex flex-col gap-3">
-            <article className="info-card">
-              <h2>How it works</h2>
-              <p>The tool automatically collects real-time traffic and weather data on working days, continuing until the end of the tracking period you set.</p>
-            </article>
-            <article className="info-card">
-              <h2>What to do</h2>
-              <p>Select the target office hierarchy, add your commute times, and submit the request for analysis.</p>
-            </article>
-            <article className="info-card">
-              <h2>What will happen next</h2>
-              <p>Your detailed relocation report is generated automatically once the system finishes collecting traffic data for your selected period (1–5 working days). View it any time using the reference ID and link you receive after submitting.</p>
-            </article>
-            <article className="info-card">
-              <h2>Access &amp; fair use</h2>
-              <ul style={{ margin: 0, padding: 0, listStyle: 'none', color: '#4b5f74', lineHeight: 1.5, textAlign: 'left' }}>
-                <li>• Restricted to MOH staff (<strong>moh.gov.my</strong> email).</li>
-                <li>• Maximum <strong>3 requests per week</strong>.</li>
-                <li>• A weekly usage counter is shown; when the free quota is reached the planner pauses.</li>
-                <li>• The service goes offline until the next weekly reset when the free limit is hit.</li>
-              </ul>
-            </article>
-          </div>
-
-          <form onSubmit={handleSubmit} className="col-span-1 lg:col-span-2 flex flex-col gap-3 pr-2">
+          <form onSubmit={handleSubmit} className="col-span-1 lg:col-span-2 lg:order-2 flex flex-col gap-3 pr-2">
             <div className="section-heading">
               <h2>Target office</h2>
               <p>Select the most relevant office level for your relocation planning.</p>
@@ -755,7 +733,7 @@ export default function HomePage() {
             </label>
 
             {usage ? (
-              <p className="muted" style={{ fontSize: '0.85rem', margin: 0 }}>
+              <p className={quotaReached ? 'error' : 'muted'} style={{ fontSize: '0.85rem', margin: 0 }}>
                 You have used <strong>{usage.used}</strong> of {usage.limit} requests this week
                 {usage.used >= usage.limit && usage.resetAt ? ` · resets ${formatShortDate(usage.resetAt)}` : ''}.
               </p>
@@ -764,17 +742,38 @@ export default function HomePage() {
             {turnstileSiteKey ? <div ref={turnstileRef} className="mt-2" /> : null}
 
             <div className="mt-2">
-              <button type="submit" className="w-full">Start tracking my commute</button>
+              <button type="submit" className="w-full" disabled={quotaReached}>
+                {quotaReached ? `Weekly limit reached — resets ${formatShortDate(usage?.resetAt)}` : 'Start tracking my commute'}
+              </button>
             </div>
 
             {status ? <p className="success">{status}</p> : null}
-            {savedRequestId ? (
-              <a href={`/report/${savedRequestId}`} className="w-full">
-                <button type="button" className="w-full">View tracking status &amp; report</button>
-              </a>
-            ) : null}
             {error ? <p className="error">{error}</p> : null}
           </form>
+
+          <div className="col-span-1 lg:order-1 flex flex-col gap-3">
+            <article className="info-card">
+              <h2>How it works</h2>
+              <p>The tool automatically collects real-time traffic and weather data on working days, continuing until the end of the tracking period you set.</p>
+            </article>
+            <article className="info-card">
+              <h2>What to do</h2>
+              <p>Select the target office hierarchy, add your commute times, and submit the request for analysis.</p>
+            </article>
+            <article className="info-card">
+              <h2>What will happen next</h2>
+              <p>Your detailed relocation report is generated automatically once the system finishes collecting traffic data for your selected period (1–5 working days). View it any time using the reference ID and link you receive after submitting.</p>
+            </article>
+            <article className="info-card">
+              <h2>Access &amp; fair use</h2>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', color: '#4b5f74', lineHeight: 1.5, textAlign: 'left' }}>
+                <li>• Restricted to MOH staff (<strong>moh.gov.my</strong> email).</li>
+                <li>• Maximum <strong>3 requests per week</strong>.</li>
+                <li>• A weekly usage counter is shown; when the free quota is reached the planner pauses.</li>
+                <li>• The service goes offline until the next weekly reset when the free limit is hit.</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 

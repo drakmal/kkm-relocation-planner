@@ -59,3 +59,52 @@ export async function sendConfirmationEmail(opts: {
     return false;
   }
 }
+
+/** Magic-link email sent right after submission, before any tracking_requests
+ *  row exists — proves the submitter owns the @moh.gov.my inbox. The link
+ *  only becomes a real tracking request once clicked (see
+ *  app/api/verify/[token]/route.ts). No-op (returns false) when
+ *  RESEND_API_KEY is unset, same as sendConfirmationEmail. */
+export async function sendVerificationEmail(opts: {
+  to: string;
+  token: string;
+  officeName: string;
+  expiresMinutes: number;
+}): Promise<boolean> {
+  if (!RESEND_API_KEY) return false;
+
+  const url = APP_BASE_URL ? `${APP_BASE_URL}/verify/${opts.token}` : null;
+  if (!url) return false;
+
+  const html =
+    '<div style="font-family:Segoe UI,Arial,sans-serif;color:#16324f;max-width:600px">' +
+    '<h2 style="color:#0f4c92">Confirm your tracking request</h2>' +
+    `<p>Target office: <strong>${escapeHtml(opts.officeName)}</strong></p>` +
+    '<p>Click below to confirm this is your request and start tracking your commute:</p>' +
+    `<p><a href="${url}" style="display:inline-block;background:#0f4c92;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600">Confirm and start tracking</a></p>` +
+    `<p style="color:#60748a;font-size:13px">This link expires in ${opts.expiresMinutes} minutes. If you didn't request this, you can ignore this email.</p>` +
+    '<p style="color:#60748a;font-size:13px">Sent by the KKM Relocation Planner (free tool for MOH staff).</p>' +
+    '</div>';
+
+  const text =
+    `Confirm your tracking request.\nTarget office: ${opts.officeName}\n` +
+    `Confirm here (expires in ${opts.expiresMinutes} minutes): ${url}\n` +
+    `If you didn't request this, you can ignore this email.\n`;
+
+  try {
+    const resp = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: RESEND_FROM,
+        to: [opts.to],
+        subject: 'Confirm your KKM Relocation Planner tracking request',
+        html,
+        text,
+      }),
+    });
+    return resp.ok;
+  } catch {
+    return false;
+  }
+}
