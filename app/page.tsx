@@ -729,7 +729,7 @@ export default function HomePage() {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. a.akmal"
+                  placeholder=""
                   pattern="[A-Za-z0-9._%+\-]+"
                   title="Enter your MOH email username — the part before @moh.gov.my."
                   value={form.userEmail.replace(/@moh\.gov\.my$/i, '')}
