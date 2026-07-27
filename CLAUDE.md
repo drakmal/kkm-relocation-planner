@@ -24,10 +24,13 @@ not an official MOH commission.**
 - Traffic: **Google Distance Matrix** (paid — the main cost) + **Open-Meteo** weather
 - Geocoding: **OSM Nominatim** (⚠️ Google Geocoding is NOT enabled on the key)
 - Report AI: **Groq** (Llama 3.3)
-- Email: **Resend** — keys/domain configured in Vercel + GitHub secrets as of 2026-07-27,
-  but an actual live send hasn't been re-verified yet (see pending item 5). App still
-  falls back to an on-screen **reference ID + `/report/[id]` link** (Option B) meanwhile;
-  a stricter hard-fail magic-link flow is built but not yet committed (see item 1).
+- Email: **Resend**, on the `drakmal.com` domain (DKIM/SPF/DMARC records added at Porkbun,
+  domain verified in Resend 2026-07-27). Confirmed live end-to-end that day via direct
+  Resend API test sends. Submission now goes through a **hard-fail magic-link flow**:
+  `POST /api/requests` creates a `pending_verifications` row and emails a link; only
+  clicking it (`POST /api/verify/[token]`) creates the real `tracking_requests` row and
+  spends quota. If the verification email can't be sent, the submission is rejected outright
+  — no reference-ID fallback (see item 1).
 
 ## Run locally
 - Dev: `npm run dev`  (⚠️ do NOT run `next build` while dev is running — it corrupts `.next`; stop dev first, or `rm -rf .next` after)
@@ -35,15 +38,17 @@ not an official MOH commission.**
 - Python: `python python_scripts/<name>.py` (auto-loads `.env` + `.env.local`)
 
 ## Key files
-- `app/page.tsx` — main form: 5-box facility cascade, OSM map of selected target, date-range tracking period, weekly usage counter, limit-reached modal
-- `app/report/[id]/page.tsx` — status/report page + rental links
+- `app/page.tsx` — main form: 5-box facility cascade, OSM map of selected target, date-range tracking period, weekly usage counter, limit-reached modal. Submit button: "Request real-time traffic tracking".
+- `app/report/[id]/page.tsx` — status/report page + rental links (no reference-ID card — not needed since report delivery is by email)
 - `app/api/locations/route.ts` — dropdown data (server-side parent filtering; returns `category` + coords)
-- `app/api/requests/route.ts` — POST submit + GET weekly usage; MOH email gate + 3/week limit + confirmation email (best-effort)
+- `app/api/requests/route.ts` — POST submit + GET weekly usage; MOH email gate + 3/week limit + Turnstile CAPTCHA + IP cap. POST no longer writes `tracking_requests` directly — it creates a `pending_verifications` row and emails a magic link (see below).
+- `app/api/verify/[token]/route.ts` — GET (safe, non-mutating peek — safe for email-scanner pre-fetch) + POST (the actual confirm: atomically claims the pending row, re-checks quota, creates the real `tracking_requests` row, sends the confirmation email, returns `reportReadyText`)
+- `app/verify/[token]/page.tsx` — interstitial page a magic-link email lands on; shows a "Confirm your tracking request" button that fires the POST above (the email's own link/button never triggers the request itself — see Gotchas)
 - `app/api/feedback/route.ts` — POST "can't find my facility" / issue reports -> Supabase `feedback` table (admin reads in Supabase dashboard); light IP/day spam cap
-- `app/lib/` — `originAnchors` (anchor discovery), `holidays`, `rental`, `email`
-- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `add_penang_facilities`, `add_state_facilities` (generic KK reconciler — `"<state key>" [--dry-run]`), `add_kd_from_osm` (best-effort KD top-up from OSM), `add_mukah_sarawak_facilities`, `add_sabah_facilities` (Sabah SKN directory — hospitals+KK+KD), `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder), `notify_feedback` (feedback -> Telegram)
+- `app/lib/` — `originAnchors` (anchor discovery), `holidays`, `rental`, `email` (`sendVerificationEmail` = magic link, sent by `api/requests`; `sendConfirmationEmail` = post-confirm email, sent by `api/verify/[token]` and by `generate_report.py`)
+- `python_scripts/` — seeders (`seed_*`, `add_perak_facilities`, `add_penang_facilities`, `add_state_facilities` (generic KK reconciler — `"<state key>" [--dry-run]`), `add_kd_from_osm` (best-effort KD top-up from OSM), `add_mukah_sarawak_facilities`, `add_sabah_facilities` (Sabah SKN directory — hospitals+KK+KD), `reconcile_perlis`, `refine_coords*`), `collect_traffic`, `run_due_reports`, `generate_report`, `find_anchors`, `run_pending_anchors` (background anchor builder), `notify_feedback` (feedback -> Telegram), `cleanup_pending_verifications` (daily sweep of expired, unconfirmed magic-link rows)
 - `data/` — `public_holidays_my.json`, `klinik_kesihatan_official.json`, `klinik_kesihatan_missing.json`, `sabah_health_facilities.json` (SKN scrape), `mukah_sarawak_facilities.xlsx`
-- `.github/workflows/` — `daily_tracker.yml` (collection), `create_anchors.yml` (anchor builder), `generate_reports.yml`, `keep_alive.yml`
+- `.github/workflows/` — `daily_tracker.yml` (collection), `create_anchors.yml` (anchor builder), `generate_reports.yml`, `keep_alive.yml`, `notify_feedback.yml` (Telegram alerts), `cleanup_pending_verifications.yml` (daily, expired magic-link cleanup)
 
 ## Facility data (Supabase `locations`, ~3,400 rows)
 5-box hierarchy, driven by `metadata.category`:
@@ -62,35 +67,49 @@ MOH `@moh.gov.my` email gate · **3 requests/email/week** · **1–5 working day
 | `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | ✅ | ✅ |
 | `GOOGLE_MAPS_API_KEY` | ✅ | ✅ |
 | `GROQ_API_KEY` | — | ✅ |
-| `RESEND_API_KEY` / `RESEND_FROM` / `APP_BASE_URL` | ✅ set (domain-verified send still unconfirmed — see item 5) | ✅ set |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | ✅ set | — |
-| `TURNSTILE_SECRET_KEY` | ✅ set | — |
-| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | — | ✅ set (still needs `db/005_feedback_notified.sql` run — see item 8) |
+| `RESEND_API_KEY` / `RESEND_FROM` / `APP_BASE_URL` | ✅ set + functionally verified 2026-07-27 | ✅ set |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | ✅ set + functionally verified 2026-07-27 | — |
+| `TURNSTILE_SECRET_KEY` | ✅ set + functionally verified 2026-07-27 | — |
+| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | — | ✅ set, `db/005` run — alerts live |
 
 GitHub secrets are all set (`gh secret list`). Vercel env confirmed to have the same set (owner-confirmed 2026-07-27).
 
-**Turnstile CAPTCHA is coded and keys are set in Vercel** — should be live. Client
-renders the widget only when `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is present; server
-verifies only when `TURNSTILE_SECRET_KEY` is present. Not yet functionally re-verified
-end-to-end on the live form since keys were added — worth a quick check.
+**Turnstile CAPTCHA is coded, keys are set, and it's confirmed working end-to-end**
+(2026-07-27): the client bundle has the site key baked in and loads the widget script;
+a direct POST to the live `/api/requests` with no token correctly 400s with a CAPTCHA
+error, confirming server-side verification is active.
+
+**Resend email is confirmed working end-to-end** (2026-07-27), after fixing three
+separate issues found along the way — worth knowing if email trouble resurfaces:
+1. Local `.env`'s `RESEND_FROM` had a copy-paste bug (`RESEND_FROM=RESEND_FROM=...`, still
+   pointing at the `resend.dev` sandbox) and `APP_BASE_URL` was empty — fixed to
+   `noreply@drakmal.com` / `https://relocate.drakmal.com` in both `.env` and Vercel.
+2. `drakmal.com` had no Resend DNS records in Porkbun (DKIM/SPF/DMARC) — added, then
+   verified in Resend's dashboard.
+3. Even after that, sends kept 422ing with "The domain is invalid" for a few more
+   minutes — turned out to be DNS/verification propagation lag on Resend's side, not a
+   real config problem; retrying shortly after resolved it. Both the original
+   "Onboarding" API key and a newer "relocate" (Full access) key work equally once the
+   domain is verified — currently using the "relocate" key everywhere for a cleaner name.
 
 ## Scheduled jobs (GitHub Actions — all verified running)
 - `daily_tracker.yml` — `collect_traffic.py` every 15 min in 05:00–10:00 MYT; collects per request near its leave-home time; skips weekends/holidays/off-window; once/day dedup.
 - `create_anchors.yml` — `run_pending_anchors.py` every 10 min; builds Overpass anchors for any non-completed request that has none (moved off the submit path).
-- `generate_reports.yml` — `run_due_reports.py` hourly; generates + (dormant) emails reports whose window ended.
+- `generate_reports.yml` — `run_due_reports.py` hourly; generates + emails reports whose window ended (email live, see item 5).
 - `keep_alive.yml` — pings Supabase every 3 days (prevents free-tier pause).
-- `notify_feedback.yml` — `notify_feedback.py` every 15 min; pushes NEW `feedback` rows to Telegram (only when there's un-notified feedback — silent otherwise; stamps `notified_at`). Inert until `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` secrets + `db/005` are set.
+- `notify_feedback.yml` — `notify_feedback.py` every 15 min; pushes NEW `feedback` rows to Telegram (only when there's un-notified feedback — silent otherwise; stamps `notified_at`). Live (see item 8).
+- `cleanup_pending_verifications.yml` — `cleanup_pending_verifications.py` daily; deletes expired, unconfirmed magic-link rows (confirmed ones are deleted immediately on confirm instead).
 
-## STATUS: deployed & verified end-to-end (reads, submit+anchors, MOH gate, all 3 Actions succeed).
+## STATUS: deployed & verified end-to-end (reads, submit+anchors, MOH gate, all 3 Actions succeed,
+magic-link email verification live, Turnstile + Resend functionally confirmed working).
 
 ## Pending / next steps (priority order)
 0a. ✅ **[Done] Emoji cleanup.** All UI emojis removed (`app/report/[id]/page.tsx`, `app/page.tsx`) — plain text/arrows only now. Telegram message emoji (🔔 in `notify_feedback.py`) is not web UI — left as-is. **Owner does not want emojis in the UI — don't add any going forward.**
 0. ✅ **[Done, 2026-07-27] Shorten the app URL.** Owner bought `drakmal.com` (Porkbun) and connected it to Vercel as `relocate.drakmal.com` (Production); DNS via Porkbun (CNAME `relocate` → Vercel). `APP_BASE_URL` + Turnstile hostname allowlist updated to match in Vercel, GitHub secrets, and Cloudflare. Do NOT share the `-git-main-…vercel.app` URL — it's login-gated + not Turnstile-allowlisted.
-1. **[Security, HIGH]** Email is only *format*-checked — a fake `@moh.gov.my` passes and each fake email gets its own 3/week quota → can run up Google cost.
-   - ✅ **IP-based rate limit implemented** (`app/api/requests/route.ts`, `IP_WEEKLY_LIMIT = 5`). Best-effort: `ip_address` is written via a post-insert update and the gate is skipped if the column is missing, so it deploys safely before migration. **ACTION REQUIRED:** run `db/003_add_ip_rate_limit.sql` in the Supabase SQL editor to add the `ip_address` column + index; the cap is inert until then.
-   - ✅ **IP cap = 5/IP/week** (`IP_WEEKLY_LIMIT = 5`) — a bit above the 3/email cap so a shared office (several colleagues behind one NAT) isn't blocked in normal use.
-   - ✅ **Cloudflare Turnstile CAPTCHA implemented and keys set in Vercel** (client widget in `app/page.tsx`, server verify in `route.ts`). Not yet functionally re-verified live since the keys were added — quick check pending.
-   - ⏳ **True email OTP / magic-link verification — built, not yet committed.** A full pending-verification flow sits uncommitted in the working tree (`db/008_add_pending_verifications.sql`, `app/api/verify/[token]/route.ts`, `app/verify/[token]/page.tsx`, `app/lib/email.ts`'s `sendVerificationEmail`, and `app/api/requests/route.ts` now creates a `pending_verifications` row + emails a confirm link instead of writing `tracking_requests` directly). Decision made: keep it **hard-fail** — if the verification email can't be sent, the submission is rejected (no reference-ID fallback), since a submission without a proven inbox shouldn't count. Blocked on running `db/008` first, then committing.
+1. ✅ **[Security, HIGH] Done, 2026-07-27.** Email is only *format*-checked by itself — a fake `@moh.gov.my` would otherwise pass and get its own 3/week quota → could run up Google cost. Three layers now all live:
+   - ✅ **IP-based rate limit** (`app/api/requests/route.ts`, `IP_WEEKLY_LIMIT = 5`). `db/003_add_ip_rate_limit.sql` is applied — the `ip_address` column exists and the cap is active.
+   - ✅ **Cloudflare Turnstile CAPTCHA** — coded, keys set, and functionally confirmed working (see env-var section above).
+   - ✅ **True email verification (magic-link), committed and deployed.** `POST /api/requests` no longer writes `tracking_requests` directly — it creates a `pending_verifications` row (`db/008`, applied) and emails a link; only clicking it (`POST /api/verify/[token]`) creates the real row and spends quota. Kept **hard-fail** by design: if the verification email can't be sent, the submission is rejected outright, since an unconfirmed inbox shouldn't count. Expired, unconfirmed rows (30 min TTL) are swept daily by `cleanup_pending_verifications.py`.
 2. ✅ **[Reliability] Done.** Anchor creation moved out of the submit path into a
    background Action. Submit now just saves the request; `create_anchors.yml`
    runs `run_pending_anchors.py` every 10 min to build anchors for any request
@@ -99,19 +118,31 @@ end-to-end on the live form since keys were added — worth a quick check.
 4. ✅ **[Data] KK reconciliation DONE for all 16 states** vs the official directory (`data/klinik_kesihatan_official.json`, already committed — **no scraping needed**; the MOH site's old scrape URL now 404s). Tool: **`add_state_facilities.py "<state key>" [--dry-run]`** — dedupes against the LIVE DB by a canonicalized name (handles Ayer/Air, Seri/Sri, Sg/Sungei, and KK/Klinik/KK1M/KD prefixes; excludes dental/lab rows), geocodes by postcode with a town fallback, parents to nearest PKD. Batch run added **14 KKs** across Kedah/Kelantan/Melaka/Sarawak/Selangor/Terengganu/WP KL/Pulau Pinang; the rest were already fully covered. Notes: `SKIP` set holds verified same-place duplicates the official list names without a locality suffix (e.g. Selangor "KK Batu 9" == "…Batu 9, Cheras"); one town-fallback miss (KK Paloh) was manually corrected to Belawai. **Klinik Desa (KD):** no official KD directory exists anywhere we can reach (MOH site gone; the committed JSON is KK-only), so KD can't be fully reconciled like KK. `add_kd_from_osm.py` does a best-effort OSM top-up (filters "Opposite …" markers + duplicate-mapped nodes, dedupes vs live DB, parents to nearest PKD) — it added ~13 named KD OSM had that we lacked. OSM's KD coverage is thinner than our DB, so the real gap (esp. Sabah/Sarawak, which have hundreds of KD in reality) remains **unfillable without an official KD source**. Perak's KD (243) is the only near-complete state, from an earlier manual scrape. **Sarawak — Bahagian Mukah** was filled from a user-supplied list (`data/mukah_sarawak_facilities.xlsx`, public Google-search info) via `add_mukah_sarawak_facilities.py`: added 1 hospital (Daro) + 9 clinics (KKIA Mukah/Dalat, KK1M Bandar/Sesok Mukah, KK Igan/Ladang Sawit/Nanga Semah/Betanak/Tekajong). Same pattern works for any other division/state list a user provides. **Sabah — filled statewide** from the Sabah SKN directory (`skn.sabah.gov.my/iknow/kesihatan-keselamatan/fasiliti-kesihatan` — server-rendered, NOT bot-blocked; curl works) via `add_sabah_facilities.py` reading `data/sabah_health_facilities.json` (353 scraped). Added **225** (6 hospitals + 164 KD + 55 KK/KKom), category by NAME prefix (source's type column mislabels KD as "Klinik Kesihatan"), parented by the district column. Sabah KD went 5 → 169. 20 rows that wouldn't geocode were snapped to their district PKD centroid (`source=pkd_district_centroid`). **This is the model for the remaining East-Malaysia gaps** — state health-dept directories, not moh.gov.my. **Melaka — 19 KD/KK1M** added from municipal-council pages (mpjasin.gov.my has exact GPS per KD; mphtj.gov.my by geocode) → `data/melaka_council_kd.json`; excluded private Poliklinik/Hospital Pantai.
 
 **⚠️ Parenting gotcha:** scripts that parent by *nearest-PKD-by-coordinate* (`add_state_facilities`, `add_penang`, `add_kd_from_osm`, `add_mukah`) mis-assign facilities near district borders — e.g. Mukah-town clinics landed under PKD Dalat, so they didn't show under PKD Mukah. Prefer parenting by the source's **district/address** (as `add_sabah` does). Fixed cases: Mukah-town clinics → PKD Mukah; KK Tepus → PKD Selangau. If a user reports "can't see X under PKD Y", check the parent_location_id vs the address district first.
-5. ⏳ **[Feature, IN PROGRESS as of 2026-07-27]** Activate email. `RESEND_API_KEY`/`RESEND_FROM`/`APP_BASE_URL` are confirmed set in **both** Vercel and GitHub secrets (owner-confirmed 2026-07-27, using the `drakmal.com` domain). Both confirmation-on-submit (`app/lib/email.ts` → `route.ts`) and report-ready (`generate_report.py`'s `send_report_email`) are fully coded and wired. **Still open:** an actual end-to-end send hasn't been re-verified since the domain move — need to confirm a real magic-link/confirmation email lands in an inbox, not just that the key is present. Once confirmed live, item #1's magic-link flow can be committed and deployed.
+5. ✅ **[Feature] Done, 2026-07-27.** Email is fully live. `RESEND_API_KEY`/`RESEND_FROM`/`APP_BASE_URL` confirmed set in both Vercel and GitHub secrets, `drakmal.com` DNS records added at Porkbun and verified in Resend, and delivery confirmed via several real test sends (see env-var section for the full troubleshooting trail — corrupted `RESEND_FROM`, missing DNS records, propagation lag). The magic-link flow (item 1) and report-ready email (`generate_report.py`'s `send_report_email`) are both wired and live.
 6. ⚠️ **[2 bugs FIXED — needs re-test] Empty reports, root-caused twice.**
    - **Bug 1 (fixed earlier):** every Google Distance Matrix call failed with `INVALID_REQUEST: departure_time is in the past` — `collect_traffic.py` captured `now` once at the start, but a 100+ anchor batch takes minutes, so by call time the leave-home moment was past. Fixed: `get_google_maps_travel_time` clamps `departure_time` to `now+1min` if it's past.
    - **Bug 2 (found after Bug 1's fix still produced 0 logs):** GitHub Actions' `schedule` trigger is unreliable — runs are commonly delayed 30-60+ min, so the old **40-minute** collection window (`leave_home -30min` to `+10min`) was frequently missed entirely by the actual (jittery) run cadence. Confirmed via run history: requests with 100+ anchors and valid leave-times still got 0 logs across multiple days because no run ever landed inside their narrow window. **Fixed:** removed the upper bound — `collect_traffic.py` now collects any time from `leave_home -30min` onward (daily dedup still caps it to one point/day; the workflow's own 05:00–12:00 MYT cron already bounds how late a run can happen, so no separate upper cutoff is needed).
    - Also: report page shows leave-home/arrive-office times; Groq prompt is now grounded with a computed per-area reliability summary (see #9).
-   - **TO RE-TEST:** watch a fresh request (e.g. PKD Sik / PKD Kangar, submitted 2026-07-20/21) run through a full weekday collection cycle and confirm logs actually land + a real report generates.
-9. ✅ **[Report quality + rental] Done.**
-   - **Farther-area + route-directness analysis** (`generate_report.py`): `distance_km` is now captured from the Distance Matrix response (`db/006_add_distance_km.sql` — **ACTION REQUIRED**, was previously discarded) so the report can name the **farthest area still within a 60-min commute**, not just the top-3 most reliable. A speed-based heuristic (distance/time) flags whether a route "looks direct/highway-like" vs "indirect/likely congested" — explicitly framed to the LLM as an inference, never as a fabricated road name or toll fact (we have no Routes/Directions API call for that — would be a separate paid API + owner decision if wanted later).
-   - **Rental price + broken link:** iProperty's own `?q=`/`_freetext=` params are silently ignored (confirmed by hand — no public free-text search exists, only an internal `districtCode` via their autocomplete widget), so the direct link always fell back to the generic all-Malaysia listing page. Replaced with a `site:iproperty.com.my` Google-search deep link (verified to surface real listings + prices for a test area). Also: Groq now returns a delimited `###AREA_ESTIMATES###` block with a typical RM range per top/farthest area, parsed and stored in `area_price_estimates` (`db/007_add_rental_estimates.sql` — **ACTION REQUIRED**) and shown on the report page labeled "AI estimate, not a live listing" (no live rental-price API exists for Malaysia, so this is disclosed, not fabricated as fact).
+   - **TO RE-TEST — in progress as of 2026-07-27 evening MYT.** The old PKD Sik/PKD Kangar requests (2026-07-19/20) that this note used to point to are **confirmed stale** — both predate the bug-2 fix (which landed 2026-07-27 03:56 MYT) by a week, so their 0-log status is expected, not a regression. Three real requests now exist that **do** postdate the fix (PKD Yan, PKD Kuala Kangsar, PKD Kangar, all confirmed via the live magic-link flow 2026-07-27 evening MYT) — these are the ones to watch. As of this check they have 0 origin_anchors yet (the anchor-builder Action's actual cadence is much less frequent than its `*/10 * * * *` cron — GitHub often delays scheduled workflows by 1-3h on public/free-tier repos, consistent with bug 2's finding) and the 05:00-12:00 MYT collection window for 2026-07-28 hadn't opened yet at check time. **Next step:** re-check these three requests' `daily_traffic_logs`/`origin_anchors` counts after 2026-07-28's collection window has passed.
+9. ✅ **[Report quality + rental] Done, `db/006`/`db/007` applied 2026-07-27.**
+   - **Farther-area + route-directness analysis** (`generate_report.py`): `distance_km` is now captured from the Distance Matrix response (`db/006_add_distance_km.sql`) so the report can name the **farthest area still within a 60-min commute**, not just the top-3 most reliable. A speed-based heuristic (distance/time) flags whether a route "looks direct/highway-like" vs "indirect/likely congested" — explicitly framed to the LLM as an inference, never as a fabricated road name or toll fact (we have no Routes/Directions API call for that — would be a separate paid API + owner decision if wanted later).
+   - **Rental price + broken link:** iProperty's own `?q=`/`_freetext=` params are silently ignored (confirmed by hand — no public free-text search exists, only an internal `districtCode` via their autocomplete widget), so the direct link always fell back to the generic all-Malaysia listing page. Replaced with a `site:iproperty.com.my` Google-search deep link (verified to surface real listings + prices for a test area). Also: Groq now returns a delimited `###AREA_ESTIMATES###` block with a typical RM range per top/farthest area, parsed and stored in `area_price_estimates` (`db/007_add_rental_estimates.sql`) and shown on the report page labeled "AI estimate, not a live listing" (no live rental-price API exists for Malaysia, so this is disclosed, not fabricated as fact).
 7. ✅ **[Collection] Done.** Collection window widened to **05:00–12:00 MYT** (`daily_tracker.yml` cron `*/15 21-23,0-3 * * *`); with the 30-min lead this covers leave-home times up to ~12:15. Widen further only if users report leaving home after noon.
-8. ✅ **[Feedback] Built + Telegram alerts.** "Can't find your facility?" form sits **beside Box 5** on `app/page.tsx` -> `app/api/feedback/route.ts` -> Supabase `feedback` table (`db/004`, run). Reports also push to **Telegram** via `notify_feedback.yml` (only when new — never messages on empty). `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` are already set as GitHub secrets. **ACTION REQUIRED:** run `db/005_feedback_notified.sql` (still not applied) — alerts are inert until then. Until it's run, reports still save; read them in the Supabase Table Editor. Light spam guard: 20 reports/IP/day.
+8. ✅ **[Feedback] Done — Telegram alerts live.** "Can't find your facility?" form sits **beside Box 5** on `app/page.tsx` -> `app/api/feedback/route.ts` -> Supabase `feedback` table (`db/004`, run). Reports also push to **Telegram** via `notify_feedback.yml` (only when new — never messages on empty). `db/005_feedback_notified.sql` applied 2026-07-27 — alerts are live, not just inert-safe. Light spam guard: 20 reports/IP/day.
+10. ✅ **[Copy/UX overhaul] Done, 2026-07-27/28**, owner-directed. Site branding: dropped "KKM" everywhere (browser title, all page eyebrows, email subject/footer/from-name) — now just "Relocation Planner". Headline "Where Should You Live?" -> "**Where Should You Stay?**" (the tool's output is a suggested area, not a verdict on living somewhere). Reworked several info-card blurbs for clarity (dropped a stale "weather data" mention, the 1-5-working-day aside, an over-explained "we collect one data point per working day" line). Removed the reference-ID card from the report-status page and the post-confirm message — no longer needed since report delivery is by email, not by the user keeping an ID. Main-page submit button renamed to **"Request real-time traffic tracking"**. Reworded the whole email/verify-flow language to stop implying the *email link itself* confirms the request (see Gotchas below) — email button is now **"Go to confirmation page"**, and the report-ready date/time moved from the post-submit message to the post-confirm "tracking started" screen (shown once, only once the request is actually confirmed).
 
 ## Gotchas
+- **The magic-link email is deliberately two-step — this is not a bug.** Clicking the
+  link/button in the verification email only navigates to `app/verify/[token]/page.tsx`
+  (a safe `GET`, no side effects); the request is only actually created when the user
+  clicks that page's own button, which fires the `POST`. Reason: corporate email link
+  scanners (Microsoft 365 Safe Links, some AV/gateway products) auto-fetch every URL in
+  an incoming email *before* a human opens it. If the email link itself performed the
+  confirm, a scanner's pre-fetch would silently burn the one-time token and create a
+  phantom request before the real user ever clicked. Keep this two-step shape even
+  though the email button and the page's button can look redundant — see item 10's copy
+  changes for how the wording was adjusted to make the distinction clearer without
+  removing the second step.
 - **⚠️ NEVER open a live browser preview of `npm run dev` on this machine.** Owner's
   laptop has a weak GPU (NVIDIA MX150) that crashes hard (unrecoverable — requires
   full Claude Code reinstall) under local rendering load, and opening a rendered
