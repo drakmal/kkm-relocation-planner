@@ -64,9 +64,13 @@ exactly against their MOH directories)._
 | `district` | ~465 | ~140 hospital · 162 PKD · 162 PKPD |
 | `clinic` | ~2,640 | ~1,124 KK · ~959 KKP · ~495 KD · gov clinic · K1M |
 
-Coordinates: after two geocoding passes (place + postcode), only ~61 facilities
-remain on approximate (state-centre) coordinates; the rest are town-level or
-exact.
+Coordinates: after a third pass (2026-07-27 — sibling-facility coordinate copy
+for co-located dental clinics, plus hand-curated Nominatim place-name lookups
+where the automated regex-based matching missed a comma or nested name), only
+33 facilities remain on approximate (state-centre) coordinates, down from ~61.
+The rest are town-level or exact. The remaining 33 are almost entirely rural
+Sabah interior and Sarawak riverine ("Nanga X") clinics with no OSM presence
+at all — see Known limitations below.
 
 ### Official benchmarks (MOH Health Facts 2024, 2023 data)
 
