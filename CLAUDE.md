@@ -10,7 +10,10 @@ live within commuting range — with rental-listing links. **Independent project
 not an official MOH commission.**
 
 ## Live
-- **App:** https://kkm-relocation-planner.vercel.app  (Vercel, auto-deploys on push to `main`)
+- **App:** https://relocate.drakmal.com  (custom domain, on Vercel, auto-deploys on push to `main`)
+  - Owner bought personal domain `drakmal.com` (Porkbun) and mapped this project to the `relocate` subdomain — kept generic/non-official-sounding on purpose (not `kkm.drakmal.com`) since this is an independent project, not an MOH commission. Root `drakmal.com` stays free for future projects/portfolio.
+  - Old fallback URLs still exist but are not primary: `kkm-relocation-planner.vercel.app` (original Vercel URL). A short-lived `aml.autos` domain was bought and connected first, then disconnected once `drakmal.com` was acquired.
+  - `APP_BASE_URL` updated to `https://relocate.drakmal.com` in both Vercel env vars and GitHub secrets.
 - **Repo:** https://github.com/drakmal/kkm-relocation-planner  (public; owner `drakmal`, `gh` CLI is authed)
 - **DB:** Supabase (cloud)
 
@@ -82,7 +85,7 @@ never a broken form.
 
 ## Pending / next steps (priority order)
 0a. ✅ **[Done] Emoji cleanup.** All UI emojis removed (`app/report/[id]/page.tsx`, `app/page.tsx`) — plain text/arrows only now. Telegram message emoji (🔔 in `notify_feedback.py`) is not web UI — left as-is. **Owner does not want emojis in the UI — don't add any going forward.**
-0. **⏰ [REMINDER for owner] Shorten the app URL.** Owner asked to do this *later* — surface it. Canonical URL today is `kkm-relocation-planner.vercel.app` (already short + public + Turnstile-allowlisted; do NOT share the `-git-main-…vercel.app` URL — it's login-gated + not Turnstile-allowlisted). To shorten further: rename the Vercel project (→ e.g. `kkm-planner.vercel.app`) then update the Turnstile hostname allowlist + `APP_BASE_URL`; or add a custom domain (needs a purchase — currently deferred).
+0. ✅ **[Done, 2026-07-27] Shorten the app URL.** Owner bought `drakmal.com` (Porkbun) and connected it to Vercel as `relocate.drakmal.com` (Production); DNS via Porkbun (CNAME `relocate` → Vercel). `APP_BASE_URL` + Turnstile hostname allowlist updated to match in Vercel, GitHub secrets, and Cloudflare. Do NOT share the `-git-main-…vercel.app` URL — it's login-gated + not Turnstile-allowlisted.
 1. **[Security, HIGH]** Email is only *format*-checked — a fake `@moh.gov.my` passes and each fake email gets its own 3/week quota → can run up Google cost.
    - ✅ **IP-based rate limit implemented** (`app/api/requests/route.ts`, `IP_WEEKLY_LIMIT = 5`). Best-effort: `ip_address` is written via a post-insert update and the gate is skipped if the column is missing, so it deploys safely before migration. **ACTION REQUIRED:** run `db/003_add_ip_rate_limit.sql` in the Supabase SQL editor to add the `ip_address` column + index; the cap is inert until then.
    - ✅ **IP cap = 5/IP/week** (`IP_WEEKLY_LIMIT = 5`) — a bit above the 3/email cap so a shared office (several colleagues behind one NAT) isn't blocked in normal use.
