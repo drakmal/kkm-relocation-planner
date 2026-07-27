@@ -2,7 +2,7 @@
 // unset, so the app works locally without email configured.
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const RESEND_FROM = process.env.RESEND_FROM || 'KKM Relocation Planner <onboarding@resend.dev>';
+const RESEND_FROM = process.env.RESEND_FROM || 'Relocation Planner <onboarding@resend.dev>';
 const APP_BASE_URL = (process.env.APP_BASE_URL || '').replace(/\/$/, '');
 
 function escapeHtml(s: string): string {
@@ -34,7 +34,7 @@ export async function sendConfirmationEmail(opts: {
     '<p>Your reference ID:</p>' +
     `<p style="font-size:20px;font-weight:700;background:#f0f7ff;border:1px solid #d8ebff;border-radius:10px;padding:10px 16px;display:inline-block;letter-spacing:0.5px">${escapeHtml(opts.refId)}</p>` +
     readyLine + linkLine +
-    '<p style="color:#60748a;font-size:13px">Please keep this reference ID. Sent by the KKM Relocation Planner (free tool for MOH staff).</p>' +
+    '<p style="color:#60748a;font-size:13px">Please keep this reference ID. Sent by the Relocation Planner.</p>' +
     '</div>';
 
   const text =
@@ -83,7 +83,7 @@ export async function sendVerificationEmail(opts: {
     '<p>Click below to confirm this is your request and start tracking your commute:</p>' +
     `<p><a href="${url}" style="display:inline-block;background:#0f4c92;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600">Confirm and start tracking</a></p>` +
     `<p style="color:#60748a;font-size:13px">This link expires in ${opts.expiresMinutes} minutes. If you didn't request this, you can ignore this email.</p>` +
-    '<p style="color:#60748a;font-size:13px">Sent by the KKM Relocation Planner (free tool for MOH staff).</p>' +
+    '<p style="color:#60748a;font-size:13px">Sent by the Relocation Planner.</p>' +
     '</div>';
 
   const text =
@@ -98,7 +98,7 @@ export async function sendVerificationEmail(opts: {
       body: JSON.stringify({
         from: RESEND_FROM,
         to: [opts.to],
-        subject: 'Confirm your KKM Relocation Planner tracking request',
+        subject: 'Confirm your tracking request',
         html,
         text,
       }),

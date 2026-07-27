@@ -81,7 +81,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
       <section className="card p-4 gap-4 flex flex-col w-full max-w-3xl mx-auto">
         <div className="hero-banner py-2 px-3 gap-3 flex items-center justify-between flex-wrap">
           <div className="min-w-0">
-            <p className="eyebrow">KKM Relocation Planner</p>
+            <p className="eyebrow">Relocation Planner</p>
             <h1 className="text-lg font-semibold leading-tight">Confirm your tracking request</h1>
           </div>
           <a href="/" className="helper text-white font-medium text-sm m-0 whitespace-nowrap underline">

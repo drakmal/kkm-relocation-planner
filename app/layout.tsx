@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'KKM Relocation Planner',
+  title: 'Relocation Planner',
   description: 'A commute planning tool for Malaysian health workers',
 };
 

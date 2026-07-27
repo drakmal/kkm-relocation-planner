@@ -425,10 +425,10 @@ export default function HomePage() {
     <main className="min-h-screen w-full p-4">
       <section className="card hero-card p-4 gap-4 flex flex-col w-full max-w-6xl mx-auto">
         <div className="hero-banner py-2 px-3 flex flex-col gap-1">
-          <p className="eyebrow" style={{ margin: 0 }}>KKM Relocation Planner</p>
-          <h1 className="text-lg font-semibold leading-tight m-0">Where Should You Live?</h1>
+          <p className="eyebrow" style={{ margin: 0 }}>Relocation Planner</p>
+          <h1 className="text-lg font-semibold leading-tight m-0">Where Should You Stay?</h1>
           <p className="helper text-white text-sm m-0">
-            For health workers relocating or transferring — measure your real daily commute and find the most reliable areas to stay near your posting.
+            For health workers relocating or transferring — track your commute over the days you choose and find the most reliable areas to stay near your posting.
           </p>
         </div>
 
@@ -616,7 +616,7 @@ export default function HomePage() {
 
             <div className="section-heading">
               <h2>Commute time</h2>
-              <p>Capture your morning journey from home to the office.</p>
+              <p>Choose the time you leave home and the time you arrive at the office.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -692,15 +692,6 @@ export default function HomePage() {
               );
             })()}
 
-            <div className="info-card">
-              <p>
-                Your report will be ready around{' '}
-                <strong>{formatReadyDateTime(computeReportReady(form.endDate, form.arriveOfficeTime))}</strong>. After you
-                submit, you&apos;ll get a <strong>reference ID</strong> and a link — bookmark it to check tracking status
-                and view the final report any time.
-              </p>
-            </div>
-
             <label>
               MOH email
               <div style={{ display: 'flex', alignItems: 'stretch' }}>
@@ -728,7 +719,7 @@ export default function HomePage() {
                 </span>
               </div>
               <span className="muted" style={{ fontWeight: 400, fontSize: '0.8rem' }}>
-                Just your username — the <strong>@moh.gov.my</strong> is added automatically. Used to confirm you&apos;re MOH staff and count weekly requests. No promotional emails are sent.
+                Used to count weekly requests and report submissions.
               </span>
             </label>
 
@@ -754,7 +745,7 @@ export default function HomePage() {
           <div className="col-span-1 lg:order-1 flex flex-col gap-3">
             <article className="info-card">
               <h2>How it works</h2>
-              <p>The tool automatically collects real-time traffic and weather data on working days, continuing until the end of the tracking period you set.</p>
+              <p>The tool automatically collects real-time traffic data on working days, continuing until the end of the tracking period you set.</p>
             </article>
             <article className="info-card">
               <h2>What to do</h2>
@@ -762,7 +753,7 @@ export default function HomePage() {
             </article>
             <article className="info-card">
               <h2>What will happen next</h2>
-              <p>Your detailed relocation report is generated automatically once the system finishes collecting traffic data for your selected period (1–5 working days). View it any time using the reference ID and link you receive after submitting.</p>
+              <p>A suggested location to stay is generated automatically once the system finishes collecting traffic data for your selected period.</p>
             </article>
             <article className="info-card">
               <h2>Access &amp; fair use</h2>
