@@ -237,6 +237,8 @@ export async function POST(request: Request) {
         to: email,
         token,
         officeName: payload.targetOfficeName || 'your target office',
+        exitHomeTime: payload.exitHomeTime,
+        arriveOfficeTime: payload.arriveOfficeTime,
         expiresMinutes: VERIFICATION_EXPIRY_MINUTES,
       });
     } catch (mailError) {

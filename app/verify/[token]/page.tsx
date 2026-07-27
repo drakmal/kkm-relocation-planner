@@ -11,6 +11,7 @@ type PeekResponse = {
 type ConfirmResponse = {
   id?: string;
   emailed?: boolean;
+  reportReadyText?: string | null;
   error?: string;
   resetAt?: string | null;
 };
@@ -27,7 +28,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
   const [loadError, setLoadError] = useState<string | null>(null);
 
   const [confirming, setConfirming] = useState(false);
-  const [confirmed, setConfirmed] = useState<{ id: string; emailed: boolean } | null>(null);
+  const [confirmed, setConfirmed] = useState<{ id: string; emailed: boolean; reportReadyText: string | null } | null>(null);
   const [confirmError, setConfirmError] = useState<{ message: string; resetAt?: string | null } | null>(null);
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
         setConfirmError({ message: payload.error || 'Unable to confirm this request.', resetAt: payload.resetAt });
         return;
       }
-      setConfirmed({ id: payload.id!, emailed: Boolean(payload.emailed) });
+      setConfirmed({ id: payload.id!, emailed: Boolean(payload.emailed), reportReadyText: payload.reportReadyText ?? null });
     } catch (err) {
       setConfirmError({ message: err instanceof Error ? err.message : 'Unexpected error' });
     } finally {
@@ -114,9 +115,7 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
         {!loading && !loadError && peek?.status === 'valid' && !confirmed ? (
           <>
             <div className="info-card">
-              <p>
-                Click below to confirm your tracking request to <strong>{peek.officeName}</strong>.
-              </p>
+              <p>Click below to confirm your tracking request.</p>
             </div>
 
             <button type="button" className="w-full" onClick={handleConfirm} disabled={confirming}>
@@ -134,7 +133,11 @@ export default function VerifyPage({ params }: { params: { token: string } }) {
 
         {confirmed ? (
           <div className="info-card">
-            <p>Tracking started. Your report will be emailed to you once it&apos;s ready.</p>
+            <p>
+              {confirmed.reportReadyText
+                ? <>Tracking started. Your report will be emailed to you by <strong>{confirmed.reportReadyText}</strong>.</>
+                : "Tracking started. Your report will be emailed to you once it's ready."}
+            </p>
             <a href={`/report/${confirmed.id}`} className="w-full" style={{ display: 'block', marginTop: '0.6rem' }}>
               <button type="button" className="w-full">View tracking status &amp; report</button>
             </a>

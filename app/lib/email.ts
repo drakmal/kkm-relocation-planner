@@ -69,6 +69,8 @@ export async function sendVerificationEmail(opts: {
   to: string;
   token: string;
   officeName: string;
+  exitHomeTime?: string;
+  arriveOfficeTime?: string;
   expiresMinutes: number;
 }): Promise<boolean> {
   if (!RESEND_API_KEY) return false;
@@ -76,19 +78,28 @@ export async function sendVerificationEmail(opts: {
   const url = APP_BASE_URL ? `${APP_BASE_URL}/verify/${opts.token}` : null;
   if (!url) return false;
 
+  const timesLine = opts.exitHomeTime && opts.arriveOfficeTime
+    ? `<p>Leave home: <strong>${escapeHtml(opts.exitHomeTime)}</strong> &middot; Arrive office: <strong>${escapeHtml(opts.arriveOfficeTime)}</strong></p>`
+    : '';
+  const timesText = opts.exitHomeTime && opts.arriveOfficeTime
+    ? `Leave home: ${opts.exitHomeTime} - Arrive office: ${opts.arriveOfficeTime}\n`
+    : '';
+
   const html =
     '<div style="font-family:Segoe UI,Arial,sans-serif;color:#16324f;max-width:600px">' +
-    '<h2 style="color:#0f4c92">Confirm your tracking request</h2>' +
+    '<h2 style="color:#0f4c92">Review your tracking request</h2>' +
     `<p>Target office: <strong>${escapeHtml(opts.officeName)}</strong></p>` +
-    '<p>Click below to review your request and confirm you\'d like to start tracking:</p>' +
-    `<p><a href="${url}" style="display:inline-block;background:#0f4c92;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600">Review and confirm</a></p>` +
+    timesLine +
+    '<p>Click below to go to the confirmation page:</p>' +
+    `<p><a href="${url}" style="display:inline-block;background:#0f4c92;color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600">Go to confirmation page</a></p>` +
     `<p style="color:#60748a;font-size:13px">This link expires in ${opts.expiresMinutes} minutes. If you didn't request this, you can ignore this email.</p>` +
     '<p style="color:#60748a;font-size:13px">Sent by the Relocation Planner.</p>' +
     '</div>';
 
   const text =
     `Review your tracking request.\nTarget office: ${opts.officeName}\n` +
-    `Review and confirm here (expires in ${opts.expiresMinutes} minutes): ${url}\n` +
+    timesText +
+    `Go to the confirmation page (expires in ${opts.expiresMinutes} minutes): ${url}\n` +
     `If you didn't request this, you can ignore this email.\n`;
 
   try {

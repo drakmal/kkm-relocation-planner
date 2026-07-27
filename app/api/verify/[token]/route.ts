@@ -173,5 +173,8 @@ export async function POST(_request: Request, { params }: { params: { token: str
   // Its job is done -- no need to wait for the daily cleanup job.
   await supabase.from('pending_verifications').delete().eq('id', row.id);
 
-  return NextResponse.json({ id: data.id, emailed, message: 'Tracking request confirmed' }, { status: 201 });
+  return NextResponse.json(
+    { id: data.id, emailed, reportReadyText: payload.reportReadyText || null, message: 'Tracking request confirmed' },
+    { status: 201 },
+  );
 }

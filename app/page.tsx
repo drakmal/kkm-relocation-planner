@@ -407,8 +407,7 @@ export default function HomePage() {
 
       setStatus(
         `Check your email — we've sent a link to ${form.userEmail}. Open it to review and confirm ` +
-        `your tracking request. The link expires in 30 minutes. Once confirmed, your report will be ` +
-        `ready by ${readyAt}.`,
+        `your tracking request. The link expires in 30 minutes.`,
       );
       // No tracking_requests row (and no quota use) exists until the emailed
       // link is confirmed — see app/api/verify/[token]/route.ts — so `usage`
@@ -734,7 +733,7 @@ export default function HomePage() {
 
             <div className="mt-2">
               <button type="submit" className="w-full" disabled={quotaReached}>
-                {quotaReached ? `Weekly limit reached — resets ${formatShortDate(usage?.resetAt)}` : 'Start tracking my commute'}
+                {quotaReached ? `Weekly limit reached — resets ${formatShortDate(usage?.resetAt)}` : 'Request real-time traffic tracking'}
               </button>
             </div>
 
