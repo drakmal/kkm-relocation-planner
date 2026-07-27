@@ -112,6 +112,15 @@ never a broken form.
 8. ✅ **[Feedback] Built + Telegram alerts.** "Can't find your facility?" form sits **beside Box 5** on `app/page.tsx` -> `app/api/feedback/route.ts` -> Supabase `feedback` table (`db/004`, run). Reports also push to **Telegram** via `notify_feedback.yml` (only when new — never messages on empty). **ACTION REQUIRED for alerts:** run `db/005_feedback_notified.sql`, create a Telegram bot (@BotFather) + get your chat id (@userinfobot), and add `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` as GitHub secrets. Until then reports still save; you read them in the Supabase Table Editor. Light spam guard: 20 reports/IP/day.
 
 ## Gotchas
+- **⚠️ NEVER open a live browser preview of `npm run dev` on this machine.** Owner's
+  laptop has a weak GPU (NVIDIA MX150) that crashes hard (unrecoverable — requires
+  full Claude Code reinstall) under local rendering load, and opening a rendered
+  dev-server tab in a browser is the trigger. To verify the app works: run
+  `npm run build` (compile check), or `curl -s -o /dev/null -w "%{http_code}"
+  http://localhost:3000/<path>` against a backgrounded `npm run dev` process for
+  a status-code check. Do not use any tool that renders/screenshots the page in
+  an actual browser (Chrome preview, Simple Browser, etc.) unless the owner
+  explicitly asks for a visual check.
 - Google Geocoding is disabled on the key → use **Nominatim** (postcode query works best for MY).
 - `moh.gov.my` and `mudah.my` block bots (HTTP 403) → scrape via the in-app **browser** using same-origin `fetch()`.
 - `next build` while `next dev` is running corrupts `.next` (clear it + restart dev).
