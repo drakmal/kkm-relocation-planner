@@ -237,6 +237,20 @@ def get_google_maps_travel_time(origin_lat: float, origin_lng: float, destinatio
     distance = element.get("distance", {})
     distance_km = round(distance.get("value", 0) / 1000, 2) if isinstance(distance, dict) else None
 
+    # Symmetric low-end sanity check: a reading implying an implausibly fast
+    # average speed (e.g. "3 min" for several km away) is almost always a bad
+    # anchor coordinate or a stale API response, not a real fast commute --
+    # reject it the same way the >90-minute case above is rejected, so it
+    # never gets stored and skews generate_report.py's averages.
+    MAX_PLAUSIBLE_SPEED_KMH = 110
+    if distance_km and travel_time_minutes:
+        implied_speed_kmh = distance_km / (travel_time_minutes / 60)
+        if implied_speed_kmh > MAX_PLAUSIBLE_SPEED_KMH:
+            raise ValueError(
+                f"Sanity check failed: implied speed {implied_speed_kmh:.0f} km/h "
+                f"({distance_km} km in {travel_time_minutes} min) is implausible"
+            )
+
     return travel_time_minutes, distance_km
 
 

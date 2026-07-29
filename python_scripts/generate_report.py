@@ -24,7 +24,7 @@ GROQ_MODEL = "llama-3.3-70b-versatile"
 # Resend email delivery (https://resend.com). Set these in the environment /
 # GitHub Actions secrets. RESEND_FROM must be a verified sender domain.
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
-RESEND_FROM = os.getenv("RESEND_FROM", "KKM Relocation Planner <onboarding@resend.dev>")
+RESEND_FROM = os.getenv("RESEND_FROM", "Relocation Planner <onboarding@resend.dev>")
 APP_BASE_URL = os.getenv("APP_BASE_URL", "").rstrip("/")
 
 supabase: Client | None = None
@@ -43,7 +43,7 @@ def fetch_tracking_logs(tracking_request_id: str):
     if not supabase:
         raise RuntimeError("Supabase client not initialized")
 
-    base_cols = "log_date, travel_time_minutes, weather_temp_c, weather_condition, weather_wind_kmh, weather_precip_mm, origin_anchors(name)"
+    base_cols = "log_date, travel_time_minutes, weather_temp_c, weather_condition, weather_wind_kmh, weather_precip_mm, origin_anchors(name, latitude, longitude)"
     try:
         response = (
             supabase.table("daily_traffic_logs")
@@ -66,16 +66,31 @@ def fetch_tracking_logs(tracking_request_id: str):
 
 def filter_logs_for_analysis(log_rows: list[dict]):
     """
-    Keep only travel logs that are plausible for a commute and exclude very long outliers.
+    Keep only travel logs that are plausible for a commute: exclude very long
+    outliers, and (when distance_km is available) exclude readings whose
+    implied speed is physically implausible -- e.g. a "3 min" reading several
+    km away, which is almost always a bad anchor coordinate or a stale API
+    response, not a real fast commute.
     """
     filtered = []
     for row in log_rows:
         travel_time = row.get("travel_time_minutes")
         try:
-            if travel_time is not None and int(travel_time) <= 120:
-                filtered.append(row)
+            if travel_time is None or int(travel_time) > 120:
+                continue
         except (TypeError, ValueError):
             continue
+
+        distance_km = row.get("distance_km")
+        if distance_km is not None and travel_time:
+            try:
+                implied_speed_kmh = float(distance_km) / (float(travel_time) / 60)
+                if implied_speed_kmh > MAX_PLAUSIBLE_SPEED_KMH:
+                    continue
+            except (TypeError, ValueError, ZeroDivisionError):
+                pass
+
+        filtered.append(row)
     return filtered
 
 
@@ -107,37 +122,155 @@ def format_logs_for_prompt(log_rows: list[dict]):
 # a Routes/Directions API call to name actual roads or tolls, so the prompt
 # must present it as a heuristic, never as fact.
 INDIRECT_ROUTE_SPEED_KMH = 30
-# Farthest-anchor pick is capped to anchors whose average travel time is still
-# "commutable" for a health worker -- an hour one-way is a common upper bound
-# used elsewhere in this codebase's Distance Matrix sanity check (90 min hard
-# cap; here we use a stricter, more realistic "still worth living there" bar).
+# A reading implying a faster average speed than this is treated as a bad
+# measurement (wrong/duplicate anchor coordinate, stale API response, etc.)
+# rather than a real commute, and is dropped in filter_logs_for_analysis.
+# 110 km/h is generous for Malaysian highway driving with traffic, so this
+# only catches genuinely implausible readings.
+MAX_PLAUSIBLE_SPEED_KMH = 110
+# Fallback ceiling for the "farthest area still within a commutable travel
+# time" pick, used only when the user's own leave/arrive times aren't
+# available to derive a real budget (see summarize_anchor_reliability) -- an
+# hour one-way is a common upper bound used elsewhere in this codebase's
+# Distance Matrix sanity check (90 min hard cap; here we use a stricter, more
+# realistic "still worth living there" bar).
 FARTHEST_COMMUTABLE_MAX_MIN = 60
 
+# Two anchors within this distance of each other are treated as the same real
+# place (e.g. duplicate/near-duplicate OSM nodes with slightly different
+# names/coordinates for one settlement), and merged before aggregation.
+ANCHOR_MERGE_DISTANCE_KM = 1.5
+# A looser distance bound used only when names also indicate the same place
+# (one name is a substring of the other) -- guards against merging two
+# genuinely different, same-named settlements on opposite sides of the
+# ~25 km anchor radius.
+ANCHOR_MERGE_NAME_MATCH_DISTANCE_KM = 5.0
 
-def summarize_anchor_reliability(log_rows: list[dict]):
+
+def commute_budget_minutes(leave_home: str | None, arrive_office: str | None) -> int | None:
+    """
+    Minutes between the user's stated leave-home and arrive-office clock
+    times ("HH:MM"), used as the real ceiling for the farthest-area pick
+    instead of a fixed constant. Returns None if either time is missing,
+    unparseable, or arrive_office isn't after leave_home same-day -- callers
+    should fall back to FARTHEST_COMMUTABLE_MAX_MIN in that case.
+    """
+    if not leave_home or not arrive_office:
+        return None
+    try:
+        lh_h, lh_m = (int(p) for p in leave_home.split(":")[:2])
+        ao_h, ao_m = (int(p) for p in arrive_office.split(":")[:2])
+    except (ValueError, AttributeError):
+        return None
+    diff = (ao_h * 60 + ao_m) - (lh_h * 60 + lh_m)
+    return diff if diff > 0 else None
+
+
+def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    from math import radians, sin, cos, sqrt, atan2
+
+    earth_radius_km = 6371.0
+    p1, p2 = radians(lat1), radians(lat2)
+    dphi = radians(lat2 - lat1)
+    dlambda = radians(lng2 - lng1)
+    a = sin(dphi / 2) ** 2 + cos(p1) * cos(p2) * sin(dlambda / 2) ** 2
+    return 2 * earth_radius_km * atan2(sqrt(a), sqrt(1 - a))
+
+
+def _merge_duplicate_anchors(anchors: list[dict]) -> list[dict]:
+    """
+    Merge anchors that almost certainly represent the same real place --
+    OSM sometimes has two nodes for one settlement with slightly different
+    names/coordinates (e.g. "Dulang Kechil" and "Kampung Kuala Dulang
+    Kechil" a few hundred metres apart). Anchors within
+    ANCHOR_MERGE_DISTANCE_KM are always merged; anchors within the looser
+    ANCHOR_MERGE_NAME_MATCH_DISTANCE_KM are merged only if one name is a
+    substring of the other. The longest (most descriptive) name in each
+    merged cluster becomes the canonical display name.
+    """
+    n = len(anchors)
+    parent = list(range(n))
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    def union(i: int, j: int) -> None:
+        ri, rj = find(i), find(j)
+        if ri != rj:
+            parent[ri] = rj
+
+    def names_overlap(a: str, b: str) -> bool:
+        a_low, b_low = a.lower(), b.lower()
+        return a_low in b_low or b_low in a_low
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            a, b = anchors[i], anchors[j]
+            if a["lat"] is None or a["lng"] is None or b["lat"] is None or b["lng"] is None:
+                continue
+            dist = _haversine_km(a["lat"], a["lng"], b["lat"], b["lng"])
+            if dist <= ANCHOR_MERGE_DISTANCE_KM:
+                union(i, j)
+            elif dist <= ANCHOR_MERGE_NAME_MATCH_DISTANCE_KM and names_overlap(a["name"], b["name"]):
+                union(i, j)
+
+    clusters: dict[int, dict] = {}
+    for i, a in enumerate(anchors):
+        cluster = clusters.setdefault(find(i), {"names": [], "minutes": [], "distances": []})
+        cluster["names"].append(a["name"])
+        cluster["minutes"].extend(a["minutes"])
+        cluster["distances"].extend(a["distances"])
+
+    merged = []
+    for cluster in clusters.values():
+        merged.append({
+            "name": max(cluster["names"], key=len),
+            "minutes": cluster["minutes"],
+            "distances": cluster["distances"],
+        })
+    return merged
+
+
+def summarize_anchor_reliability(log_rows: list[dict], leave_home: str | None = None, arrive_office: str | None = None):
     """
     Aggregate per-anchor stats (avg travel time, avg distance, avg speed) across
-    all collected days, then pick the top-3 most reliable anchors and the
-    single farthest anchor that's still commutable. Returns (summary_text,
-    ranked_anchor_names) -- ranked_anchor_names feeds the rental-estimate ask.
+    all collected days -- after merging near-duplicate anchors that represent
+    the same real place -- then pick the top-3 most reliable anchors and the
+    single farthest anchor that's still commutable within the user's own
+    leave-home/arrive-office budget (falling back to FARTHEST_COMMUTABLE_MAX_MIN
+    if that budget isn't available). Returns (summary_text, ranked_anchor_names)
+    -- ranked_anchor_names feeds the rental-estimate ask.
     """
-    stats: dict[str, dict] = {}
+    raw: dict[tuple, dict] = {}
     for row in log_rows:
         origin = row.get("origin_anchors")
-        name = origin.get("name") if isinstance(origin, dict) else None
+        if not isinstance(origin, dict):
+            continue
+        name = origin.get("name")
         if not name:
             continue
         minutes = row.get("travel_time_minutes")
         if minutes is None:
             continue
-        entry = stats.setdefault(name, {"minutes": [], "distances": []})
+        lat, lng = origin.get("latitude"), origin.get("longitude")
+        key = (name, round(lat, 6) if lat is not None else None, round(lng, 6) if lng is not None else None)
+        entry = raw.setdefault(key, {"name": name, "lat": lat, "lng": lng, "minutes": [], "distances": []})
         entry["minutes"].append(float(minutes))
         distance = row.get("distance_km")
         if distance is not None:
             entry["distances"].append(float(distance))
 
-    if not stats:
+    if not raw:
         return "No per-area statistics available.", []
+
+    stats: dict[str, dict] = {}
+    for cluster in _merge_duplicate_anchors(list(raw.values())):
+        entry = stats.setdefault(cluster["name"], {"minutes": [], "distances": []})
+        entry["minutes"].extend(cluster["minutes"])
+        entry["distances"].extend(cluster["distances"])
 
     rows_out = []
     for name, entry in stats.items():
@@ -149,7 +282,8 @@ def summarize_anchor_reliability(log_rows: list[dict]):
     by_reliability = sorted(rows_out, key=lambda r: r["avg_min"])
     top3 = by_reliability[:3]
 
-    commutable = [r for r in rows_out if r["avg_min"] <= FARTHEST_COMMUTABLE_MAX_MIN and r["avg_km"] is not None]
+    farthest_max_min = commute_budget_minutes(leave_home, arrive_office) or FARTHEST_COMMUTABLE_MAX_MIN
+    commutable = [r for r in rows_out if r["avg_min"] <= farthest_max_min and r["avg_km"] is not None]
     farthest = max(commutable, key=lambda r: r["avg_km"]) if commutable else None
 
     def route_note(r):
@@ -166,11 +300,11 @@ def summarize_anchor_reliability(log_rows: list[dict]):
 
     if farthest and farthest["name"] not in {r["name"] for r in top3}:
         lines.append(
-            f"\nFarthest area still within a {FARTHEST_COMMUTABLE_MAX_MIN}-minute commute: "
+            f"\nFarthest area still within a {farthest_max_min}-minute commute: "
             f"{farthest['name']} (~{farthest['avg_km']:.1f} km, avg {farthest['avg_min']:.0f} min){route_note(farthest)}"
         )
     elif farthest:
-        lines.append(f"\n({farthest['name']} above is also the farthest area still within a {FARTHEST_COMMUTABLE_MAX_MIN}-minute commute.)")
+        lines.append(f"\n({farthest['name']} above is also the farthest area still within a {farthest_max_min}-minute commute.)")
 
     ranked_names = [r["name"] for r in top3] + ([farthest["name"]] if farthest else [])
     # de-dup while preserving order
@@ -216,15 +350,17 @@ def build_prompt(tracking_request_id: str, formatted_logs: str, anchor_summary: 
     context = f"Target office: {office_name}."
     if leave_home or arrive_office:
         context += (
-            f" The user plans to leave home at {leave_home or '—'} and arrive at the office by "
-            f"{arrive_office or '—'}. Anchor your departure-time advice to these times."
+            f" The user has already fixed their schedule: leave home at {leave_home or '—'} and "
+            f"arrive at the office by {arrive_office or '—'}. Treat these as given facts, not as "
+            f"something to recompute or second-guess -- do not propose a different departure time "
+            f"and do not add a generic disclaimer such as \"this may vary due to traffic or weather\"."
         )
 
     rental_ask = ""
     if ranked_names:
         area_list = ", ".join(ranked_names)
         rental_ask = f"""
-7. After the narrative, add a line "###AREA_ESTIMATES###" followed by one line per
+6. After the narrative, add a line "###AREA_ESTIMATES###" followed by one line per
    area in this exact list: {area_list}
    Format each line exactly as: Area Name | RM low-high
    Give a plausible TYPICAL monthly rental range for a modest home in that area,
@@ -254,9 +390,8 @@ Return a clean text report with:
 1. A short summary of the overall pattern.
 2. The top 3 residential areas ranked by reliability (use the summary above).
 3. The farthest area that is still within a commutable travel time (use the summary above), so the user knows how far they could realistically live.
-4. A recommendation for the exact time the user should leave home to arrive by {arrive_office or 'their target time'}.
-5. Keep the report concise and practical.
-6. Ignore any travel times that appear unrealistic or above 120 minutes.
+4. Keep the report concise and practical.
+5. Ignore any travel times that appear unrealistic or above 120 minutes.
 {rental_ask}
 Raw data:
 {formatted_logs}
@@ -323,7 +458,14 @@ def save_report_to_db(report: str, tracking_request_id: str, area_price_estimate
         query.execute()
 
 
-def send_report_email(to_email: str, office_name: str, report: str, tracking_request_id: str) -> bool:
+def send_report_email(
+    to_email: str,
+    office_name: str,
+    report: str,
+    tracking_request_id: str,
+    leave_home: str | None = None,
+    arrive_office: str | None = None,
+) -> bool:
     """Email the finished report via Resend. No-op (returns False) if unconfigured."""
     if not RESEND_API_KEY:
         print("RESEND_API_KEY not set — skipping email (report still saved to DB).")
@@ -332,14 +474,19 @@ def send_report_email(to_email: str, office_name: str, report: str, tracking_req
     report_url = f"{APP_BASE_URL}/report/{tracking_request_id}" if APP_BASE_URL else None
     safe_report = html.escape(report)
     link_html = f"<p><a href='{report_url}'>View the full report online</a></p>" if report_url else ""
+    times_html = (
+        f"<p>Leave home: <strong>{html.escape(leave_home)}</strong> &middot; "
+        f"Arrive office: <strong>{html.escape(arrive_office)}</strong></p>"
+        if leave_home and arrive_office else ""
+    )
     body_html = (
         "<div style=\"font-family:Segoe UI,Arial,sans-serif;color:#16324f;max-width:640px\">"
-        "<h2 style=\"color:#0f4c92\">Your KKM relocation report</h2>"
+        "<h2 style=\"color:#0f4c92\">Your relocation report</h2>"
         f"<p>Target office: <strong>{html.escape(office_name)}</strong></p>"
+        f"{times_html}"
         "<pre style=\"white-space:pre-wrap;background:#f7fbff;border:1px solid #dce9f6;"
         f"border-radius:12px;padding:16px;line-height:1.6\">{safe_report}</pre>"
         f"{link_html}"
-        "<p style=\"color:#60748a;font-size:13px\">Sent by the KKM Relocation Planner (free tool for MOH staff).</p>"
         "</div>"
     )
     try:
@@ -374,18 +521,21 @@ def process_request(tracking_request_id: str) -> str:
         .data
     ) or {}
 
+    leave_home = (request_row.get("return_time") or "")[:5] or None    # return_time = leave-home
+    arrive_office = (request_row.get("arrival_time") or "")[:5] or None
+
     logs = fetch_tracking_logs(tracking_request_id)
     filtered_logs = filter_logs_for_analysis(logs)
     formatted_logs = format_logs_for_prompt(filtered_logs)
-    anchor_summary, ranked_names = summarize_anchor_reliability(filtered_logs)
+    anchor_summary, ranked_names = summarize_anchor_reliability(filtered_logs, leave_home=leave_home, arrive_office=arrive_office)
     prompt = build_prompt(
         tracking_request_id,
         formatted_logs,
         anchor_summary=anchor_summary,
         ranked_names=ranked_names,
         office_name=request_row.get("target_office_name") or "the target office",
-        leave_home=(request_row.get("return_time") or "")[:5] or None,   # return_time = leave-home
-        arrive_office=(request_row.get("arrival_time") or "")[:5] or None,
+        leave_home=leave_home,
+        arrive_office=arrive_office,
     )
     report = generate_report_with_groq(prompt)
     area_price_estimates = parse_area_estimates(report)
@@ -395,7 +545,14 @@ def process_request(tracking_request_id: str) -> str:
 
     email = request_row.get("user_email")
     if email:
-        send_report_email(email, request_row.get("target_office_name") or "your target office", report, tracking_request_id)
+        send_report_email(
+            email,
+            request_row.get("target_office_name") or "your target office",
+            report,
+            tracking_request_id,
+            leave_home=leave_home,
+            arrive_office=arrive_office,
+        )
 
     return report
 
