@@ -94,24 +94,97 @@ def filter_logs_for_analysis(log_rows: list[dict]):
     return filtered
 
 
+# `weather_condition` stores Open-Meteo's raw WMO weather_code (see
+# collect_traffic.py) -- a bare integer means nothing to the model, so map the
+# codes we actually see in Malaysia to short labels. Anything unmapped falls
+# back to the code itself rather than guessing at a description.
+WMO_CONDITIONS = {
+    0: "clear",
+    1: "mainly clear",
+    2: "partly cloudy",
+    3: "overcast",
+    45: "fog", 48: "fog",
+    51: "light drizzle", 53: "drizzle", 55: "heavy drizzle",
+    61: "light rain", 63: "rain", 65: "heavy rain",
+    80: "light showers", 81: "showers", 82: "violent showers",
+    95: "thunderstorm", 96: "thunderstorm with hail", 99: "thunderstorm with hail",
+}
+
+
+def describe_weather_code(code) -> str | None:
+    """Short text for a WMO weather code; falls back to 'code N' if unmapped."""
+    if code is None:
+        return None
+    try:
+        code = int(code)
+    except (TypeError, ValueError):
+        return str(code)
+    return WMO_CONDITIONS.get(code, f"code {code}")
+
+
 def format_logs_for_prompt(log_rows: list[dict]):
     """
-    Convert log rows into a readable text summary for the AI.
+    Condense log rows into a per-day summary for the AI -- one line per collected
+    date, not one per log row.
+
+    A request with many anchors over a long window produces hundreds of rows, and
+    dumping them raw scales the prompt past Groq's free-tier tokens-per-minute
+    ceiling (a 431-log request measured ~21k tokens against a 12k limit, so its
+    report failed silently every hour for days). The per-area detail the report
+    actually cites already comes from summarize_anchor_reliability(); this block
+    only has to carry the day-to-day spread and the weather picture, and both
+    aggregate cleanly. Size is now bounded by the number of tracked days (1-5),
+    not by the anchor count.
     """
     if not log_rows:
         return "No traffic logs available after filtering out routes longer than 120 minutes."
 
-    lines = []
+    by_date: dict[str, dict] = {}
     for row in log_rows:
-        anchor_name = "Unknown"
-        origin = row.get("origin_anchors")
-        if isinstance(origin, dict):
-            anchor_name = origin.get("name", "Unknown")
-
-        lines.append(
-            f"Date: {row['log_date']} | Anchor: {anchor_name} | Travel: {row.get('travel_time_minutes')} min | "
-            f"Weather: temp {row.get('weather_temp_c')}C, wind {row.get('weather_wind_kmh')} km/h, precip {row.get('weather_precip_mm')} mm"
+        entry = by_date.setdefault(
+            row["log_date"],
+            {"minutes": [], "temp": [], "wind": [], "precip": [], "conditions": []},
         )
+        minutes = row.get("travel_time_minutes")
+        if minutes is not None:
+            entry["minutes"].append(float(minutes))
+        for key, column in (("temp", "weather_temp_c"), ("wind", "weather_wind_kmh"), ("precip", "weather_precip_mm")):
+            value = row.get(column)
+            if value is not None:
+                entry[key].append(float(value))
+        condition = row.get("weather_condition")
+        if condition:
+            entry["conditions"].append(condition)
+
+    def _avg(values):
+        return sum(values) / len(values) if values else None
+
+    lines = []
+    for date in sorted(by_date):
+        entry = by_date[date]
+        minutes = entry["minutes"]
+        if minutes:
+            travel = (
+                f"travel avg {_avg(minutes):.0f} min "
+                f"(range {min(minutes):.0f}-{max(minutes):.0f} across {len(minutes)} area samples)"
+            )
+        else:
+            travel = "no travel times recorded"
+
+        weather = []
+        if entry["conditions"]:
+            dominant = max(set(entry["conditions"]), key=entry["conditions"].count)
+            label = describe_weather_code(dominant)
+            if label:
+                weather.append(label)
+        if entry["temp"]:
+            weather.append(f"temp {_avg(entry['temp']):.0f}C")
+        if entry["wind"]:
+            weather.append(f"wind {_avg(entry['wind']):.0f} km/h")
+        if entry["precip"]:
+            weather.append(f"precip {_avg(entry['precip']):.1f} mm")
+
+        lines.append(f"Date: {date} | {travel} | Weather: {', '.join(weather) if weather else 'not recorded'}")
     return "\n".join(lines)
 
 
@@ -376,7 +449,7 @@ Analyze the following commute tracking data for tracking request {tracking_reque
 Use the travel times and weather conditions to identify which residential areas are most reliable for travel to the target office.
 Factor in weather delays from wind, rain, and temperature where relevant.
 
-Per-area reliability summary (already computed from the raw data below):
+Per-area reliability summary (already computed from the collected data):
 {anchor_summary}
 
 The "avg speed" note on each area is an INFERENCE from distance/time, not real
@@ -393,7 +466,7 @@ Return a clean text report with:
 4. Keep the report concise and practical.
 5. Ignore any travel times that appear unrealistic or above 120 minutes.
 {rental_ask}
-Raw data:
+Day-by-day overview (each line aggregates every area sampled that day):
 {formatted_logs}
 """
 
