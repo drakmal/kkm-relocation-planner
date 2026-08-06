@@ -9,6 +9,7 @@ Run:  python python_scripts/run_due_reports.py
 """
 
 import re
+import sys
 from datetime import datetime, timezone, timedelta
 
 from generate_report import supabase, process_request
@@ -64,12 +65,25 @@ def main():
             due.append(r["id"])
 
     print(f"{len(rows)} open request(s); {len(due)} due for reporting.")
+    failures = []
     for rid in due:
         try:
             process_request(rid)
             print(f"  reported {rid}")
         except Exception as exc:  # noqa: BLE001 - one failure must not block the rest
             print(f"  FAILED {rid}: {exc}")
+            failures.append((rid, exc))
+
+    # Every due request still gets its turn above -- one bad request must not
+    # block the others -- but a run with any failure now exits non-zero so it
+    # actually surfaces. This used to exit 0 regardless, so the workflow stayed
+    # green while a Groq 413 silently killed one request's report on every
+    # hourly run for 4 days.
+    if failures:
+        print(f"\n{len(failures)} of {len(due)} due request(s) failed:", file=sys.stderr)
+        for rid, exc in failures:
+            print(f"  - {rid}: {exc}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
