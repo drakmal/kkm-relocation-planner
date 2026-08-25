@@ -168,3 +168,9 @@ magic-link email verification live, Turnstile + Resend functionally confirmed wo
 - `moh.gov.my` and `mudah.my` block bots (HTTP 403) → scrape via the in-app **browser** using same-origin `fetch()`.
 - `next build` while `next dev` is running corrupts `.next` (clear it + restart dev).
 - Facility geocoding on public Nominatim is rate-limited — run one geocoding job at a time.
+- **Never commit staff phone numbers with scraped facility data.** The `tel`
+  field was stripped from `data/sabah_health_facilities.json` and purged from
+  git history before the repo went public (many entries were individual staff
+  mobiles, not switchboards). No code reads it. Re-scrapes of SKN Sabah — or
+  any other state directory carrying phone numbers — must strip it again.
+  Rationale in `docs/DATA.md` under Known limitations.

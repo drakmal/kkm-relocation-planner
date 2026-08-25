@@ -109,6 +109,10 @@ at all — see Known limitations below.
 | --- | --- |
 | `klinik_kesihatan_official.json` | All 997 official KK, each flagged `in_osm`, with address |
 | `klinik_kesihatan_missing.json` | The ~658 official KK not yet in OSM, with addresses for geocoding |
+| `sabah_health_facilities.json` | 353 Sabah facilities scraped from the SKN Sabah directory (see the phone-number note below) |
+| `melaka_council_kd.json` | 20 Melaka KD/KK1M from municipal-council pages, with exact GPS |
+| `mukah_sarawak_facilities.xlsx` | User-supplied Bahagian Mukah (Sarawak) facility list |
+| `public_holidays_my.json` | MY public holidays, used to skip non-working days during collection |
 
 ---
 
@@ -124,6 +128,17 @@ at all — see Known limitations below.
   count is a slight over-estimate where naming differs.
 - The only route to a fully authoritative geocoded dataset is the
   access-restricted **MyHDW** directory (`support.myhdw@mimos.my`).
+- **Staff phone numbers are deliberately absent, and must stay that way.**
+  The SKN Sabah directory publishes a `tel` per facility and the original
+  scrape of `sabah_health_facilities.json` carried it for all 353 rows. Many
+  are individual staff mobiles (suffixed `(JM)` / `(PKK)`) rather than
+  switchboard lines, so the field was dropped from the file and purged from
+  git history before this repo was made public: redistributing a bulk copy of
+  personal contact numbers is a PDPA concern even though the source page is
+  itself public. Nothing reads the field — `add_sabah_facilities.py` uses only
+  `name`, `address`, `district` and `type` — so its absence is behaviour-neutral.
+  **If you re-scrape SKN (or add another state directory that ships phone
+  numbers), strip the field before committing.**
 
 ---
 
