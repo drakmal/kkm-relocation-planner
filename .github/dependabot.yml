@@ -1,0 +1,29 @@
+# Groups Dependabot's security PRs into a single pull request per ecosystem,
+# instead of one PR per advisory. There is no REST API for the "Grouped
+# security updates" toggle, so the grouping is configured here in the repo.
+#
+# open-pull-requests-limit: 0 disables routine *version*-update PRs. Security
+# updates are unaffected by that limit and keep flowing — grouped.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    groups:
+      npm-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: pip
+    directory: /python_scripts
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    groups:
+      pip-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
