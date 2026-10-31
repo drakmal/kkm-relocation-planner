@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 
 type PeekResponse = {
   status: 'valid' | 'expired' | 'not_found';
@@ -21,8 +21,8 @@ function formatShortDate(value?: string | null): string {
   return new Date(value).toLocaleString('en-MY', { dateStyle: 'medium', timeStyle: 'short' });
 }
 
-export default function VerifyPage({ params }: { params: { token: string } }) {
-  const { token } = params;
+export default function VerifyPage({ params }: { params: Promise<{ token: string }> }) {
+  const { token } = use(params);
   const [loading, setLoading] = useState(true);
   const [peek, setPeek] = useState<PeekResponse | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);

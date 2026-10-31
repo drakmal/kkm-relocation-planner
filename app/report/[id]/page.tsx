@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { rentalLinksFor } from '@/app/lib/rental';
 
 type TrackingRequest = {
@@ -45,8 +45,8 @@ function formatTime(value?: string | null) {
   return value.slice(0, 5); // "07:30:00" -> "07:30"
 }
 
-export default function ReportPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function ReportPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const [data, setData] = useState<ApiResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);

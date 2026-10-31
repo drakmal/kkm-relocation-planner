@@ -36,12 +36,13 @@ async function findPending(token: string): Promise<{ row: PendingRow | null; err
 // (Microsoft 365/Exchange Safe Links-style scanners auto-fetch links in
 // incoming mail before a human opens them; a mutating GET would let the
 // scanner silently burn the token before the real user ever clicks).
-export async function GET(_request: Request, { params }: { params: { token: string } }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ token: string }> }) {
   if (!supabase) {
     return NextResponse.json({ error: 'Supabase is not configured yet' }, { status: 500 });
   }
 
-  const { row, error } = await findPending(params.token);
+  const { token } = await params;
+  const { row, error } = await findPending(token);
   if (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
@@ -63,12 +64,13 @@ export async function GET(_request: Request, { params }: { params: { token: stri
 // explicit button click on the interstitial page (see
 // app/verify/[token]/page.tsx). This is where the real tracking_requests row
 // is created and the weekly/IP quota is spent.
-export async function POST(_request: Request, { params }: { params: { token: string } }) {
+export async function POST(_request: Request, { params }: { params: Promise<{ token: string }> }) {
   if (!supabase) {
     return NextResponse.json({ error: 'Supabase is not configured yet' }, { status: 500 });
   }
 
-  const { row, error } = await findPending(params.token);
+  const { token } = await params;
+  const { row, error } = await findPending(token);
   if (error) {
     return NextResponse.json({ error }, { status: 500 });
   }

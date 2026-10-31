@@ -9,13 +9,13 @@ const supabase = supabaseUrl && (supabaseServiceRoleKey || supabaseAnonKey)
   ? createClient(supabaseUrl, supabaseServiceRoleKey || supabaseAnonKey)
   : null;
 
-export async function GET(_request: Request, { params }: { params: { id: string } }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     if (!supabase) {
       return NextResponse.json({ error: 'Supabase is not configured yet' }, { status: 500 });
     }
 
-    const { id } = params;
+    const { id } = await params;
     if (!id) {
       return NextResponse.json({ error: 'Missing request id' }, { status: 400 });
     }
