@@ -96,7 +96,7 @@ separate issues found along the way — worth knowing if email trouble resurface
 - `daily_tracker.yml` — `collect_traffic.py` every 15 min in 05:00–10:00 MYT; collects per request near its leave-home time; skips weekends/holidays/off-window; once/day dedup.
 - `create_anchors.yml` — `run_pending_anchors.py` every 10 min; builds Overpass anchors for any non-completed request that has none (moved off the submit path).
 - `generate_reports.yml` — `run_due_reports.py` hourly; generates + emails reports whose window ended (email live, see item 5).
-- `keep_alive.yml` — pings Supabase every 3 days (prevents free-tier pause).
+- `keep_alive.yml` — pings Supabase every 3 days (prevents free-tier pause), and re-enables every workflow via the API (`keep-workflows-enabled` job). GitHub disables scheduled workflows in public repos after 60 days with no commits — this was about to hit all six on 2026-10-31 (last commit 2026-08-26). If "workflow will be disabled soon" emails come back anyway, push any commit and check that job's run log.
 - `notify_feedback.yml` — `notify_feedback.py` every 15 min; pushes NEW `feedback` rows to Telegram (only when there's un-notified feedback — silent otherwise; stamps `notified_at`). Live (see item 8).
 - `cleanup_pending_verifications.yml` — `cleanup_pending_verifications.py` daily; deletes expired, unconfirmed magic-link rows (confirmed ones are deleted immediately on confirm instead).
 

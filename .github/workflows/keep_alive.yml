@@ -2,6 +2,8 @@ name: Supabase Keep-Alive
 
 # Supabase free-tier projects pause after ~7 days of no activity. This pings the
 # database every 3 days so it never goes idle long enough to be paused.
+# It also keeps GitHub from disabling this repo's scheduled workflows (see the
+# keep-workflows-enabled job below).
 # (The traffic-collector and report workflows already query the DB on weekdays,
 #  but this guarantees activity during quiet periods, holidays, etc.)
 
@@ -25,3 +27,22 @@ jobs:
             -H "Authorization: Bearer $SUPABASE_KEY")
           echo "Supabase ping returned HTTP $code"
           test "$code" = "200"
+
+  # GitHub disables scheduled workflows in a public repo after 60 days with no
+  # repository activity (scheduled runs don't count). Re-enabling each workflow
+  # via the API counts as activity, so the crons never get switched off during
+  # quiet stretches with no commits. Separate job so a Supabase failure can't skip it.
+  keep-workflows-enabled:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Re-enable all workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          for id in $(gh api "repos/$REPO/actions/workflows" --jq '.workflows[].id'); do
+            gh api -X PUT "repos/$REPO/actions/workflows/$id/enable"
+            echo "Enabled workflow $id"
+          done
